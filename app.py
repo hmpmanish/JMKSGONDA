@@ -49,6 +49,9 @@ db_url = os.getenv('DATABASE_URL') or os.getenv('POSTGRES_URL')
 if db_url:
     if db_url.startswith('postgres://'):
         db_url = db_url.replace('postgres://', 'postgresql://', 1)
+    # Strip channel_binding option for psycopg2-binary compatibility
+    if 'channel_binding=' in db_url:
+        db_url = db_url.replace('&channel_binding=require', '').replace('channel_binding=require&', '').replace('channel_binding=require', '')
     app.config['SQLALCHEMY_DATABASE_URI'] = db_url
 elif os.environ.get('VERCEL'):
     db_path = '/tmp/jaymani_krishi.db'
