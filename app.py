@@ -44,12 +44,17 @@ from werkzeug.security import generate_password_hash, check_password_hash
 # Initialize Flask App
 app = Flask(__name__, template_folder='templates', static_folder='static')
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'jaymani-krishi-sewa-eval3-2026-secure-key')
-# Dynamic Database Routing: Use /tmp directory on Vercel Serverless environment
-if os.environ.get('VERCEL'):
+# Dynamic Database Routing: Cloud PostgreSQL first, then /tmp SQLite for Vercel, then local SQLite
+db_url = os.getenv('DATABASE_URL') or os.getenv('POSTGRES_URL')
+if db_url:
+    if db_url.startswith('postgres://'):
+        db_url = db_url.replace('postgres://', 'postgresql://', 1)
+    app.config['SQLALCHEMY_DATABASE_URI'] = db_url
+elif os.environ.get('VERCEL'):
     db_path = '/tmp/jaymani_krishi.db'
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{db_path}'
 else:
-    app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL', 'sqlite:///jaymani_krishi.db')
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///jaymani_krishi.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
