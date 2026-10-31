@@ -45,29 +45,13 @@ from werkzeug.security import generate_password_hash, check_password_hash
 app = Flask(__name__, template_folder='templates', static_folder='static')
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'jaymani-krishi-sewa-eval3-2026-secure-key')
 
-# Resilient Database Routing: Cloud PostgreSQL with safe fallback to SQLite
-def configure_database_uri(flask_app):
-    db_url = os.getenv('DATABASE_URL') or os.getenv('POSTGRES_URL')
-    if db_url:
-        try:
-            import psycopg2
-            if db_url.startswith('postgres://'):
-                db_url = db_url.replace('postgres://', 'postgresql://', 1)
-            if 'channel_binding=' in db_url:
-                db_url = db_url.replace('&channel_binding=require', '').replace('channel_binding=require&', '').replace('channel_binding=require', '')
-            flask_app.config['SQLALCHEMY_DATABASE_URI'] = db_url
-            return
-        except ImportError:
-            print("[WARN] psycopg2 driver unavailable; using SQLite engine", file=sys.stderr)
-        except Exception as e:
-            print(f"[WARN] Database URL notice: {e}", file=sys.stderr)
+# Dynamic Database Routing: Use /tmp directory on Vercel Serverless environment
+if os.environ.get('VERCEL'):
+    db_path = '/tmp/jaymani_krishi.db'
+    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{db_path}'
+else:
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL', 'sqlite:///jaymani_krishi.db')
 
-    if os.environ.get('VERCEL'):
-        flask_app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/jaymani_krishi.db'
-    else:
-        flask_app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///jaymani_krishi.db'
-
-configure_database_uri(app)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
