@@ -1,0 +1,23 @@
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+
+# Flask & SQLite instance
+instance/
+*.db
+*.sqlite3
+*.sqlite
+
+# OS and Office Temp locks
+~$*
+.DS_Store
+Thumbs.db
+
+# Antigravity Scratch files
+scratch/
