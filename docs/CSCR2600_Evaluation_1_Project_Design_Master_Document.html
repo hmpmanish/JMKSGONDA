@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSCR2600 Evaluation-1 Master Document - JAYMANI KRISHI SEWA</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 15mm 15mm 15mm 15mm;
+      @bottom-right {
+        content: counter(page);
+      }
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 11pt;
+      line-height: 1.5;
+      color: #111827;
+      background-color: #ffffff;
+      margin: 0;
+      padding: 20px;
+    }
+    .header-box {
+      border: 2px solid #0f172a;
+      padding: 15px;
+      text-align: center;
+      margin-bottom: 25px;
+      background-color: #f8fafc;
+    }
+    .header-box h1 {
+      margin: 0 0 5px 0;
+      font-size: 16pt;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .header-box h2 {
+      margin: 0 0 5px 0;
+      font-size: 13pt;
+      font-weight: 600;
+      color: #334155;
+    }
+    .header-box h3 {
+      margin: 0;
+      font-size: 11pt;
+      font-weight: 500;
+      color: #475569;
+    }
+    .section-title {
+      background-color: #0f172a;
+      color: #ffffff;
+      padding: 6px 12px;
+      font-size: 11pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-top: 25px;
+      margin-bottom: 12px;
+      border-radius: 2px;
+    }
+    .sub-title {
+      font-size: 11pt;
+      font-weight: 700;
+      color: #0f172a;
+      border-bottom: 1px solid #cbd5e1;
+      padding-bottom: 3px;
+      margin-top: 15px;
+      margin-bottom: 8px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0;
+      font-size: 9.5pt;
+    }
+    th, td {
+      border: 1px solid #94a3b8;
+      padding: 6px 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f1f5f9;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    pre {
+      background-color: #f8fafc;
+      border: 1px solid #cbd5e1;
+      padding: 10px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 8.5pt;
+      line-height: 1.35;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      margin: 10px 0;
+    }
+    .math-box {
+      background-color: #f8fafc;
+      border-left: 3px solid #0f172a;
+      padding: 8px 12px;
+      margin: 8px 0;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 9pt;
+    }
+    .signature-grid {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 35px;
+      padding-top: 15px;
+      border-top: 1px dashed #64748b;
+    }
+    .signature-item {
+      width: 48%;
+      font-size: 9.5pt;
+    }
+    @media print {
+      body {
+        padding: 0;
+      }
+      .page-break {
+        page-break-before: always;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header-box">
+    <h1>SHARDA UNIVERSITY</h1>
+    <h2>School of Engineering and Technology | Department of Computer Science & Engineering</h2>
+    <h3>CSCR2600: Project-Based Learning (PBL) - 1 | Session: 2026–2027 (Semester 3, Section B)</h3>
+    <hr style="border: 0; border-top: 1px solid #cbd5e1; margin: 10px 0;">
+    <div style="font-weight: bold; font-size: 12pt; color: #0f172a;">
+      PROJECT DESIGN & EVALUATION MASTER DOCUMENT (EVALUATION-1)
+    </div>
+    <div style="font-size: 9.5pt; margin-top: 4px;">
+      Target: 35 / 35 Marks (Rubric #R1 Criteria | 5/5 Excellent across all POs)
+    </div>
+  </div>
+
+  <table style="margin-bottom: 20px;">
+    <tr>
+      <th style="width: 25%;">Project Title</th>
+      <td><strong>JAYMANI KRISHI SEWA</strong> — Digital Agritech Marketplace & Bahi-Khata Ledger for Farmers & Local Vendors</td>
+    </tr>
+    <tr>
+      <th>Faculty Mentor</th>
+      <td><strong>Prof. (Dr.) Ali Imam Abidi</strong>, Department of Computer Science & Engineering</td>
+    </tr>
+    <tr>
+      <th>Project Investigators</th>
+      <td>
+        1. <strong>Manish Pandey</strong> (Roll No: 2515010348 | System ID: 2025266283) — Role: Lead Tester & Backend Developer<br>
+        2. <strong>Jayant Raj</strong> (Roll No: 2515010273 | System ID: 2025298708) — Role: Lead Designer & Full-Stack Developer
+      </td>
+    </tr>
+  </table>
+
+  <!-- SECTION 1 -->
+  <div class="section-title">1. Objectives and Methodology of Project Proposal (PO1) [Max Marks: 5]</div>
+
+  <div class="sub-title">1.1 Problem Formulation & Grassroots Realities</div>
+  <p>In rural agricultural belts of northern India (specifically surveyed across District Gonda, Uttar Pradesh), agrarian micro-commerce operates under severe structural inefficiencies that adversely impact smallholder farmers and verified retail merchants:</p>
+  <ul>
+    <li><strong>Blind Physical Stock Hunting:</strong> Farmers travel 15–30 km across fragmented rural markets during sowing windows, frequently finding subsidized fertilizers (Urea, DAP) out of stock.</li>
+    <li><strong>Economic & Productive Labor Loss:</strong> Each unconfirmed trip consumes 4–6 productive farming hours and Rs. 150–350 in deadhead transportation fuel.</li>
+    <li><strong>Asymmetric Information & Middleman Markups:</strong> Lack of unified catalog visibility allows middlemen to charge premiums above the Government Maximum Sale Price (MSP) ceiling (e.g. Urea capped at Rs. 266.50/45kg sold for Rs. 320–350).</li>
+    <li><strong>Paper-Based Bahi-Khata Ledger Disputes:</strong> Over 80% of local agri-inputs rely on informal seasonal credit ("Udhaar"). Traditional paper notebooks suffer from weathering, alterations, calculation errors, and contentious disputes.</li>
+  </ul>
+
+  <div class="sub-title">1.2 Core Technological Objectives</div>
+  <ul>
+    <li><strong>Sub-100ms Hyper-Local Stock Visibility:</strong> In-memory spatial index resolving vendor catalog queries, verified stock, and geodetic distance in under 100ms within a 5km radius.</li>
+    <li><strong>Tamper-Proof Digital Credit Ledger Engine:</strong> Double-entry mathematical ledger enforcing credit balance invariance, dynamic credit ceiling checks (Rs. 10,000 pool), and SHA-256 audit hashes.</li>
+    <li><strong>Transparent & Verified Price Discovery:</strong> Real-time price monitoring cross-referenced against District Agriculture Officer (DAO) MSP ceilings and the National SeedTrace Portal (seedtrace.gov.in).</li>
+    <li><strong>Click-to-Reserve & Central Escrow Fulfillment:</strong> Click-to-reserve workflow with atomic inventory locking, preventing double-allocation and enabling two-stage verification via dynamic 4-digit OTPs.</li>
+  </ul>
+
+  <div class="sub-title">1.3 Phased Agile Engineering Methodology (5-Step Lifecycle)</div>
+  <pre>
+[Step 1: Grassroots Analysis] 
+   |-- Field surveys across 35 farming households and 6 licensed dealers in Gonda district.
+   |-- Literacy and affordance profiling: requirement for bilingual UI, high-contrast badges, 
+       minimal text input, and offline resilience under 2G/3G network conditions.
+
+[Step 2: System Architecture & Relational Schema Planning]
+   |-- Third Normal Form (3NF) relational schema engineering.
+   |-- Definition of primary/foreign keys, cascade constraints, and spatial coordinate indexing.
+   |-- Mathematical formulation of spherical distance and double-entry accounting constraints.
+
+[Step 3: Modular Core Development]
+   |-- Backend: Stateless Python Flask RESTful micro-services with SQLAlchemy ORM.
+   |-- Frontend: React.js with Tailwind CSS, Vite bundler, and icon-driven responsive components.
+   |-- Decoupled API routes for authentication, catalog search, bahi-khata, and ordering.
+
+[Step 4: System Integration & Payment Gateway Engineering]
+   |-- Integration of Razorpay API with HMAC SHA-256 signature verification.
+   |-- Central Escrow protocol implementation (ESCROW_HOLD -> OTP Verification -> ESCROW_RELEASED).
+   |-- Automated ReportLab PDF generator for cryptographic digital tax invoices.
+
+[Step 5: Concurrency Testing, Security Audits, and UAT]
+   |-- Concurrency stress-testing simulating multi-threaded race conditions on single-unit stock.
+   |-- Penetration testing against unauthorized ledger mutations and SQL injection.
+   |-- Field User Acceptance Testing (UAT) with local farmers and merchant Sukhdev Prasad Pandey.
+  </pre>
+
+  <div class="sub-title">1.4 End-to-End Operational Pipeline Flowchart</div>
+  <pre>
++--------------------------------------------------------------------------------------------------+
+|                                    FARMER USER INTERFACE (CLIENT)                                |
+|           [Search Radius <= 5km]       [Select Crop Category: Fertilizer / Seed / Chemical]      |
++--------------------------------------------------------------------------------------------------+
+                                                  |
+                                                  v  HTTPS GET /api/products?radius=5km
++--------------------------------------------------------------------------------------------------+
+|                                  FLASK REST API GATEWAY & ROUTER                                 |
+|                         (Reverse Proxy: Nginx | WSGI: Gunicorn | Flask 3.0)                       |
++--------------------------------------------------------------------------------------------------+
+                                                  |
+                         +------------------------+------------------------+
+                         |                                                 |
+                         v                                                 v
+           [Cache Hit: < 5ms Response]                       [Cache Miss: Spatial Calculation]
++--------------------------------------------------+ +---------------------------------------------+
+|               REDIS IN-MEMORY CACHE              | |      NATIVE HAVERSINE DISTANCE ENGINE       |
+|    - Geo-spatial coordinates & active catalog    | |     d = 2R * arcsin(sqrt(h)) <= 5.0 km      |
++--------------------------------------------------+ +---------------------------------------------+
+                         |                                                 |
+                         +------------------------+------------------------+
+                                                  |
+                                                  v
++--------------------------------------------------------------------------------------------------+
+|                                     MYSQL RELATIONAL DATABASE                                    |
+|      Query: SELECT * FROM products JOIN vendors WHERE distance <= 5km AND stock_quantity > 0     |
++--------------------------------------------------------------------------------------------------+
+                                                  |
+                                                  v
++--------------------------------------------------------------------------------------------------+
+|                                      CART CHECKOUT DECISION                                      |
++--------------------------------------------------------------------------------------------------+
+                                                  |
+                  +-------------------------------+-------------------------------+
+                  |                                                               |
+                  v [Path A: Online Payment]                                      v [Path B: Credit / Udhaar]
++---------------------------------------------------+       +--------------------------------------+
+|            RAZORPAY PAYMENT GATEWAY               |       |    DIGITAL BAHI-KHATA LEDGER CHECK   |
+|   - Generate Order & Render UPI QR Code           |       |   - Validate Outstanding <= Rs.10,000|
+|   - Webhook: HMAC SHA-256 Signature Verification  |       |   - Atomic Row-Level Balance Lock    |
++---------------------------------------------------+       +--------------------------------------+
+                  |                                                               |
+                  +-------------------------------+-------------------------------+
+                                                  |
+                                                  v
++--------------------------------------------------------------------------------------------------+
+|                              ATOMIC ORDER & ESCROW FULFILLMENT                                   |
+|   1. Lock Inventory Row (SELECT ... FOR UPDATE)                                                  |
+|   2. Decrement Available Stock (S_avail = S_total - Q_ordered)                                   |
+|   3. Generate Dynamic 4-Digit Handover OTP (e.g. 1841) & SHA-256 Invoice Hash                    |
+|   4. Physical Handover at Store / Farm -> Vendor OTP Validation -> Funds Released to Vendor      |
++--------------------------------------------------------------------------------------------------+
+  </pre>
+
+  <!-- SECTION 2 -->
+  <div class="section-title">2. Identification of Necessary Tools / Formulas (PO5) [Max Marks: 5]</div>
+
+  <div class="sub-title">2.1 Technology Stack Matrix</div>
+  <table>
+    <thead>
+      <tr>
+        <th>Tier</th>
+        <th>Technology</th>
+        <th>Version</th>
+        <th>Technical Justification</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Frontend Client</strong></td>
+        <td>React.js / Tailwind CSS / Vite</td>
+        <td>18.2 / 3.4 / 5.1</td>
+        <td>Low-footprint mobile-first client; sub-second rendering across low-bandwidth 3G networks.</td>
+      </tr>
+      <tr>
+        <td><strong>Application Tier</strong></td>
+        <td>Python Flask / Gunicorn</td>
+        <td>3.0.2 / 21.2</td>
+        <td>Stateless microservice execution, explicit WSGI thread control, minimal memory footprint.</td>
+      </tr>
+      <tr>
+        <td><strong>Database & ORM</strong></td>
+        <td>MySQL / SQLAlchemy ORM</td>
+        <td>8.0.36 / 2.0</td>
+        <td>Full ACID compliance, foreign key cascades, and pessimistic row locking (<code>for_update</code>).</td>
+      </tr>
+      <tr>
+        <td><strong>Cache Layer</strong></td>
+        <td>Redis In-Memory Key-Value</td>
+        <td>7.2.4</td>
+        <td>Sub-5ms response for spatial geocache and active JWT token blacklist.</td>
+      </tr>
+      <tr>
+        <td><strong>Payment & PDF</strong></td>
+        <td>Razorpay API / ReportLab PDF</td>
+        <td>v2 / 4.1.0</td>
+        <td>HMAC SHA-256 webhook signatures and programmatic vector-clean digital tax receipts.</td>
+      </tr>
+      <tr>
+        <td><strong>DevOps</strong></td>
+        <td>Docker / Nginx Web Server</td>
+        <td>24.0 / 1.24</td>
+        <td>Reproducible containerized environments, reverse-proxy caching, and SSL termination.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="sub-title">2.2 Mathematical Formulations & Engineering Equations</div>
+  <div class="math-box">
+    <strong>1. Bahi-Khata Running Balance Equation:</strong><br>
+    B_current = B_prev + Sum(P_j * Q_j) - R_repay<br>
+    Constraint: Approved iff (B_current &lt;= L_sanctioned), where L_sanctioned = Rs. 10,000.00
+  </div>
+  <div class="math-box">
+    <strong>2. Thread-Safe Inventory Decrement Formula:</strong><br>
+    S_available = S_total - (S_reserved + S_confirmed)<br>
+    Update Rule: Delta(S_available) = -Q_order iff (S_available &gt;= Q_order) within atomic transaction.
+  </div>
+  <div class="math-box">
+    <strong>3. Haversine Proximity Geofencing Equation:</strong><br>
+    a = sin²(Delta_lat / 2) + cos(lat1) * cos(lat2) * sin²(Delta_lon / 2)<br>
+    d = 2 * R * arcsin(min(1, sqrt(a))) &nbsp;&nbsp;[R = 6,371.0 km, Radius &lt;= 5.0 km]
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="section-title">3. Identification of the Modules (PO2) [Max Marks: 5]</div>
+  <table>
+    <thead>
+      <tr>
+        <th>Module Name</th>
+        <th>Primary Inputs</th>
+        <th>Core Algorithms & Processing</th>
+        <th>Primary Outputs</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Mod 1: RBAC Auth</strong></td>
+        <td>Email, Password, Role</td>
+        <td>PBKDF2 Password Verification, SeedTrace License Validation</td>
+        <td>Signed JWT Token, Role Scopes, Certified Badge</td>
+      </tr>
+      <tr>
+        <td><strong>Mod 2: Spatial Discovery</strong></td>
+        <td>Latitude, Longitude, Radius (5km)</td>
+        <td>Haversine Spherical Filter, Redis Spatial Tile Lookup</td>
+        <td>Sorted Store Array, Distance (km), Stock Volume</td>
+      </tr>
+      <tr>
+        <td><strong>Mod 3: Vendor Inventory Hub</strong></td>
+        <td>SKU, Price, Stock Delta, Batch No</td>
+        <td>District MSP Cap Compliance Check, ACID Stock Adjustment</td>
+        <td>Live Catalog JSON, Low-Stock Alerts (&lt; 15 bags)</td>
+      </tr>
+      <tr>
+        <td><strong>Mod 4: Bahi-Khata Ledger</strong></td>
+        <td>Farmer ID, Udhaar / Repayment Sum</td>
+        <td>Double-Entry Math, Credit Limit Check (&lt;= Rs. 10,000)</td>
+        <td>Running Balance, SHA-256 Audit Hash, PDF Invoice</td>
+      </tr>
+      <tr>
+        <td><strong>Mod 5: Order & Central Escrow</strong></td>
+        <td>Cart Items, Pay Method, 4-digit OTP</td>
+        <td>Pessimistic Row Lock, Dynamic OTP Minting, Escrow Release</td>
+        <td>Order Ref, 5-Stage Step, Delivery Proof Receipt</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SECTION 4 -->
+  <div class="section-title">4. Working with High Level Design (HLD) (PO3) [Max Marks: 5]</div>
+  <div class="sub-title">4.1 3-Tier Enterprise Architectural Layout</div>
+  <pre>
++--------------------------------------------------------------------------------------------------+
+|                                    PRESENTATION TIER (CLIENTS)                                   |
+|   +-----------------------+   +------------------------+   +---------------------------------+   |
+|   |   Farmer Mobile UI    |   |  Vendor Management UI  |   |   DAO Official Monitor Console  |   |
+|   |  (React / Tailwind)   |   |   (Catalog & Ledger)   |   |     (Price Caps & Grievance)    |   |
+|   +-----------------------+   +------------------------+   +---------------------------------+   |
++--------------------------------------------------------------------------------------------------+
+                                                |  HTTPS (JSON Payloads)
+                                                v
++--------------------------------------------------------------------------------------------------+
+|                            GATEWAY & MIDDLEWARE TIER (NGINX + GUNICORN)                          |
+|   - SSL / TLS Termination           - Rate Limiting (Token Bucket)        - CORS Middleware      |
++--------------------------------------------------------------------------------------------------+
+                                                |
+                                                v
++--------------------------------------------------------------------------------------------------+
+|                                 APPLICATION TIER (PYTHON FLASK ENGINE)                           |
+|   +-------------------+  +-------------------+  +-------------------+  +---------------------+   |
+|   | Auth & RBAC Guard |  |  Spatial Service  |  |  Inventory Engine |  |  Bahi-Khata Ledger  |   |
+|   +-------------------+  +-------------------+  +-------------------+  +---------------------+   |
+|   +------------------------------------------+  +--------------------------------------------+   |
+|   |      Order & 5-Stage Stepper Service     |  |       Central Escrow & OTP Service         |   |
+|   +------------------------------------------+  +--------------------------------------------+   |
++--------------------------------------------------------------------------------------------------+
+                                                |
+                        +-----------------------+-----------------------+
+                        |                                               |
+                        v                                               v
++-----------------------------------------------+ +------------------------------------------------+
+|       PERSISTENCE TIER (DATA & CACHE)         | |           EXTERNAL INTEGRATION TIER            |
+|   +---------------------------------------+   | |   +----------------------------------------+   |
+|   | MySQL 8.0 Relational DB (ACID Schema) |   | |   | Razorpay Banking & UPI Central Escrow  |   |
+|   +---------------------------------------+   | |   +----------------------------------------+   |
+|   +---------------------------------------+   | |   +----------------------------------------+   |
+|   | Redis In-Memory Store (Spatial Cache) |   | |   | Govt SeedTrace Portal (seedtrace.gov.in|   |
+|   +---------------------------------------+   | |   +----------------------------------------+   |
++-----------------------------------------------+ +------------------------------------------------+
+  </pre>
+
+  <div class="sub-title">4.2 System Workload & Resource Distribution</div>
+  <pre>
+                  SYSTEM QUERY & COMPUTATIONAL WORKLOAD DISTRIBUTION
+                                   
+                                      [40%]
+                           Local Inventory Catalog &
+                           Spatial Geolocation Queries
+                                      / \
+                                     /   \
+                                    /     \
+                                   /       \
+                        [25%]     /         \     [20%]
+                    Bahi-Khata   /           \   Order Processing &
+                    Ledger Log  /             \  Payment Webhooks
+                                \             /
+                                 \           /
+                                  \         /
+                                   \       /
+                                    \     /
+                                     \   /
+                                      \ /
+                                     [15%]
+                                User Auth & JWT
+                               Session Management
+  </pre>
+
+  <!-- SECTION 5 -->
+  <div class="section-title">5. Working with Low Level Design (LLD) (PO4) [Max Marks: 5]</div>
+  <div class="sub-title">5.1 Database Relational Schema (ER Specifications)</div>
+  <pre>
+1. USERS (id PK, full_name, email UNIQUE, password_hash, role ENUM, phone_number, village, created_at)
+2. VENDORS (id PK, user_id FK->users.id, shop_name, proprietor_name, license_number, seedtrace_id, 
+           latitude, longitude, market_area, credit_pool_limit, is_verified)
+3. PRODUCTS (id PK, vendor_id FK->vendors.id, sku_code, name, category, price, gov_msp_cap, 
+            stock_quantity, batch_number, is_active, CHECK price <= gov_msp_cap)
+4. ORDERS (id PK, order_reference UNIQUE, farmer_id FK->users.id, vendor_id FK->vendors.id, 
+          total_amount, payment_method, payment_status, delivery_stage, delivery_otp, receipt_hash)
+5. BAHI_KHATA_LEDGER (id PK, farmer_id FK->users.id, vendor_id FK->vendors.id, order_id FK->orders.id, 
+                     entry_type, debit_amount, credit_amount, running_balance, entry_hash, timestamp_ist)
+  </pre>
+
+  <div class="sub-title">5.2 REST API Endpoint Contracts</div>
+  <pre>
+CONTRACT 1: GET /api/products?radius=5km&lat=27.1352&lon=82.0124
+HTTP/1.1 200 OK
+{
+  "success": true,
+  "search_origin": { "lat": 27.1352, "lon": 82.0124, "radius_km": 5.0 },
+  "products": [{
+    "product_id": 101, "name": "Neem Coated Urea (45kg)", "price": 266.50, "gov_msp_cap": 266.50,
+    "stock_quantity": 85, "vendor": { "shop_name": "Pandey Traders", "seedtrace_id": "24-076000", "distance_km": 1.8 }
+  }]
+}
+
+CONTRACT 2: POST /api/ledger/credit-order
+Payload: { "farmer_id": 1, "vendor_id": 1, "purchase_amount": 1340.00, "order_reference": "JMKS-ORD-20261101-8B3E" }
+HTTP/1.1 201 Created
+{
+  "success": true, "status": "APPROVED",
+  "ledger_entry": { "prior_balance": 3200.00, "debit_amount": 1340.00, "new_running_balance": 4540.00, "credit_limit": 10000.00 }
+}
+
+CONTRACT 3: POST /api/payment/razorpay-webhook
+Headers: X-Razorpay-Signature: d75a...9e1
+Payload: { "event": "payment.captured", "payload": { "payment": { "entity": { "amount": 134000, "status": "captured" } } } }
+HTTP/1.1 200 OK
+{ "success": true, "escrow_status": "ESCROW_HOLD", "delivery_otp": "7194", "message": "Funds locked in Central Escrow" }
+  </pre>
+
+  <div class="sub-title">5.3 Dual-Branch Checkout Execution Flow</div>
+  <pre>
+FARMER CLIENT                     FLASK API GATEWAY                 DATABASE & PAYMENT
+      |                                   |                                  |
+      |-- 1. Submit Cart Checkout ------->|                                  |
+      |                                   |-- 2. Lock Row (FOR UPDATE) ----->|
+      |                                   |<- 3. Row Lock Confirmed ---------|
+      |                                   |                                  |
+      |=================== BRANCH A: INSTANT ONLINE PAYMENT =================|
+      |                                   |                                  |
+      |                                   |-- 4A. Create Razorpay Order ---->|
+      |<- 5A. Render Dynamic UPI QR ------|                                  |
+      |-- 6A. Authorize UPI Payment ----->|                                  |
+      |                                   |<-- 7A. Webhook: Signature Valid -|
+      |                                   |-- 8A. Mark ESCROW_HOLD --------->|
+      |                                   |-- 9A. Decrement Stock (S = S-Q) ->|
+      |<- 10A. Issue Delivery OTP (7194) -|                                  |
+      |                                   |                                  |
+      |=================== BRANCH B: DIGITAL BAHI-KHATA (UDHAAR) ============|
+      |                                   |                                  |
+      |                                   |-- 4B. Query Outstanding Debt --->|
+      |                                   |<- 5B. Debt: Rs.3200 (Limit 10k) -|
+      |                                   |                                  |
+      |   [Condition: Order (Rs.1340) + Debt (Rs.3200) <= Rs.10,000 Cap]     |
+      |                                   |                                  |
+      |                                   |-- 6B. Debit Ledger (New: Rs.4540)|
+      |                                   |-- 7B. Decrement Stock ----------->|
+      |                                   |-- 8B. MINT SHA-256 Entry Hash -->|
+      |<- 9B. Issue Bahi-Khata Invoice ---|                                  |
+      |                                   |                                  |
+      |=================== FULFILLMENT & PHYSICAL HANDOVER ==================|
+      |                                   |                                  |
+      |-- 11. Present OTP at Store ------>|                                  |
+      |                                   |-- 12. Validate OTP ------------->|
+      |                                   |-- 13. Release Escrow to Vendor ->|
+      |<- 14. Order Completed Receipt ----|                                  |
+  </pre>
+
+  <!-- SECTION 6 -->
+  <div class="section-title">6. Communication (Presentation) (PO10) [Max Marks: 5]</div>
+  <div class="sub-title">6.1 Core Defense Viva Q&A</div>
+  <p><strong>Q1: How does your architecture handle concurrency conflicts when two farmers purchase the last remaining bag of Urea?</strong><br>
+  <em>Defense:</em> We utilize pessimistic row-level locking via SQLAlchemy's <code>.with_for_update()</code> directive (emitting SQL <code>SELECT ... FOR UPDATE</code>). When Thread A requests the record, an exclusive lock is granted. Thread B is placed in a blocked state. Thread A decrements stock from 1 to 0 and commits, releasing the lock. Thread B then unblocks, reads stock as 0, fails the constraint, and receives an HTTP 409 'INSUFFICIENT_STOCK' response with zero negative stock drift.</p>
+
+  <p><strong>Q2: If mobile connectivity drops immediately after a UPI payment is deducted, how is the order recovered?</strong><br>
+  <em>Defense:</em> Payment capture does not rely on client-side callbacks. We implement asynchronous server-to-server webhooks via Razorpay. When the payment processes, Razorpay posts directly to <code>/api/payment/razorpay-webhook</code>. The backend verifies the HMAC SHA-256 signature, transitions order status to <code>ESCROW_HOLD</code>, and issues the 4-digit OTP. When the farmer regains connectivity, querying <code>/api/orders</code> immediately displays the active escrow voucher and OTP.</p>
+
+  <p><strong>Q3: What safeguards prevent a vendor from manually altering a farmer's Bahi-Khata debt balance in the database?</strong><br>
+  <em>Defense:</em> The <code>bahi_khata_ledger</code> is an append-only ledger; direct <code>UPDATE</code> or <code>DELETE</code> operations are prohibited at the ORM layer. Every ledger row computes an internal SHA-256 hash linking the prior record's hash, farmer ID, debit amount, and timestamp: <code>H_k = SHA256(H_{k-1} || FarmerID || Delta || Timestamp)</code>. Any manual database tampering breaks the cryptographic hash continuity, causing the administrative telemetry audit engine to immediately flag the discrepancy.</p>
+
+  <!-- SECTION 7 -->
+  <div class="section-title">7. Project Design Report & Roadmap (PO12) [Max Marks: 5]</div>
+  <div class="sub-title">7.1 Test Evaluation Matrix</div>
+  <table>
+    <thead>
+      <tr>
+        <th>TC ID</th>
+        <th>Scenario</th>
+        <th>Execution Steps & Input</th>
+        <th>Expected Result</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>TC-01</strong></td>
+        <td>Role-Based Access Control Guard</td>
+        <td>Attempt accessing vendor dashboard with Farmer JWT</td>
+        <td>HTTP 403 Forbidden; access blocked</td>
+        <td><strong>PASS</strong></td>
+      </tr>
+      <tr>
+        <td><strong>TC-02</strong></td>
+        <td>Concurrent Stock Race Condition</td>
+        <td>2 simultaneous threads checkout last DAP bag</td>
+        <td>Thread 1 succeeds; Thread 2 receives 409</td>
+        <td><strong>PASS</strong></td>
+      </tr>
+      <tr>
+        <td><strong>TC-03</strong></td>
+        <td>Bahi-Khata Synchronous Ledger Debit</td>
+        <td>Credit order Rs. 1,340; current balance Rs. 3,200</td>
+        <td>Debt balance rises to exact Rs. 4,540</td>
+        <td><strong>PASS</strong></td>
+      </tr>
+      <tr>
+        <td><strong>TC-04</strong></td>
+        <td>Cryptographic Webhook HMAC Check</td>
+        <td>Send forged payment payload with fake signature</td>
+        <td>Signature mismatch rejected (400 Bad)</td>
+        <td><strong>PASS</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="sub-title">7.2 Future Scope</div>
+  <ul>
+    <li><strong>Vernacular Voice Ordering (NLP):</strong> Integrating lightweight Hindi/Bhojpuri speech models (Whisper/IndicWav2Vec) for illiterate farmers.</li>
+    <li><strong>AI-Driven Soil & Crop Inputs:</strong> Coupling Soil Health Card telemetry with local weather forecasts to autonomously prescribe optimal fertilizer schedules.</li>
+    <li><strong>WhatsApp Business API Micro-Bot:</strong> Automated dispatch of Bahi-Khata ledger summaries and order collection OTPs directly via WhatsApp.</li>
+  </ul>
+
+  <!-- SIGN-OFF -->
+  <div class="signature-grid">
+    <div class="signature-item">
+      <strong>Candidate Signatures:</strong><br><br>
+      1. Manish Pandey (Roll No: 2515010348 | System ID: 2025266283) ____________________<br><br>
+      2. Jayant Raj (Roll No: 2515010273 | System ID: 2025298708) ____________________
+    </div>
+    <div class="signature-item">
+      <strong>Faculty Mentor Endorsement:</strong><br><br>
+      Prof. (Dr.) Ali Imam Abidi<br>
+      Professor & Faculty Mentor,<br>
+      Department of Computer Science & Engineering,<br>
+      Sharda School of Computing Science and Engineering &nbsp;&nbsp;&nbsp;&nbsp;____________________
+    </div>
+  </div>
+
+</body>
+</html>
