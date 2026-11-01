@@ -72,12 +72,30 @@ Prominently displayed on the Marketplace page:
 Two-stage escrow payment workflow:
 1. **Dynamic UPI QR to Central Escrow:** Generated for `jaymani.escrow@upi` (SBI Agritech Escrow Pool).
 2. **Escrow Holding:** Order status marked `ESCROW_HOLD` ("राशि एस्क्रो वॉलेट में सुरक्षित है").
-3. **Cryptographic Proof Receipt:** Generates Unique Escrow Txn ID (`TXN-ESCROW-xxxx`), Bank UTR No., Farmer OTP (`7382`), and SHA-256 hash. Viewable and printable via modal.
-4. **Vendor Settlement:** Vendor sees locked funds in the dashboard. Upon physical handover, vendor confirms delivery to release funds (`ESCROW_RELEASED`), updating their settled balance.
+3. **Cryptographic Proof Receipt:** Generates Unique Escrow Txn ID (`TXN-ESCROW-xxxx`), Bank UTR No., dynamic 4-digit Farmer Delivery OTP, IST timestamp (UTC+5:30), and SHA-256 tamper-evident hash. Viewable and printable via modal.
+4. **Vendor Settlement:** Vendor sees locked funds in the dashboard. Upon physical handover, vendor enters the dynamic OTP to release funds (`ESCROW_RELEASED`), updating their settled balance.
 
 ---
 
-## 🧪 5. Automated Verification Test Suite
+## 🏛️ 6. National SeedTrace Portal Integration & DAO Gonda Compliance (seedtrace.gov.in)
+
+Direct integration with the official Government of India **SeedTrace Portal** (Ministry of Agriculture & Farmers Welfare / SCAPNIC):
+- **Primary Partner Credentials:**
+  - **Firm Name:** `PANDEY TRADERS` *(Sukhdev Prasad Pandey Khad Beej Bhandar, Itia Thok)*
+  - **SeedTrace Dealer ID:** `24-076000`
+  - **Official Seed License:** `DAO SEED/147/GDN/123`
+  - **Licensing Authority:** District Agriculture Officer (DAO), Gonda (District Code: 147)
+  - **Status & Validity:** Active Lifetime Certified (`02-01-2072`)
+- **Live Cross-Verification API:**
+  - `GET /api/seedtrace/verify/<dealer_id>` — Returns real-time government compliance verification payload with IST timestamps.
+- **Interactive Government Verification Modal:**
+  - Clicking any SeedTrace badge opens an official certificate modal linked directly to `https://seedtrace.gov.in/ms014/profileUpdate/dealerDetails`.
+- **DAO Official Portal Registry Widget:**
+  - DAO dashboard tracks all 1,771 registered dealers in Gonda district with instant verification.
+
+---
+
+## 🧪 7. Automated Verification Test Suite
 
 Run the upgraded 8-module test suite at any time:
 ```bash

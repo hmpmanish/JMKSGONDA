@@ -146,7 +146,8 @@ def run_tests():
         new_order = ord_data['order']
         assert new_order['delivery_mode'] == 'DOORSTEP'
         assert new_order['delivery_stage'] == 'PLACED'
-        assert new_order['delivery_otp'] == '7382'
+        assert len(str(new_order['delivery_otp'])) == 4
+        dynamic_otp = str(new_order['delivery_otp'])
         order_id = new_order['id']
         print(f"  -> PASSED: Order {new_order['order_reference']} created with OTP {new_order['delivery_otp']} and Doorstep Delivery.")
 
@@ -158,11 +159,11 @@ def run_tests():
         assert step_res.get_json()['order']['delivery_stage'] == 'OUT_FOR_DELIVERY'
 
         # Verify OTP
-        otp_res = client.post(f'/api/orders/{order_id}/verify-otp', json={'otp': '7382'})
+        otp_res = client.post(f'/api/orders/{order_id}/verify-otp', json={'otp': dynamic_otp})
         assert otp_res.status_code == 200
         assert otp_res.get_json()['order']['delivery_stage'] == 'DELIVERED'
         assert otp_res.get_json()['order']['order_status'] == 'COMPLETED'
-        print(f"  -> PASSED: Order advanced to DELIVERED upon OTP 7382 verification.")
+        print(f"  -> PASSED: Order advanced to DELIVERED upon dynamic OTP verification.")
 
         # TEST 8: Concurrency-Safe Bahi-Khata Ledger & Strict Decimal Accounting
         print("\n[TEST 8/13] Digital Bahi-Khata Ledger & Ceiling Check...")
@@ -238,7 +239,7 @@ def run_tests():
         print(f"  -> PASSED: Grievance {complaint_ref} registered and DAO notice issued.")
 
         # TEST 13: Admin Platform Telemetry & SHA-256 Audit Trail Verification
-        print("\n[TEST 13/13] Admin Platform Telemetry & Cryptographic SHA-256 Integrity...")
+        print("\n[TEST 13/14] Admin Platform Telemetry & Cryptographic SHA-256 Integrity...")
         tele = client.get('/api/admin/telemetry').get_json()
         assert tele['success'] == True
         assert tele['db_latency_ms'] > 0
@@ -247,8 +248,20 @@ def run_tests():
         assert tele['district_quota']['dap_pct'] == 76.3
         print(f"  -> PASSED: Telemetry online ({tele['db_latency_ms']}ms latency, SHA-256 chain 100% validated).")
 
+        # TEST 14: National SeedTrace Portal Live Cross-Verification API
+        print("\n[TEST 14/14] National SeedTrace Portal & DAO Gonda Official Compliance...")
+        st_res = client.get('/api/seedtrace/verify/24-076000')
+        assert st_res.status_code == 200
+        st_data = st_res.get_json()
+        assert st_data['success'] == True
+        assert st_data['dealer_id'] == '24-076000'
+        assert st_data['license_no'] == 'DAO SEED/147/GDN/123'
+        assert st_data['status'] == 'VERIFIED'
+        assert st_data['valid_upto'] == '02-01-2072'
+        print(f"  -> PASSED: SeedTrace Dealer {st_data['dealer_id']} verified against DAO Gonda registry ({st_data['license_no']}).")
+
         print("\n" + "=" * 75)
-        print(">>> ALL 13/13 COMPREHENSIVE INTEGRATION TESTS PASSED WITH 100% SUCCESS! <<<")
+        print(">>> ALL 14/14 COMPREHENSIVE INTEGRATION TESTS PASSED WITH 100% SUCCESS! <<<")
         print("=" * 75 + "\n")
 
 if __name__ == '__main__':
