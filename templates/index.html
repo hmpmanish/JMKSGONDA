@@ -3188,6 +3188,27 @@
       if (active) active.classList.remove('hidden');
     }
 
+    // Indian Standard Time (IST) Local Date-Time Formatter
+    function formatDateTimeIST(dateStr) {
+      if (!dateStr) return '';
+      if (String(dateStr).includes('AM') || String(dateStr).includes('PM')) return dateStr;
+      try {
+        const d = new Date(dateStr);
+        if (isNaN(d.getTime())) return dateStr;
+        return d.toLocaleString('en-IN', {
+          timeZone: 'Asia/Kolkata',
+          day: '2-digit',
+          month: 'short',
+          year: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit',
+          hour12: true
+        });
+      } catch (e) {
+        return dateStr;
+      }
+    }
+
     // =========================================================================
     // 2. BOOTSTRAP DATA LOADER
     // =========================================================================
@@ -3692,7 +3713,7 @@
           <tr class="hover:bg-slate-50 transition">
             <td class="py-3 px-4">
               <div class="font-bold text-slate-900 font-mono text-[11px]">${entry.transaction_ref}</div>
-              <div class="text-[10px] text-slate-400">${entry.created_at}</div>
+              <div class="text-[10px] text-slate-400">${formatDateTimeIST(entry.created_at)}</div>
             </td>
             <td class="py-3 px-4 text-slate-700 font-semibold">${entry.vendor_name}</td>
             <td class="py-3 px-4 text-slate-600">${entry.notes}</td>
@@ -3770,7 +3791,7 @@
                   ${isDoorstep ? '🚚 खेत तक डिलीवरी' : '🏪 दुकान से संग्रह'}
                 </span>
                 ${o.payment_status === 'ESCROW_HOLD' ? `<span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-[10px]">🔒 Escrow Hold</span>` : ''}
-                <span class="text-slate-400 text-xs font-medium">${o.created_at}</span>
+                <span class="text-slate-400 text-xs font-medium">${formatDateTimeIST(o.created_at)}</span>
               </div>
               <p class="text-xs text-slate-600">
                 विक्रेता: <strong>${o.vendor_name}</strong> • भुगतान: <span class="font-semibold text-emerald-700">${o.payment_method}</span>
@@ -3823,7 +3844,7 @@
               ${!isDelivered ? `
                 <div class="flex items-center space-x-1.5 bg-amber-50 border border-amber-200 px-2.5 py-1 rounded-lg">
                   <span class="text-[11px] font-bold text-amber-900">गोपनीय डिलीवरी OTP:</span>
-                  <span class="font-mono font-black text-amber-900 bg-amber-200/70 px-2 py-0.5 rounded tracking-widest text-xs">${o.delivery_otp || '7382'}</span>
+                  <span class="font-mono font-black text-amber-900 bg-amber-200/70 px-2 py-0.5 rounded tracking-widest text-xs">${o.delivery_otp || o.farmer_receipt_otp || '----'}</span>
                 </div>
                 ${(curStage === 'OUT_FOR_DELIVERY' || curStage === 'PACKED') ? `
                   <button onclick="verifyDeliveryOtp(${o.id})" class="px-2.5 py-1 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-lg text-xs flex items-center space-x-1 transition shadow-xs">
@@ -3905,7 +3926,7 @@
                   <span class="px-2 py-0.5 rounded text-[10px] font-bold ${o.payment_status === 'ESCROW_RELEASED' ? 'bg-emerald-100 text-emerald-800' : 'bg-blue-100 text-blue-800'}">
                     ${o.payment_status === 'ESCROW_RELEASED' ? '✓ Funds Released' : '🔒 ESCROW HOLD'}
                   </span>
-                  <span class="text-slate-400 text-[10px]">${o.created_at}</span>
+                  <span class="text-slate-400 text-[10px]">${formatDateTimeIST(o.created_at)}</span>
                 </div>
                 <p class="text-xs text-slate-700">Farmer: <strong>${o.farmer_name}</strong> • Bank UTR: <span class="font-mono text-slate-500">${o.bank_utr_no}</span></p>
                 <div class="text-[11px] text-slate-500">${o.items.map(it => `${it.quantity}x ${it.product_name}`).join(', ')}</div>
@@ -3943,7 +3964,7 @@
             <div class="flex items-center justify-between">
               <div>
                 <span class="font-bold text-slate-900 text-xs font-mono">${o.order_reference}</span>
-                <span class="text-[10px] text-slate-400 block">${o.created_at}</span>
+                <span class="text-[10px] text-slate-400 block">${formatDateTimeIST(o.created_at)}</span>
               </div>
               <span class="px-2 py-0.5 rounded text-[10px] font-bold ${
                 isDelivered ? 'bg-emerald-100 text-emerald-800' :
@@ -3981,7 +4002,7 @@
                   </button>
                 ` : curStage === 'OUT_FOR_DELIVERY' ? `
                   <div class="flex items-center space-x-1 bg-white border border-slate-300 rounded px-1.5 py-0.5">
-                    <input type="text" id="otp-input-${o.id}" value="${o.delivery_otp || '7382'}" maxlength="6" placeholder="OTP" class="w-16 text-center font-mono font-bold text-xs outline-none">
+                    <input type="text" id="otp-input-${o.id}" value="" maxlength="6" placeholder="OTP दर्ज करें" class="w-20 text-center font-mono font-bold text-xs outline-none">
                     <button onclick="verifyDeliveryOtp(${o.id})" class="px-2 py-0.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded text-[11px] font-bold transition">
                       Verify OTP
                     </button>
@@ -4352,7 +4373,11 @@
           if (paymentMethod === 'UPI_ESCROW') {
             showEscrowProofModal(data.order);
           } else {
-            showToast('Order confirmed with digital receipt!', 'success');
+            if (data.order && data.order.id) {
+              openTaxInvoiceModal(data.order.id);
+            }
+            const orderOtp = data.order ? (data.order.delivery_otp || data.order.farmer_receipt_otp || '') : '';
+            showToast(`ऑर्डर सुरक्षित दर्ज! आपका डिलीवरी OTP: ${orderOtp}`, 'success');
           }
 
           await loadBootstrapData();
@@ -4394,7 +4419,7 @@
       document.getElementById('escrowRecRef').innerText = order.order_reference;
       document.getElementById('escrowRecTxnId').innerText = order.escrow_txn_id || 'TXN-ESCROW-202610-8812';
       document.getElementById('escrowRecUtr').innerText = order.bank_utr_no || 'UTR994827103829';
-      document.getElementById('escrowRecOtp').innerText = order.farmer_receipt_otp || '7382';
+      document.getElementById('escrowRecOtp').innerText = order.farmer_receipt_otp || order.delivery_otp || '----';
       document.getElementById('escrowRecFarmer').innerText = order.farmer_name;
       document.getElementById('escrowRecVendor').innerText = order.vendor_name;
       document.getElementById('escrowRecAmount').innerText = `₹${order.final_payable.toLocaleString('en-IN', {minimumFractionDigits: 2})}`;
@@ -5365,26 +5390,39 @@ ${step.desc}`;
 
     async function verifyDeliveryOtp(orderId) {
       const inputEl = document.getElementById(`otp-input-${orderId}`);
-      const enteredOtp = inputEl ? inputEl.value.trim() : '7382';
+      let enteredOtp = inputEl ? inputEl.value.trim() : '';
+      const order = (AppState.orders || []).find(o => String(o.id) === String(orderId));
+
+      if (!enteredOtp) {
+        // If triggered from farmer panel or quick click without typing, use order's actual unique OTP
+        if (order && (order.delivery_otp || order.farmer_receipt_otp)) {
+          enteredOtp = order.delivery_otp || order.farmer_receipt_otp;
+          if (inputEl) inputEl.value = enteredOtp;
+        } else {
+          enteredOtp = prompt('किसान के फोन पर प्राप्त 4-अंकों का डिलीवरी OTP दर्ज करें:');
+          if (!enteredOtp) return;
+        }
+      }
 
       try {
         const res = await fetch(`/api/orders/${orderId}/verify-otp`, {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify({otp: enteredOtp || '7382'})
+          body: JSON.stringify({otp: enteredOtp})
         });
         const d = await res.json();
-        if (d.success) {
+        if (d.success || d.status === 'SUCCESS') {
           playSuccessChime();
-          showToast(d.message, 'success');
+          showToast(d.message || 'OTP सत्यापित! डिलीवरी पूर्ण हुई।', 'success');
           await loadBootstrapData();
           renderFarmerOrders();
           renderVendorView();
         } else {
+          playErrorBuzzer();
           showToast(d.message || 'अमान्य OTP!', 'error');
         }
       } catch (e) {
-        showToast('सत्यापन में त्रुटि।', 'error');
+        showToast('सत्यापन में त्रुटि: ' + e.message, 'error');
       }
     }
 
@@ -5413,12 +5451,12 @@ ${step.desc}`;
           <div>
             <span class="text-slate-500 block">इनवॉइस संदर्भ:</span>
             <span class="font-mono font-bold text-slate-900">${order.order_reference}</span>
-            <span class="text-slate-500 block mt-1">दिनांक: ${order.created_at}</span>
+            <span class="text-slate-500 block mt-1">दिनांक: ${formatDateTimeIST(order.created_at)}</span>
           </div>
           <div>
             <span class="text-slate-500 block">किसान ग्राहक:</span>
             <span class="font-bold text-slate-900">${order.farmer_name}</span>
-            <span class="text-slate-500 block mt-1">डिलीवरी: ${order.delivery_address || 'ग्राम इटियाथोक, गोंडा'}</span>
+            <span class="text-slate-500 block mt-1">गोपनीय डिलीवरी OTP: <strong class="text-amber-700 font-mono tracking-wider">${order.delivery_otp || order.farmer_receipt_otp || '----'}</strong></span>
           </div>
         </div>
 
@@ -5462,7 +5500,8 @@ ${step.desc}`;
     function shareOrderOnWhatsApp(orderId) {
       const order = AppState.orders.find(o => String(o.id) === String(orderId)) || AppState.orders[0];
       if (!order) return;
-      const text = `जयमनी कृषि सेवा - ऑर्डर रसीद%0Aऑर्डर आईडी: ${order.order_reference}%0Aविक्रेता: ${order.vendor_name}%0Aदेय राशि: ₹${order.final_payable}%0Aडिलीवरी OTP: ${order.delivery_otp || '7382'}%0Aडिजिटल सील: ${order.receipt_hash.substring(0, 16)}...%0Aजय जवान, जय किसान!`;
+      const orderOtp = order.delivery_otp || order.farmer_receipt_otp || '----';
+      const text = `जयमनी कृषि सेवा - ऑर्डर रसीद%0Aऑर्डर आईडी: ${order.order_reference}%0Aविक्रेता: ${order.vendor_name}%0Aदेय राशि: ₹${order.final_payable}%0Aडिलीवरी OTP: ${orderOtp}%0Aडिजिटल सील: ${order.receipt_hash.substring(0, 16)}...%0Aजय जवान, जय किसान!`;
       window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
     }
 
@@ -5472,7 +5511,8 @@ ${step.desc}`;
       const modal = document.getElementById('smsModal');
       const body = document.getElementById('smsTextBody');
       if (body) {
-        body.innerText = `प्रिय ${order.farmer_name} जी, आपका ऑर्डर ${order.order_reference} स्वीकृत हुआ है। कुल राशि: ₹${order.final_payable}। डिलीवरी राइडर: विरेन्द्र यादव। आपका OTP है: [ ${order.delivery_otp || '7382'} ]। सामान मिलने पर ही OTP राइडर को बताएं। - जयमनी कृषि सेवा`;
+        const orderOtp = order.delivery_otp || order.farmer_receipt_otp || '----';
+        body.innerText = `प्रिय ${order.farmer_name} जी, आपका ऑर्डर ${order.order_reference} स्वीकृत हुआ है। कुल राशि: ₹${order.final_payable}। डिलीवरी राइडर: विरेन्द्र यादव। आपका OTP है: [ ${orderOtp} ]। सामान मिलने पर ही OTP राइडर को बताएं। - जयमनी कृषि सेवा`;
       }
       if (modal) modal.classList.remove('hidden');
     }

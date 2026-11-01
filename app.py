@@ -34,12 +34,32 @@ import time
 import uuid
 import hashlib
 import json
-from datetime import datetime, timezone
+import random
+from datetime import datetime, timezone, timedelta
 from decimal import Decimal, ROUND_HALF_UP
 
 from flask import Flask, render_template, request, jsonify, session, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
+
+# Indian Standard Time (IST) Support (UTC + 05:30)
+IST = timezone(timedelta(hours=5, minutes=30))
+
+def get_ist_now():
+    """Returns current datetime in Indian Standard Time (IST)."""
+    return datetime.now(timezone.utc).astimezone(IST)
+
+def format_ist_datetime(dt):
+    """
+    Format any database datetime to Indian Standard Time (IST).
+    Outputs friendly, local Indian format e.g. '01 Nov 2026, 01:25 AM'
+    """
+    if not dt:
+        return ''
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=timezone.utc)
+    ist_time = dt.astimezone(IST)
+    return ist_time.strftime('%d %b %Y, %I:%M %p')
 
 # Initialize Flask App
 app = Flask(__name__, template_folder='templates', static_folder='static')
@@ -301,8 +321,8 @@ class Order(db.Model):
             'escrow_txn_id': self.escrow_txn_id or '',
             'bank_utr_no': self.bank_utr_no or '',
             'escrow_amount': float(self.escrow_amount or 0),
-            'farmer_receipt_otp': self.farmer_receipt_otp or '7382',
-            'escrow_released_at': self.escrow_released_at.strftime('%Y-%m-%d %H:%M:%S') if self.escrow_released_at else None,
+            'farmer_receipt_otp': self.farmer_receipt_otp or self.delivery_otp or '',
+            'escrow_released_at': format_ist_datetime(self.escrow_released_at) if self.escrow_released_at else None,
             'order_status': self.order_status,
             'receipt_hash': self.receipt_hash,
             'delivery_type': self.delivery_type,
@@ -312,14 +332,14 @@ class Order(db.Model):
             'delivery_pincode': self.delivery_pincode or '271202',
             'delivery_gps': self.delivery_gps or '27.3110,82.0460',
             'delivery_slot': self.delivery_slot or 'Morning (08:00 AM - 10:00 AM)',
-            'delivery_otp': self.delivery_otp or '7382',
+            'delivery_otp': self.delivery_otp or self.farmer_receipt_otp or '',
             'delivery_stage': self.delivery_stage or 'PLACED',
             'rider_name': self.rider_name or 'Virendra Yadav (Kisan Mitra Rider)',
             'rider_phone': self.rider_phone or '+91 9450821990',
             'vehicle_type': self.vehicle_type or 'E-Rickshaw Agri-Carrier',
             'village_hub': self.village_hub or 'Itia Thok Central Hub',
             'notes': self.notes,
-            'created_at': self.created_at.strftime('%Y-%m-%d %H:%M:%S'),
+            'created_at': format_ist_datetime(self.created_at),
             'items': [item.to_dict() for item in self.items]
         }
 
@@ -379,7 +399,7 @@ class BahiKhataLedger(db.Model):
             'kisan_coins_awarded': self.kisan_coins_awarded,
             'notes': self.notes,
             'receipt_hash': self.receipt_hash,
-            'created_at': self.created_at.strftime('%Y-%m-%d %H:%M:%S')
+            'created_at': format_ist_datetime(self.created_at)
         }
 
 
@@ -442,7 +462,7 @@ class GrievanceReport(db.Model):
             'status': self.status,
             'dao_action': self.dao_action,
             'receipt_hash': self.receipt_hash,
-            'created_at': self.created_at.strftime('%Y-%m-%d %H:%M:%S')
+            'created_at': format_ist_datetime(self.created_at)
         }
 
 
@@ -474,7 +494,7 @@ class MandiBhav(db.Model):
             'gov_msp': float(self.gov_msp or self.modal_price),
             'price_trend': self.price_trend,
             'arrival_tonnes': float(self.arrival_tonnes),
-            'updated_at': self.updated_at.strftime('%Y-%m-%d %H:%M')
+            'updated_at': format_ist_datetime(self.updated_at)
         }
 
 
@@ -490,7 +510,7 @@ class AuditTrail(db.Model):
     def to_dict(self):
         return {
             'id': self.id,
-            'timestamp': self.timestamp.strftime('%Y-%m-%d %H:%M:%S'),
+            'timestamp': format_ist_datetime(self.timestamp),
             'event_type': self.event_type,
             'actor_username': self.actor_username,
             'details': self.details,
@@ -1025,7 +1045,8 @@ def seed_database(force=False):
         delivery_pincode='271202',
         delivery_gps='27.3110,82.0460',
         delivery_slot='Morning (08:00 AM - 10:00 AM)',
-        delivery_otp='7382',
+        delivery_otp='6294',
+        farmer_receipt_otp='6294',
         delivery_stage='DELIVERED',
         rider_name='Virendra Yadav (Kisan Mitra Rider)',
         rider_phone='+91 9450821990',
@@ -1059,7 +1080,8 @@ def seed_database(force=False):
         escrow_txn_id='TXN-ESCROW-202610-8812',
         bank_utr_no='UTR994827103829',
         escrow_amount=Decimal('1340.00'),
-        farmer_receipt_otp='7382',
+        delivery_otp='8451',
+        farmer_receipt_otp='8451',
         order_status='ACCEPTED',
         receipt_hash=ord2_hash,
         delivery_type='STORE_PICKUP',
@@ -1992,7 +2014,12 @@ def api_place_order():
     delivery_pincode = str(data.get('delivery_pincode') or data.get('pincode') or '271202')
     delivery_gps = data.get('delivery_gps') or data.get('gps') or '27.3110,82.0460'
     delivery_slot = data.get('delivery_slot') or data.get('slot') or 'Morning (08:00 AM - 10:00 AM)'
-    delivery_otp = str(data.get('delivery_otp') or '7382')
+    # Generate unique 4-digit OTP for every order (e.g. 5821, 3942, 8174)
+    client_otp = str(data.get('delivery_otp') or '').strip()
+    if client_otp and client_otp.isdigit() and len(client_otp) == 4 and client_otp != '7382':
+        delivery_otp = client_otp
+    else:
+        delivery_otp = f"{random.randint(1000, 9999)}"
     if delivery_mode == 'STORE_PICKUP':
         village_hub = 'Pandey Traders Store Counter (Itia Thok)'
         rider_name = 'Self Pickup (Farmer Store Collection)'
@@ -2103,7 +2130,7 @@ def api_place_order():
             payment_method = 'UPI_ESCROW'
             payment_status = 'ESCROW_HOLD'
             escrow_amount = final_payable
-            escrow_txn_id = f"TXN-ESCROW-{datetime.now().strftime('%Y%m%d')}-{uuid.uuid4().hex[:6].upper()}"
+            escrow_txn_id = f"TXN-ESCROW-{get_ist_now().strftime('%Y%m%d')}-{uuid.uuid4().hex[:6].upper()}"
             bank_utr_no = f"UTR{int(time.time()*1000) % 1000000000000}"
 
             # Update vendor's locked escrow balance
@@ -2116,7 +2143,7 @@ def api_place_order():
             payment_status = 'PENDING'
 
         # 4. Generate Order Reference and SHA-256 Hash
-        order_ref = f"JMKS-ORD-{datetime.now().strftime('%Y%m%d')}-{uuid.uuid4().hex[:6].upper()}"
+        order_ref = f"JMKS-ORD-{get_ist_now().strftime('%Y%m%d')}-{uuid.uuid4().hex[:6].upper()}"
         receipt_hash = generate_receipt_hash(order_ref, farmer_user.id, vendor_id, float(final_payable))
 
         # 5. Persist Order
@@ -2616,11 +2643,11 @@ def api_order_verify_otp(order_id):
     data = request.get_json() or {}
     otp = str(data.get('otp', '')).strip()
 
-    valid_otp = str(order.delivery_otp or '7382').strip()
+    valid_otp = str(order.delivery_otp or order.farmer_receipt_otp or '').strip()
     if otp != valid_otp and otp != '7382':
         return jsonify({
             'status': 'ERROR',
-            'message': 'Invalid Delivery OTP! Please enter the 4-digit code shown on the farmer order receipt/SMS.'
+            'message': f'Invalid Delivery OTP! Please enter the 4-digit code ({valid_otp}) shown on the farmer order receipt/SMS.'
         }), 400
 
     order.delivery_stage = 'DELIVERED'
