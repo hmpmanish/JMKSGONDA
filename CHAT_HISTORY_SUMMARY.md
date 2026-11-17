@@ -95,3 +95,4 @@ git push origin main
    - Strict ₹10,000 credit ceiling with automatic mathematical rejection when limit is exceeded. Supports partial and full repayments with zero rounding errors (`Decimal`).
 6. **Comprehensive 14/14 Integration Tests:**
    - 100% test coverage validating guest entry, email auth, weather-driven advisory, Insecticides India multi-store pricing, dynamic OTP stepper, credit ceiling, ICAR calculators, PM-Kisan DBT tracker, APMC Mandi ticker, grievance portal, SHA-256 audit chain, and SeedTrace verification.
+

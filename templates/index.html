@@ -6088,6 +6088,42 @@ ${step.desc}`;
       }
     });
 
+    // --- L. URL Hash Router for Quick View & Screenshot Navigation ---
+    function handleUrlHash() {
+      const h = window.location.hash;
+      if (!h) return;
+      if (h === '#about') {
+        showTab('aboutTab');
+      } else if (h === '#stores') {
+        showTab('storesTab');
+      } else if (h === '#calcs') {
+        showTab('calcsTab');
+      } else if (h === '#doctor') {
+        showTab('doctorTab');
+      } else if (h === '#bahi') {
+        showTab('bahiTab');
+      } else if (h === '#schemes') {
+        showTab('schemesTab');
+      } else if (h === '#orders') {
+        showTab('ordersTab');
+      } else if (h === '#vendor') {
+        ['view-farmer', 'view-official', 'view-admin'].forEach(id => document.getElementById(id)?.classList.add('hidden'));
+        document.getElementById('view-vendor')?.classList.remove('hidden');
+      } else if (h === '#official') {
+        ['view-farmer', 'view-vendor', 'view-admin'].forEach(id => document.getElementById(id)?.classList.add('hidden'));
+        document.getElementById('view-official')?.classList.remove('hidden');
+      } else if (h === '#admin') {
+        ['view-farmer', 'view-vendor', 'view-official'].forEach(id => document.getElementById(id)?.classList.add('hidden'));
+        document.getElementById('view-admin')?.classList.remove('hidden');
+      } else if (h === '#seedtrace') {
+        document.getElementById('seedtraceModal')?.classList.remove('hidden');
+      } else if (h === '#escrow') {
+        document.getElementById('escrowReceiptModal')?.classList.remove('hidden');
+      }
+    }
+    window.addEventListener('DOMContentLoaded', handleUrlHash);
+    window.addEventListener('hashchange', handleUrlHash);
+    setTimeout(handleUrlHash, 200);
 
   </script>
 
