@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JAYMANI KRISHI SEWA — All Prototype Screens Complete Showcase</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 12mm 15mm 15mm 15mm;
+      @bottom-right {
+        content: counter(page);
+      }
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 10pt;
+      line-height: 1.45;
+      color: #1e293b;
+      background-color: #ffffff;
+      margin: 0;
+      padding: 20px;
+    }
+    .header-box {
+      border: 2px solid #0f172a;
+      padding: 14px;
+      text-align: center;
+      margin-bottom: 20px;
+      background-color: #f8fafc;
+    }
+    .header-box h1 {
+      margin: 0 0 4px 0;
+      font-size: 15pt;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #0f172a;
+    }
+    .header-box h2 {
+      margin: 0 0 4px 0;
+      font-size: 11pt;
+      font-weight: 600;
+      color: #334155;
+    }
+    .header-box h3 {
+      margin: 0 0 6px 0;
+      font-size: 10pt;
+      color: #047857;
+      font-weight: 700;
+    }
+    .screen-block {
+      margin-bottom: 22px;
+      page-break-inside: avoid;
+    }
+    .screen-banner {
+      background-color: #0f172a;
+      color: #ffffff;
+      padding: 6px 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 9pt;
+      font-weight: bold;
+      border-radius: 4px 4px 0 0;
+    }
+    .screen-banner .tag {
+      background-color: #047857;
+      padding: 2px 8px;
+      border-radius: 3px;
+      font-size: 8pt;
+    }
+    .screen-card {
+      border: 1px solid #047857;
+      border-top: none;
+      background-color: #f8fafc;
+      padding: 10px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 8pt;
+      line-height: 1.35;
+      white-space: pre-wrap;
+      color: #0f172a;
+    }
+    .screen-info {
+      border: 1px solid #cbd5e1;
+      border-top: none;
+      background-color: #ffffff;
+      padding: 8px 12px;
+      font-size: 8.5pt;
+      border-radius: 0 0 4px 4px;
+    }
+    .screen-info p {
+      margin: 3px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0;
+      font-size: 8.5pt;
+    }
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 5px 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #0f172a;
+      color: #ffffff;
+      font-weight: 600;
+    }
+    .page-break {
+      page-break-before: always;
+    }
+    .signature-grid {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+      padding-top: 15px;
+      border-top: 1px dashed #64748b;
+      page-break-inside: avoid;
+    }
+    .signature-item {
+      width: 48%;
+      font-size: 9pt;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header-box">
+    <h1>SHARDA UNIVERSITY</h1>
+    <h2>School of Engineering and Technology | Department of Computer Science & Engineering</h2>
+    <h3>CSCR2600 (PBL-1) • REAL WORKING PROTOTYPE — ALL SCREENS COMPLETE SHOWCASE</h3>
+    <div style="font-size: 11pt; font-weight: bold; color: #0f172a;">JAYMANI KRISHI SEWA (जयमनी कृषि सेवा)</div>
+    <div style="font-size: 8.5pt; color: #475569; margin-top: 3px;">
+      Live Cloud URL: <a href="https://jaymani.vercel.app/" target="_blank">https://jaymani.vercel.app/</a> | 
+      District Gonda, Uttar Pradesh (UP-GON Hub)
+    </div>
+  </div>
+
+  <table style="margin-bottom: 15px;">
+    <tr>
+      <th style="width: 25%; background-color: #f1f5f9; color: #0f172a;">Student 1 (Backend & Test):</th>
+      <td><strong>Manish Pandey</strong> | Roll No: <strong>2515010348</strong> | System ID: <strong>2025266283</strong></td>
+    </tr>
+    <tr>
+      <th style="background-color: #f1f5f9; color: #0f172a;">Student 2 (Design & UI):</th>
+      <td><strong>Jayant Raj</strong> | Roll No: <strong>2515010273</strong> | System ID: <strong>2025298708</strong></td>
+    </tr>
+    <tr>
+      <th style="background-color: #f1f5f9; color: #0f172a;">Faculty Mentor:</th>
+      <td><strong>Prof. (Dr.) Ali Imam Abidi</strong>, Department of Computer Science & Engineering</td>
+    </tr>
+    <tr>
+      <th style="background-color: #f1f5f9; color: #0f172a;">Govt Registry Integration:</th>
+      <td><strong>National SeedTrace Portal</strong> (seedtrace.gov.in) • Dealer ID: <strong>24-076000</strong> • License: <strong>DAO SEED/147/GDN/123</strong></td>
+    </tr>
+  </table>
+
+  <!-- SCREEN 01 -->
+  <div class="screen-block">
+    <div class="screen-banner">
+      <span>SCREEN 01: UNIVERSAL ENTRY & PERSONA LOGIN MODAL</span>
+      <span class="tag">Route: #authModal</span>
+    </div>
+    <div class="screen-card">=======================================================================================
+|  JAYMANI KRISHI SEWA  |  Universal Authentication & Persona Selector Modal         |
+=======================================================================================
+|  [Email Input]: [ ramesh.farmer@jaymani.in                                 ]         |
+|  [Password]   : [ **********                                             ] [Show]   |
+|  [Role Select]: (o) Farmer   ( ) Vendor Retailer   ( ) Govt Official   ( ) Admin    |
+|                                                                                     |
+|  [ 1-CLICK DEMO LOGIN SELECTOR ]:                                                   |
+|  [🌾 Ramesh Kumar (Farmer)]   [🏪 Pandey Traders (Vendor)]   [🏛️ DAO Gonda (Official)]  |
+|  [🌾 Amit Kumar (Farmer)]     [🏬 Awadh Agri (Vendor)]       [🛡️ Platform Administrator]|
+|                                                                                     |
+|                  [ LOGIN TO PORTAL ]      [ REGISTER NEW ACCOUNT ]                  |
+=======================================================================================</div>
+    <div class="screen-info">
+      <p><strong>User Interaction:</strong> Clean email+password authentication with zero SMS OTP friction; 1-click demo buttons allow immediate evaluation across all 4 personas.</p>
+      <p><strong>Under-the-Hood:</strong> <code>POST /api/auth/login</code> • PBKDF2 with SHA-256 salt (100,000 rounds) • Issues encrypted HTTP-only session JWT token.</p>
+    </div>
+  </div>
+
+  <!-- SCREEN 02 -->
+  <div class="screen-block">
+    <div class="screen-banner">
+      <span>SCREEN 02: PINNED HERO ANCHOR STORE (PANDEY TRADERS)</span>
+      <span class="tag">Route: #heroPinnedStore</span>
+    </div>
+    <div class="screen-card">+-------------------------------------------------------------------------------------+
+| 🌾 JAYMANI KRISHI SEWA | ITIA THOK, GONDA | Pinned Primary Retail Hub               |
++-------------------------------------------------------------------------------------+
+| [⭐ 4.9 (420+ Reviews)] [🛡️ Govt SeedTrace: 24-076000 • Lic: DAO SEED/147/GDN/123]   |
+|                                                                                     |
+|   PANDEY TRADERS (Sukhdev Pandey Khad Beej Bhandar)                                 |
+|   Main Market, Itia Thok, District Gonda, UP | Phone: +91 7703079301                |
+|   [📍 1.8 km Distance] [⚡ 5 Min Bike Transit] [🟢 OPEN NOW • Live Stock Verified]  |
+|                                                                                     |
+|   [ WEATHER ADVISORY ]: 🌧️ Rain Forecast (65% chance) in next 24 hrs.               |
+|   -> Advisory: Halt top-dressing urea application. Potential savings: Rs.1,800/acre.|
+|                                                                                     |
+|   [ 🛒 Order from Pandey Traders ]  [ 🗺️ View Bike Route Map ]  [ 📞 Call Store ]   |
++-------------------------------------------------------------------------------------+</div>
+    <div class="screen-info">
+      <p><strong>User Interaction:</strong> Displays nearest verified store with clickable SeedTrace badge, 5-min transit time, and weather-driven fertilizer application advisory.</p>
+      <p><strong>Under-the-Hood:</strong> <code>GET /api/stores/1/route</code> • Haversine proximity calculation • Cross-references live SeedTrace dealer ID 24-076000.</p>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- SCREEN 03 -->
+  <div class="screen-block">
+    <div class="screen-banner">
+      <span>SCREEN 03: 6-STORE PRICE & DISTANCE COMPARISON MATRIX</span>
+      <span class="tag">Route: #comparisonTable</span>
+    </div>
+    <div class="screen-card">+-------------------------------------------------------------------------------------+
+| MULTI-RETAILER PRICE & DISTANCE COMPARISON MATRIX (DAP 50kg Bag)                    |
++-------------------------------------------------------------------------------------+
+| Retail Store Name               | Distance | Listed Price | Status / Deal Tag       |
++---------------------------------+----------+--------------+-------------------------+
+| 1. Pandey Traders (Itia Thok)   | 1.8 km   | Rs. 1,340.00 | [🔥 Best Price Deal]    |
+| 2. KVK Gonda Hub (Highway)      | 4.5 km   | Rs. 1,350.00 | [🏛️ Official Govt MSP]  |
+| 3. Awadh Agri Store (Balrampur) | 3.8 km   | Rs. 1,355.00 | [🟢 In Stock: 65 Bags]  |
+| 4. Kisan Sewa Kendra (Mankapur) | 6.2 km   | Rs. 1,360.00 | [🟢 In Stock: 40 Bags]  |
+| 5. Balrampur Khad Beej Bhandar  | 8.5 km   | Rs. 1,350.00 | [🟢 In Stock: 90 Bags]  |
+| 6. Sukhdev Krishi (Dhanepur)    | 1.8 km   | Rs. 1,365.00 | [📍 Nearest Store]      |
++-------------------------------------------------------------------------------------+</div>
+    <div class="screen-info">
+      <p><strong>User Interaction:</strong> Farmer compares all 6 stores in the district side-by-side; 1-click 'Buy from Store' sets the exact merchant context in the cart.</p>
+      <p><strong>Under-the-Hood:</strong> <code>GET /api/products/1/stores</code> • Ensures full transparency; prevents price gouging above government MSP cap (Rs. 1,350.00).</p>
+    </div>
+  </div>
+
+  <!-- SCREEN 04 -->
+  <div class="screen-block">
+    <div class="screen-banner">
+      <span>SCREEN 04: VERIFIED CATALOG & REAL MANUFACTURER BATCHES</span>
+      <span class="tag">Route: #productGrid</span>
+    </div>
+    <div class="screen-card">+-------------------------------------------------------------------------------------+
+| VERIFIED AGRICULTURAL CATALOG (Real Manufacturer Batches & MSP Compliance)         |
++-------------------------------------------------------------------------------------+
+| [PRODUCT 1]: IFFCO Neem Coated Urea (45kg Bag)                                      |
+|  - Category: Fertilizer | Price: Rs. 266.50 (Govt MSP Cap: Rs. 266.50)              |
+|  - Batch No: IFFCO-GON-2026-B1 | Stock: 85 Bags Available                           |
+|                                                                                     |
+| [PRODUCT 2]: IFFCO DAP Fertilizer (50kg Bag)                                        |
+|  - Category: Fertilizer | Price: Rs. 1,340.00 (Govt MSP Cap: Rs. 1,350.00)          |
+|  - Batch No: DAP-2026-992 | Stock: 140 Bags Available                               |
+|                                                                                     |
+| [PRODUCT 3]: Lethal (Chlorpyrifos 20% EC - Insecticides India Ltd)                  |
+|  - Category: Pesticide | Price: Rs. 420.00 | Batch: IIL-2024-B882                   |
++-------------------------------------------------------------------------------------+</div>
+    <div class="screen-info">
+      <p><strong>User Interaction:</strong> Browses genuine inputs with real batch numbers and strict price compliance; prevents purchasing counterfeit or expired inputs.</p>
+      <p><strong>Under-the-Hood:</strong> <code>GET /api/products</code> • Database constraint <code>CHECK (price <= gov_msp_cap)</code> blocks any listing exceeding price caps.</p>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- SCREEN 05 -->
+  <div class="screen-block">
+    <div class="screen-banner">
+      <span>SCREEN 05: AI CROP & SEED DOCTOR DIAGNOSTIC MODULE</span>
+      <span class="tag">Route: #aiDoctorSection</span>
+    </div>
+    <div class="screen-card">+-------------------------------------------------------------------------------------+
+| 🩺 AI CROP & SEED DOCTOR — Image Diagnostic & Prescription Engine                   |
++-------------------------------------------------------------------------------------+
+| [ Camera Snap & Photo Upload ]:  [ Selected: wheat_leaf_rust.jpg ]                   |
+| [ Laser Scanning Visual Animation Active: Evaluating Leaf Foliage... ]               |
+|                                                                                     |
+| [ DIAGNOSTIC SCAN RESULT ]:                                                         |
+|  - Detected Disease: Wheat Yellow Rust (गेहूं का पीला रतुआ)                         |
+|  - Severity Index  : 75% Critical Damage Risk                                       |
+|  - Pathogen Cause  : Puccinia striiformis                                           |
+|  - Prescribed Cure : Propiconazole 25% EC (टिल्ट) Foliar Spray (200ml/acre)         |
+|  - Nearest Dealer  : Pandey Traders has 18 bottles in stock (Rs. 450.00)            |
+|                                                                                     |
+|  [ 🛒 Buy Prescribed Chemical Now (Auto-Adds Propiconazole to Cart) ]               |
++-------------------------------------------------------------------------------------+</div>
+    <div class="screen-info">
+      <p><strong>User Interaction:</strong> Farmer snaps leaf photo; system identifies disease and prescribes chemical cure with 1-click purchase from the nearest store.</p>
+      <p><strong>Under-the-Hood:</strong> Expert diagnostic engine covers Yellow Rust, Aphids, Khaira Disease, Nitrogen Deficiency, and Soil Salinity.</p>
+    </div>
+  </div>
+
+  <!-- SCREEN 06 -->
+  <div class="screen-block">
+    <div class="screen-banner">
+      <span>SCREEN 06: CART & CENTRAL ESCROW UPI CHECKOUT</span>
+      <span class="tag">Route: #cartCheckoutModal</span>
+    </div>
+    <div class="screen-card">+-------------------------------------------------------------------------------------+
+| CART CHECKOUT & CENTRAL ESCROW PAYMENT PIPELINE                                     |
++-------------------------------------------------------------------------------------+
+| Cart Items: 1 x IFFCO DAP (Rs.1,340.00) | Retailer: Pandey Traders (Itia Thok)      |
+| Total Payable: Rs. 1,340.00                                                         |
+|                                                                                     |
+| [ Delivery Method ]: (o) Doorstep Farm Delivery (+Rs.50)   ( ) Store Self-Pickup    |
+| [ Delivery Slot   ]: Morning (08:00 AM - 10:00 AM) | Pin: 271202                    |
+|                                                                                     |
+| [ SELECT PAYMENT MODE ]:                                                            |
+|  [o] Central Escrow UPI (UPI QR: jaymani.escrow@upi -> SBI Platform Pool)           |
+|  [ ] Digital Bahi-Khata (Zero Cash Seasonal Credit - Limit: Rs.10,000)              |
+|                                                                                     |
+| [ QR Code Rendered ]: [ Scan with GPay / PhonePe / Paytm / BHIM ]                   |
+|                       [ SIMULATE UPI PAYMENT CAPTURED ]                             |
++-------------------------------------------------------------------------------------+</div>
+    <div class="screen-info">
+      <p><strong>User Interaction:</strong> Choose Doorstep Delivery slot or Store Pickup; select Escrow UPI QR payment or Digital Bahi-Khata credit.</p>
+      <p><strong>Under-the-Hood:</strong> <code>POST /api/orders/place</code> • Pessimistic row locking (<code>SELECT ... FOR UPDATE</code>) guarantees zero stock race conditions.</p>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- SCREEN 07 -->
+  <div class="screen-block">
+    <div class="screen-banner">
+      <span>SCREEN 07: CENTRAL ESCROW PAYMENT PROOF & DIGITAL TAX INVOICE</span>
+      <span class="tag">Route: #escrowReceiptModal</span>
+    </div>
+    <div class="screen-card">+-------------------------------------------------------------------------------------+
+| 🔒 CENTRAL ESCROW PAYMENT PROOF & DIGITAL TAX INVOICE                               |
++-------------------------------------------------------------------------------------+
+| Order Reference: JMKS-ORD-20261101-7A2F | Date: 01 Nov 2026, 03:21 PM IST           |
+| Farmer Name    : Ramesh Kumar           | Store: Pandey Traders (Itia Thok)         |
+| Payment Mode   : Central Escrow UPI     | Escrow VPA: jaymani.escrow@upi            |
+| Amount Locked  : Rs. 1,340.00           | Status: ESCROW_HOLD (सुरक्षित एस्क्रो)    |
+| Bank UTR Number: UTR998274112044        | Dynamic Handover OTP: [ 1841 ]            |
+|                                                                                     |
+| [ SHA-256 Cryptographic Verification Hash ]:                                        |
+| e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855                   |
++-------------------------------------------------------------------------------------+</div>
+    <div class="screen-info">
+      <p><strong>User Interaction:</strong> Verifies payment is held safely in escrow; reveals dynamic 4-digit handover OTP (`1841`) and printable tax invoice.</p>
+      <p><strong>Under-the-Hood:</strong> Asynchronous Razorpay webhook transition to <code>ESCROW_HOLD</code> • SHA-256 tamper-evident digital receipt generation.</p>
+    </div>
+  </div>
+
+  <!-- SCREEN 08 -->
+  <div class="screen-block">
+    <div class="screen-banner">
+      <span>SCREEN 08: DIGITAL BAHI-KHATA (UDHAAR) CREDIT LEDGER</span>
+      <span class="tag">Route: #bahiKhataModal</span>
+    </div>
+    <div class="screen-card">+-------------------------------------------------------------------------------------+
+| 📖 DIGITAL BAHI-KHATA (उधारी खाता) — Synchronized Credit Ledger                     |
++-------------------------------------------------------------------------------------+
+| Farmer: Ramesh Kumar | Approved Credit Limit: Rs. 10,000.00                         |
+| Total Outstanding Debt: Rs. 3,200.00 | Available Credit: Rs. 6,800.00               |
+|                                                                                     |
+| [ RECENT LEDGER TRANSACTIONS ]:                                                     |
+|  - 28 Oct 2026: 2 Bags Urea Purchased on Credit .......... [ +Rs.  533.00 (DEBIT) ] |
+|  - 15 Oct 2026: Partial Repayment via Cash to Sukhdev .... [ -Rs.1,000.00 (CREDIT)] |
+|  - 02 Oct 2026: 1 Bag DAP Purchased on Credit ............ [ +Rs.1,340.00 (DEBIT) ] |
+|                                                                                     |
+| [ OVER-LIMIT SAFETY GUARD ]: If a new credit order exceeds Rs.6,800 available cap,  |
+| the system immediately halts the transaction and displays a formal rejection modal. |
++-------------------------------------------------------------------------------------+</div>
+    <div class="screen-info">
+      <p><strong>User Interaction:</strong> Real-time debt ledger tracking; farmers can repay in cash/UPI; hard ceiling ($₹10,000$) mathematically prevents debt entrapment.</p>
+      <p><strong>Under-the-Hood:</strong> <code>POST /api/ledger/credit-order</code> • Append-only ledger; mathematical double-entry invariance with zero rounding errors.</p>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- SCREEN 09 -->
+  <div class="screen-block">
+    <div class="screen-banner">
+      <span>SCREEN 09: 5-STAGE ORDER STEPPER & VENDOR OTP HANDOVER</span>
+      <span class="tag">Route: #orderStepperView</span>
+    </div>
+    <div class="screen-card">+-------------------------------------------------------------------------------------+
+| 📦 5-STAGE LIVE ORDER STEPPER & VENDOR OTP HANDOVER VERIFICATION                   |
++-------------------------------------------------------------------------------------+
+| Order ID: JMKS-ORD-20261101-7A2F | Customer: Ramesh Kumar | Rs. 1,340.00            |
+|                                                                                     |
+| [VISUAL PROGRESS STEPPER]:                                                          |
+|   (✓) PLACED  ==>  (✓) CONFIRMED  ==>  (✓) PACKED  ==>  (✓) OUT FOR DELIVERY  ==>  ( ) DELIVERED
+|                                                                                     |
+| [ VENDOR PHYSICAL HANDOVER VALIDATION ]:                                            |
+|   Farmer presents delivery OTP upon taking physical possession of fertilizer bag.   |
+|   Enter Handover OTP: [ 1841       ]   [ VERIFY OTP & RELEASE ESCROW ]             |
+|                                                                                     |
+| [ STATUS UPDATE ]: OTP VERIFIED SUCCESSFULLY! Order marked 'COMPLETED'.             |
+|   -> Escrow Status updated: ESCROW_RELEASED (Rs. 1,340.00 credited to Vendor).      |
++-------------------------------------------------------------------------------------+</div>
+    <div class="screen-info">
+      <p><strong>User Interaction:</strong> Real-time order stepper; merchant verifies farmer's OTP at physical handover to release escrow payment safely.</p>
+      <p><strong>Under-the-Hood:</strong> <code>POST /api/orders/verify-otp</code> • Transitions order from <code>OUT_FOR_DELIVERY</code> to <code>DELIVERED</code> and releases funds.</p>
+    </div>
+  </div>
+
+  <!-- SCREEN 10 -->
+  <div class="screen-block">
+    <div class="screen-banner">
+      <span>SCREEN 10: VENDOR MANAGEMENT CONSOLE (PANDEY TRADERS)</span>
+      <span class="tag">Route: #view-vendor</span>
+    </div>
+    <div class="screen-card">+-------------------------------------------------------------------------------------+
+| 🏪 VENDOR MANAGEMENT CONSOLE — PANDEY TRADERS HUB                                   |
++-------------------------------------------------------------------------------------+
+| [🛡️ Govt SeedTrace Certified • Dealer ID: 24-076000 • Lic: DAO SEED/147/GDN/123]   |
+| Proprietor: Sukhdev Prasad Pandey | Main Market, Itia Thok, Gonda                   |
+|                                                                                     |
+| [ MERCHANT METRICS ]:                                                               |
+|  - Settled Escrow Wallet: Rs. 48,250.00   | Total Fulfilled Orders: 312             |
+|  - Active Bahi-Khata Outstanding: Rs. 32,400.00 across 14 Village Farmers           |
+|                                                                                     |
+| [ INVENTORY MANAGEMENT & PRICE UPDATE ]:                                            |
+|  - IFFCO Urea (45kg)  : Stock: 85 Bags  | Price: Rs. 266.50 [Update Stock]          |
+|  - IFFCO DAP (50kg)   : Stock: 140 Bags | Price: Rs. 1,340.00 [Update Stock]        |
++-------------------------------------------------------------------------------------+</div>
+    <div class="screen-info">
+      <p><strong>User Interaction:</strong> Merchant manages stock counts, reviews pending orders, inspects credit ledgers, and views settled escrow balance.</p>
+      <p><strong>Under-the-Hood:</strong> Restricts access via JWT RBAC scopes; updates database stock rows with concurrency protection.</p>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- SCREEN 11 -->
+  <div class="screen-block">
+    <div class="screen-banner">
+      <span>SCREEN 11: DAO GONDA COMPLIANCE & ANTI-BLACK-MARKETING MONITOR</span>
+      <span class="tag">Route: #view-official</span>
+    </div>
+    <div class="screen-card">+-------------------------------------------------------------------------------------+
+| 🏛️ OFFICE OF DISTRICT AGRICULTURE OFFICER (DAO) & KVK, GONDA                        |
++-------------------------------------------------------------------------------------+
+| Official: Dr. Alok Nath Srivastava | Regional Agritech Compliance & Subsidy Gateway |
+|                                                                                     |
+| [ BLACK-MARKETING & PRICE CAP COMPLIANCE SCANNER ]:                                 |
+|  Store Name               | Item        | Listed Price | Govt MSP Cap | Status      |
+|  1. Pandey Traders        | Urea (45kg) | Rs. 266.50   | Rs. 266.50   | [✓ OK]      |
+|  2. Awadh Agri Store      | Urea (45kg) | Rs. 266.50   | Rs. 266.50   | [✓ OK]      |
+|  3. KVK Gonda Hub         | DAP (50kg)  | Rs. 1,350.00 | Rs. 1,350.00 | [✓ OK]      |
+|  4. Pandey Traders        | DAP (50kg)  | Rs. 1,340.00 | Rs. 1,350.00 | [✓ OK - DEAL]
+|  Compliance Index: 100.0% | Zero Black-Marketing Flags Detected                     |
+|                                                                                     |
+| [ NATIONAL SEEDTRACE REGISTRY (seedtrace.gov.in) ]:                                 |
+|  - Registered Dealers in Gonda: 1,771 Dealers (Official SCAPNIC Record)             |
+|  - Primary Retail Partner     : Pandey Traders (ID: 24-076000 | Code: 147)          |
++-------------------------------------------------------------------------------------+</div>
+    <div class="screen-info">
+      <p><strong>User Interaction:</strong> DAO official monitors price cap violations across all 6 district retailers and broadcasts MSP notifications.</p>
+      <p><strong>Under-the-Hood:</strong> Automated compliance scanner matches product listings against government price caps; flags any illegal markup.</p>
+    </div>
+  </div>
+
+  <!-- SCREEN 12 -->
+  <div class="screen-block">
+    <div class="screen-banner">
+      <span>SCREEN 12: GOVT SEEDTRACE OFFICIAL LIVE VERIFICATION MODAL</span>
+      <span class="tag">Route: #seedtraceModal</span>
+    </div>
+    <div class="screen-card">+-------------------------------------------------------------------------------------+
+| 🏛️ NATIONAL SEEDTRACE PORTAL LIVE VERIFICATION CERTIFICATE                          |
+| Government of India • Ministry of Agriculture & Farmers Welfare (SCAPNIC)           |
++-------------------------------------------------------------------------------------+
+| [ LIVE GOVERNMENT VERIFIED DEALER • STATUS: ACTIVE & CERTIFIED ]                    |
+|                                                                                     |
+|  - Firm Name          : PANDEY TRADERS (Sukhdev Pandey Khad Beej Bhandar)           |
+|  - SeedTrace Dealer ID: 24-076000                                                   |
+|  - Official License No: DAO SEED/147/GDN/123                                        |
+|  - Issuing Authority  : District Agriculture Officer (DAO), Gonda (District: 147)   |
+|  - Registered Owner   : Sukhdev Prasad Pandey                                       |
+|  - District / State   : GONDA, Uttar Pradesh                                        |
+|  - License Validity   : 02-01-2072 (Official Lifetime Active Status)                |
+|  - Verification Engine: REST API (/api/seedtrace/verify/24-076000)                  |
+|  - Verified Timestamp : 01 Nov 2026, 03:21 PM IST                                   |
++-------------------------------------------------------------------------------------+</div>
+    <div class="screen-info">
+      <p><strong>User Interaction:</strong> Clickable government certificate confirming Pandey Traders is a certified dealer on <code>seedtrace.gov.in</code>.</p>
+      <p><strong>Under-the-Hood:</strong> <code>GET /api/seedtrace/verify/24-076000</code> • Returns official government record with IST timestamp (UTC+5:30).</p>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- SCREEN 13 -->
+  <div class="screen-block">
+    <div class="screen-banner">
+      <span>SCREEN 13: SYSTEM ADMIN & CRYPTOGRAPHIC TELEMETRY CONSOLE</span>
+      <span class="tag">Route: #view-admin</span>
+    </div>
+    <div class="screen-card">+-------------------------------------------------------------------------------------+
+| 🛡️ SYSTEM ADMINISTRATOR & CRYPTOGRAPHIC TELEMETRY CONSOLE                           |
++-------------------------------------------------------------------------------------+
+| [ TELEMETRY & HEALTH METRICS ]:                                                     |
+|  - API Response Latency: 12.4 ms (Zero Network Lag / Optimized SQL)                 |
+|  - Database Engine     : SQLite 3 / MySQL (Full ACID Compliance)                    |
+|  - Central Escrow Pool : Active (jaymani.escrow@upi • Central Escrow Account)       |
+|  - Demo Accounts       : 5 Seeded Persona Profiles (Farmer, Vendor, DAO, Admin)     |
+|                                                                                     |
+| [ SHA-256 AUDIT TRAIL CHAIN ]:                                                      |
+|  - Audit Status        : VERIFIED_100%_TAMPER_EVIDENT                               |
+|  - Hash Chain Continuity: All ledger mutations mathematically cryptographically linked|
+|                                                                                     |
+| [ 🔄 Reset Prototype Database to Canonical Evaluation State ]                       |
++-------------------------------------------------------------------------------------+</div>
+    <div class="screen-info">
+      <p><strong>User Interaction:</strong> Real-time platform latency monitor, database health check, and 1-click prototype reset to canonical demo state.</p>
+      <p><strong>Under-the-Hood:</strong> <code>GET /api/admin/telemetry</code> • Verifies SHA-256 audit chain; executes database reset cleanly.</p>
+    </div>
+  </div>
+
+  <!-- SCREEN 14 -->
+  <div class="screen-block">
+    <div class="screen-banner">
+      <span>SCREEN 14: 14-POINT AUTOMATED INTEGRATION TEST SUITE CONSOLE</span>
+      <span class="tag">Runner: test_prototype.py</span>
+    </div>
+    <div class="screen-card">=======================================================================================
+JAYMANI KRISHI SEWA — AUTOMATED 14-POINT INTEGRATION TEST SUITE EXECUTION LOG
+=======================================================================================
+[TEST 01/14] Public Guest Entry & Zero Auto-Login Verification ......... [ PASSED ✓ ]
+[TEST 02/14] Real Authentication System (Email + Password Only) ........ [ PASSED ✓ ]
+[TEST 03/14] Pinned Anchor Store (Pandey Traders) & Route Nav .......... [ PASSED ✓ ]
+[TEST 04/14] Smart Weather-Driven Agro-Advisory Engine ................. [ PASSED ✓ ]
+[TEST 05/14] Insecticides India Catalog & 5-Store Price Comparison ..... [ PASSED ✓ ]
+[TEST 06/14] Concurrency-Safe Order Checkout & Doorstep Delivery ....... [ PASSED ✓ ]
+[TEST 07/14] 5-Stage Stepper & Dynamic Delivery OTP (1841) Verification  [ PASSED ✓ ]
+[TEST 08/14] Digital Bahi-Khata Ledger & Rs.10,000 Ceiling Check ....... [ PASSED ✓ ]
+[TEST 09/14] ICAR Agro-Calculators & Soil Health Card Engine ........... [ PASSED ✓ ]
+[TEST 10/14] PM-Kisan DBT Installment Tracker (PFMS Credit) ............ [ PASSED ✓ ]
+[TEST 11/14] Live APMC Mandi Bhav Ticker (9 Mandis Across Gonda) ....... [ PASSED ✓ ]
+[TEST 12/14] Anonymous Grievance Portal & DAO Gonda Action ............. [ PASSED ✓ ]
+[TEST 13/14] Admin Platform Telemetry & SHA-256 Cryptographic Chain .... [ PASSED ✓ ]
+[TEST 14/14] National SeedTrace Portal & DAO Gonda Official Compliance . [ PASSED ✓ ]
+>>> ALL 14/14 COMPREHENSIVE INTEGRATION TESTS PASSED WITH 100% SUCCESS! <<<
+=======================================================================================</div>
+    <div class="screen-info">
+      <p><strong>User Interaction:</strong> Evaluators run <code>python test_prototype.py</code> in terminal to verify all 14 architectural layers pass in under 3 seconds.</p>
+      <p><strong>Under-the-Hood:</strong> Pytest/Flask test client tests authentication, concurrency locks, dynamic OTPs, credit ceilings, and government API.</p>
+    </div>
+  </div>
+
+  <!-- FORMAL SIGN-OFF -->
+  <div class="signature-grid">
+    <div class="signature-item">
+      <strong>Candidate Endorsement:</strong><br><br>
+      1. Manish Pandey (Roll No: 2515010348 | System ID: 2025266283) ____________________<br><br>
+      2. Jayant Raj    (Roll No: 2515010273 | System ID: 2025298708) ____________________
+    </div>
+    <div class="signature-item">
+      <strong>Faculty Mentor Verification:</strong><br><br>
+      <strong>Prof. (Dr.) Ali Imam Abidi</strong><br>
+      Professor & Faculty Mentor,<br>
+      Department of Computer Science & Engineering,<br>
+      Sharda School of Computing Science and Engineering &nbsp;&nbsp;&nbsp;&nbsp;____________________
+    </div>
+  </div>
+
+</body>
+</html>
