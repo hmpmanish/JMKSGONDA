@@ -10,7 +10,7 @@ Stack:
 - SQLAlchemy with SQLite (ACID-compliant zero-setup execution, MySQL schema compatible)
 - RESTful JSON API + Single-Page Responsive Web Dashboard (Tailwind CSS, FontAwesome, Vanilla JS ES6+)
 - Real Session-based Authentication (Email + Password only, no direct switcher)
-- AI Crop & Seed Doctor (Photo Scan & Instant Remedy Engine)
+- Crop Health Diagnostics (ICAR Photo Scan & Treatment Engine)
 - Multi-Retailer Price & Distance Comparison (Best Deal Finder across 6 verified retailers)
 - Central Escrow UPI QR Payment Gateway (jaymani.escrow@upi holding account with handover release)
 - Concurrency-safe stock reservation, Decimal-precision Bahi-Khata credit engine, SHA-256 digital audit trail
@@ -899,7 +899,7 @@ def seed_database(force=False):
         # --- Micro-Nutrients: Zinc Sulfate ---
         Product(vendor_id=v1_user.id, category_id=cat_micro.id, name='Zinc Sulfate Heptahydrate 21% (5kg)', hindi_name='जिंक सल्फेट 21% (5 किग्रा बैग)', description='Cures Khaira disease and zinc chlorosis in paddy/wheat.', unit='5kg Bag', price=Decimal('320.00'), gov_msp_cap=Decimal('350.00'), is_subsidized=False, subsidy_amount=Decimal('0.00'), stock_quantity=8, low_stock_threshold=15, image_url='https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=400&q=80', tags='zinc, jink, khaira rog, micro nutrient'),
 
-        # --- AI Crop Doctor Prescribed Medicines ---
+        # --- Plant Health Clinic Prescribed Formulations ---
         Product(vendor_id=v1_user.id, category_id=cat_med.id, name='Tilt Propiconazole 25% EC (250ml)', hindi_name='टिल्ट प्रोपिकोनाजोल 25% ईसी (250 मिली)', description='Prescribed cure for Wheat Yellow Rust (गेहूं का पीला रतुआ). Systemic broad-spectrum fungicide.', unit='250ml Bottle', price=Decimal('380.00'), gov_msp_cap=Decimal('400.00'), is_subsidized=False, subsidy_amount=Decimal('0.00'), stock_quantity=24, low_stock_threshold=8, image_url='https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=400&q=80', tags='tilt, propiconazole, yellow rust, pila ratua, fungicide, medicine'),
         Product(vendor_id=v1_user.id, category_id=cat_med.id, name='Rogor Dimethoate 30% EC (500ml)', hindi_name='रोगोर डाइमेथोएट 30% ईसी (500 मिली)', description='Prescribed insecticide for Mustard Aphid / Mahu (सरसों का माहू कीट).', unit='500ml Bottle', price=Decimal('290.00'), gov_msp_cap=Decimal('310.00'), is_subsidized=False, subsidy_amount=Decimal('0.00'), stock_quantity=30, low_stock_threshold=10, image_url='https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=400&q=80', tags='rogor, dimethoate, aphid, mahu, insecticide, medicine'),
 
@@ -1904,7 +1904,7 @@ def api_compare_products():
     })
 
 
-# --- 4. AI CROP & SEED DOCTOR ENGINE (PHOTO SCAN & INSTANT REMEDY) ---
+# --- 4. CROP HEALTH & SEED DIAGNOSTICS ENGINE (ICAR ADVISORY) ---
 
 DISEASE_KNOWLEDGE_BASE = {
     'yellow_rust': {
@@ -1982,7 +1982,7 @@ DISEASE_KNOWLEDGE_BASE = {
 @app.route('/api/crop-doctor/diagnose', methods=['POST'])
 def api_crop_doctor_diagnose():
     """
-    AI Crop & Seed Doctor: Heuristic Photo Scan & Diagnosis Engine
+    Crop Health Diagnostics: ICAR Foliar Symptom Analysis
     Accepts preset condition or image analysis and returns scientific remedy + direct product match.
     """
     data = request.get_json() or {}

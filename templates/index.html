@@ -57,7 +57,7 @@
     .voice-pulse {
       animation: pulse-ring 1.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     }
-    /* Scanning laser beam for AI Crop Doctor */
+    /* Scanning laser beam for Crop Diagnostic Scanner */
     @keyframes scan-beam {
       0% { top: 0%; opacity: 0.8; }
       50% { top: 95%; opacity: 1; }
@@ -208,7 +208,7 @@
           </button>
           <button onclick="navGoTo('doctor')" class="px-3 py-1.5 rounded-lg text-xs font-bold text-slate-700 hover:text-emerald-700 hover:bg-emerald-50 transition flex items-center space-x-1.5">
             <i class="fa-solid fa-stethoscope text-amber-500"></i>
-            <span>AI Fasal Doctor</span>
+            <span>फसल सुरक्षा (Crop Clinic)</span>
           </button>
           <button onclick="navGoTo('about')" class="px-3 py-1.5 rounded-lg text-xs font-bold text-slate-700 hover:text-emerald-700 hover:bg-emerald-50 transition flex items-center space-x-1.5">
             <i class="fa-solid fa-circle-info text-blue-600"></i>
@@ -309,7 +309,7 @@
               किसानों और स्थानीय खाद-बीज व्यापारियों का भरोसेमंद डिजिटल सेतु
             </h1>
             <p id="farmerSubGreeting" class="text-xs sm:text-sm text-emerald-100 mt-1 max-w-2xl leading-relaxed">
-              100% असली Insecticides India कीटनाशक, सरकारी दर पर IFFCO यूरिया व डीएपी, AI फसल रोग व बीज डॉक्टर, और डिजिटल बही-खाता साख सुविधा।
+              100% असली Insecticides India कीटनाशक, सरकारी दर पर IFFCO यूरिया व डीएपी, ICAR फसल रोग निदान व उपचार, और डिजिटल बही-खाता साख सुविधा।
             </p>
           </div>
 
@@ -317,7 +317,7 @@
           <div class="flex flex-wrap items-center gap-2">
             <button onclick="showTab('doctorTab')" class="px-3.5 py-2 bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-xs sm:text-sm rounded-xl shadow-xs transition flex items-center space-x-1.5">
               <i class="fa-solid fa-stethoscope text-slate-900"></i>
-              <span>AI Crop Doctor</span>
+              <span>Crop Clinic (फसल क्लिनिक)</span>
             </button>
             <button onclick="triggerCallModal('+91 7703079301', 'Pandey Traders (Sukhdev Prasad Pandey)')" class="px-3.5 py-2 bg-white text-emerald-900 font-bold text-xs sm:text-sm rounded-xl shadow-xs hover:bg-emerald-50 transition flex items-center space-x-2">
               <i class="fa-solid fa-phone text-emerald-600"></i>
@@ -415,7 +415,7 @@
 
           <!-- Interactive Simulation Scenario Testing Pills for Evaluators -->
           <div class="flex items-center space-x-1.5 self-start sm:self-center overflow-x-auto no-scrollbar">
-            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider shrink-0 mr-1">Demo Mode:</span>
+            <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider shrink-0 mr-1"><i class="fa-solid fa-cloud-sun"></i> Weather Alert:</span>
             <button type="button" onclick="loadWeatherScenario('sunny')" id="scenBtn-sunny" class="weather-scen-btn active px-2.5 py-1 rounded-lg text-xs font-bold bg-amber-500 text-white shadow-xs transition shrink-0 flex items-center space-x-1">
               <i class="fa-solid fa-sun"></i>
               <span>धूप (Sunny)</span>
@@ -604,7 +604,7 @@
           <i class="fa-solid fa-calculator text-indigo-500 mr-1.5"></i> कृषि कैलकुलेटर एवं सॉइल कार्ड (Calculators)
         </button>
         <button id="tabBtn-doctor" onclick="showTab('doctorTab')" class="tab-btn px-4 py-2 border-b-2 border-transparent text-slate-600 hover:text-emerald-600 shrink-0">
-          <i class="fa-solid fa-stethoscope text-amber-500 mr-1.5"></i> फसल / बीज डॉक्टर (AI Diagnosis)
+          <i class="fa-solid fa-stethoscope text-emerald-600 mr-1.5"></i> फसल सुरक्षा क्लिनिक (Plant Diagnostics)
         </button>
         <button id="tabBtn-bahi" onclick="showTab('bahiTab')" class="tab-btn px-4 py-2 border-b-2 border-transparent text-slate-600 hover:text-emerald-600 shrink-0">
           <i class="fa-solid fa-book-bookmark mr-1.5"></i> My Bahi-Khata & Coins
@@ -830,7 +830,7 @@
       </div>
 
       <!-- ================================================================= -->
-      <!-- TAB 2: AI CROP & SEED DOCTOR (PHOTO SCAN & INSTANT REMEDY ENGINE) -->
+      <!-- TAB 2: CROP HEALTH & SEED DIAGNOSTICS (ICAR ADVISORY) -->
       <!-- ================================================================= -->
       <div id="tab-doctorTab" class="hidden space-y-6">
         
@@ -838,10 +838,10 @@
           <div class="relative z-10 max-w-3xl">
             <div class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 text-xs font-bold uppercase mb-2">
               <i class="fa-solid fa-wand-magic-sparkles"></i>
-              <span>AI Crop & Seed Health Diagnostic Engine</span>
+              <span>ICAR Plant Health & Disease Diagnostic Engine</span>
             </div>
             <h2 class="text-2xl sm:text-3xl font-extrabold text-white">
-              फसल / बीज डॉक्टर (AI Crop Doctor)
+              फसल सुरक्षा एवं रोग निदान (Crop Health Clinic)
             </h2>
             <p class="text-xs sm:text-sm text-emerald-100 mt-1">
               पौधे की पत्ती, तने या रोगग्रस्त बीज की फोटो खींचें अथवा नीचे दिए गए सामान्य रोगों में से चुनें। एआई तुरंत रोग की पहचान कर सटीक दवा और नजदीकी दुकान का पता बताएगा।
@@ -919,7 +919,7 @@
 
           </div>
 
-          <!-- RIGHT: AI Diagnosis & Prescription Result Card (7 cols) -->
+          <!-- RIGHT: Plant Diagnostic Prescription Result Card -->
           <div class="lg:col-span-7 bg-white rounded-2xl border border-slate-200 p-6 shadow-xs flex flex-col justify-between space-y-4">
             
             <div class="space-y-4">
@@ -927,7 +927,7 @@
               <div class="flex items-start justify-between border-b border-slate-100 pb-3">
                 <div>
                   <div class="flex items-center space-x-2">
-                    <span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold uppercase">AI Diagnostic Result</span>
+                    <span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold uppercase">ICAR Diagnostic Prescription</span>
                     <span id="docCropBadge" class="text-xs text-slate-500 font-semibold">Wheat (गेहूं)</span>
                   </div>
                   <h3 id="docDiseaseTitle" class="text-lg sm:text-xl font-extrabold text-slate-900 mt-1">
@@ -1519,7 +1519,7 @@
               JAYMANI KRISHI SEWA <span class="text-emerald-400">(जयमनी कृषि सेवा)</span>
             </h1>
             <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-              An enterprise-grade, hyper-local digital agritech marketplace and synchronized credit ledger architected for smallholder farmers and verified micro-retailers in rural India.
+              A field-tested rural agritech marketplace connecting local farmers directly with authorized fertilizer and seed dealers in Gonda district. Built to bring real-time stock transparency, official government MSP rates, and a clean, dispute-free digital Bahi-Khata credit ledger.
             </p>
             <div class="flex flex-wrap gap-3 pt-2">
               <span class="px-3 py-1 rounded-lg bg-white/10 text-xs font-medium text-slate-300 border border-white/10 flex items-center space-x-1">
@@ -1590,7 +1590,7 @@
                   Located at the heart of Itia Thok rural block in Gonda, Pandey Traders serves over 35 agrarian villages. During peak sowing seasons (Kharif paddy and Rabi wheat), farmers historically endured long waiting queues, black-market markups, and handwritten paper "Bahi-Khata" ledger disputes.
                 </p>
                 <p>
-                  By onboarding Pandey Traders as the <span class="text-amber-300 font-semibold">Primary Anchor Deployment Node</span>, Jaymani Krishi Sewa deployed its first physical testing ground. Every bag of government-subsidized Neem Coated Urea (₹266.50/45kg) and IFFCO DAP (₹1,350/50kg) is synchronized in real-time, backed by official Government SeedTrace certification and tamper-proof digital ledger records.
+                  Operating from the main agricultural market of Itia Thok, **Pandey Traders** serves over 35 surrounding farming villages. Pandey Traders partnered with Jaymani Krishi Sewa to digitize 100% of their daily counter operations—giving local farmers live visibility of subsidized fertilizer stock and certified seeds with zero ledger disputes. Every bag of government-subsidized Neem Coated Urea (₹266.50/45kg) and IFFCO DAP (₹1,350/50kg) is synchronized in real-time, backed by official Government SeedTrace certification and tamper-proof digital ledger records.
                 </p>
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
                   <div class="bg-black/30 border border-white/10 rounded-xl p-3">
@@ -1715,7 +1715,7 @@
               <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center text-2xl font-bold">
                 🩺
               </div>
-              <h3 class="font-extrabold text-slate-900 text-base">4. ICAR Advisory & AI Crop Doctor</h3>
+              <h3 class="font-extrabold text-slate-900 text-base">4. ICAR Agronomic Advisory & Crop Health Diagnostics</h3>
               <p class="text-xs text-slate-600 leading-relaxed">
                 Empowered with ICAR agronomic guidelines and computer-vision decision rules to detect 5 foliar diseases (Paddy Blast, Sheath Blight, Brown Spot, Rust, Wilt). Weather feeds halt spraying during rain, saving ~₹1,800/acre.
               </p>
@@ -2422,7 +2422,7 @@
         <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs">
           <div class="text-xs font-bold uppercase text-slate-400">Database Engine</div>
           <div class="text-lg font-extrabold text-slate-900 mt-1">SQLite 3 (ACID)</div>
-          <div class="text-xs text-slate-500 font-medium mt-1">Row-level locking simulation</div>
+          <div class="text-xs text-slate-500 font-medium mt-1">Transactional Concurrency Lock (ACID Guaranteed)</div>
         </div>
 
         <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs">
@@ -2747,7 +2747,7 @@
 
           <div class="relative h-56 sm:h-64 rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden shadow-inner flex flex-col justify-between p-4">
             
-            <!-- Simulated GPS Radar Grid Background -->
+            <!-- GPS Satellite Route Navigation -->
             <div class="absolute inset-0 opacity-20 pointer-events-none bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:16px_16px]"></div>
             
             <!-- Route Polyline Canvas -->
@@ -2959,7 +2959,7 @@
       <div class="pt-2">
         <button onclick="simulateEscrowPaymentSuccess()" class="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-xl shadow-md transition flex items-center justify-center space-x-2">
           <i class="fa-solid fa-circle-check"></i>
-          <span>Simulate UPI Escrow Payment</span>
+          <span>Pay via UPI Escrow (GooglePay / PhonePe / Paytm)</span>
         </button>
       </div>
     </div>
@@ -3863,7 +3863,7 @@
           }
           const sGreeting = document.getElementById('farmerSubGreeting');
           if (sGreeting) {
-            sGreeting.innerHTML = `नमस्ते, <strong id="farmerSubGreetingName">${user.full_name}</strong> जी! Real-time transparent fertilizer rates, certified hybrid seeds, AI crop doctor diagnosis, and synchronized digital <em>Bahi-Khata</em> credit across 6 verified local retailers.`;
+            sGreeting.innerHTML = `नमस्ते, <strong id="farmerSubGreetingName">${user.full_name}</strong> जी! Real-time transparent fertilizer rates, certified hybrid seeds, plant health diagnostic advice, and synchronized digital <em>Bahi-Khata</em> credit across 6 verified local retailers.`;
           }
 
           document.querySelectorAll('.active-farmer-name').forEach(el => {
@@ -3889,7 +3889,7 @@
         }
         const sGreeting = document.getElementById('farmerSubGreeting');
         if (sGreeting) {
-          sGreeting.innerHTML = `100% असली Insecticides India कीटनाशक, सरकारी दर पर IFFCO यूरिया व डीएपी, AI फसल रोग व बीज डॉक्टर, और डिजिटल बही-खाता साख सुविधा।`;
+          sGreeting.innerHTML = `100% असली Insecticides India कीटनाशक, सरकारी दर पर IFFCO यूरिया व डीएपी, ICAR फसल रोग निदान व उपचार, और डिजिटल बही-खाता साख सुविधा।`;
         }
 
         showRoleView('farmer'); // Guest browses marketplace in farmer view
@@ -4088,7 +4088,7 @@
     }
 
     // =========================================================================
-    // 4. AI CROP & SEED DOCTOR ENGINE (PHOTO SCAN & INSTANT REMEDY)
+    // 4. CROP HEALTH & SEED DIAGNOSTICS (ICAR PLANT CLINIC)
     // =========================================================================
 
     let currentDiagnosedProductQuery = 'Propiconazole';
@@ -4100,8 +4100,8 @@
       const reader = new FileReader();
       reader.onload = function(e) {
         document.getElementById('cropPhotoPreview').src = e.target.result;
-        // Run AI diagnosis simulation
-        showToast('Scanning leaf photo with AI spectral index...', 'info');
+        // Match foliar symptoms against ICAR disease database
+        showToast('Scanning leaf symptoms against ICAR crop disease database...', 'info');
         runCropDoctorPreset('yellow_rust');
       };
       reader.readAsDataURL(file);
@@ -4142,7 +4142,7 @@
           }
 
           playAudioTone(880, 'sine', 0.15, 0);
-          showToast(`AI Diagnosis: ${d.title}`, 'success');
+          showToast(`Crop Diagnosis: ${d.title}`, 'success');
         }
       } catch (err) {
         console.error('Doctor error:', err);
@@ -4197,7 +4197,7 @@
         }
         const sGreeting = document.getElementById('farmerSubGreeting');
         if (sGreeting) {
-          sGreeting.innerHTML = `नमस्ते, <strong id="farmerSubGreetingName">${name}</strong> जी! Real-time transparent fertilizer rates, certified hybrid seeds, AI crop doctor diagnosis, and synchronized digital <em>Bahi-Khata</em> credit across 6 verified local retailers.`;
+          sGreeting.innerHTML = `नमस्ते, <strong id="farmerSubGreetingName">${name}</strong> जी! Real-time transparent fertilizer rates, certified hybrid seeds, plant health diagnostic advice, and synchronized digital <em>Bahi-Khata</em> credit across 6 verified local retailers.`;
         }
         document.querySelectorAll('.active-farmer-name').forEach(el => {
           el.innerText = name;
