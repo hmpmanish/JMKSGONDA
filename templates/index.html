@@ -632,6 +632,9 @@
         <button id="tabBtn-orders" onclick="showTab('ordersTab')" class="tab-btn px-4 py-2 border-b-2 border-transparent text-slate-600 hover:text-emerald-600 shrink-0">
           <i class="fa-solid fa-receipt mr-1.5"></i> Order Receipts
         </button>
+        <button id="tabBtn-tools" onclick="showTab('toolsTab')" class="tab-btn px-4 py-2 border-b-2 border-transparent text-slate-600 hover:text-emerald-600 shrink-0 font-medium">
+          <i class="fa-solid fa-tractor text-amber-500 mr-1.5"></i> किसान टूल्स व मशीनरी (Machinery & Tools)
+        </button>
         <button id="tabBtn-about" onclick="showTab('aboutTab')" class="tab-btn px-4 py-2 border-b-2 border-transparent text-slate-600 hover:text-emerald-600 shrink-0 font-medium">
           <i class="fa-solid fa-circle-info text-emerald-600 mr-1.5"></i> About Us & Architecture
         </button>
@@ -1063,10 +1066,16 @@
               <h3 class="font-bold text-slate-900 text-base">Digital Bahi-Khata Passbook (डिजिटल बही-खाता)</h3>
               <p class="text-xs text-slate-500">Cryptographically signed ledger entries with SHA-256 digital receipt hashes</p>
             </div>
-            <button onclick="openRepaymentModal()" class="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-bold transition flex items-center space-x-1.5">
-              <i class="fa-solid fa-money-bill-wave"></i>
-              <span>Pay Dues & Earn Coins</span>
-            </button>
+            <div class="flex items-center space-x-2">
+              <button onclick="openPassbookModal()" class="px-3.5 py-1.5 bg-slate-800 hover:bg-slate-900 text-white rounded-lg text-xs font-bold transition flex items-center space-x-1.5 shadow-xs" title="पासबुक प्रिंट व डाउनलोड">
+                <i class="fa-solid fa-print text-amber-400"></i>
+                <span>पासबुक प्रिंट (Passbook)</span>
+              </button>
+              <button onclick="openRepaymentModal()" class="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-bold transition flex items-center space-x-1.5 shadow-xs">
+                <i class="fa-solid fa-money-bill-wave"></i>
+                <span>Pay Dues & Earn Coins</span>
+              </button>
+            </div>
           </div>
 
           <div class="overflow-x-auto">
@@ -1505,6 +1514,346 @@
                 </tbody>
               </table>
             </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- TAB 9: KISAN SMART AGRI-TOOLS & MACHINERY RENTAL HUB -->
+      <div id="tab-toolsTab" class="hidden space-y-8 animate-fadeIn">
+
+        <!-- HEADER BANNER -->
+        <div class="bg-gradient-to-r from-slate-900 via-amber-950 to-emerald-950 text-white rounded-3xl p-6 sm:p-8 shadow-xl border border-amber-500/30 relative overflow-hidden">
+          <div class="absolute -right-8 -bottom-8 opacity-10 text-9xl pointer-events-none select-none">🚜</div>
+          <div class="relative z-10 max-w-4xl space-y-3">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40 flex items-center space-x-1.5">
+                <i class="fa-solid fa-tractor text-amber-400"></i>
+                <span>Custom Hiring Center • Itia Thok Hub</span>
+              </span>
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 flex items-center space-x-1.5">
+                <i class="fa-solid fa-shield-halved text-emerald-400"></i>
+                <span>Govt Subsidized Rental Rates</span>
+              </span>
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-blue-500/20 text-blue-300 border border-blue-500/40 flex items-center space-x-1.5">
+                <i class="fa-solid fa-calendar-days text-blue-400"></i>
+                <span>ICAR Crop Sowing Calendar</span>
+              </span>
+            </div>
+
+            <h1 class="text-2xl sm:text-3xl font-black text-white tracking-tight">
+              किसान स्मार्ट टूल्स एवं मशीनरी केंद्र <span class="text-amber-400">(Agri-Tools & Machinery Hub)</span>
+            </h1>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+              गोंडा जनपद के लघु व सीमांत किसानों हेतु रियायती ट्रैक्टर-रोटावेटर किराया, मौसम-आधारित फसल चक्र कैलेंडर, एवं प्रधानमंत्री फसल बीमा योजना (PMFBY) प्रीमियम गणक।
+            </p>
+          </div>
+        </div>
+
+        <!-- 1. TRACTOR & FARM MACHINERY RENTAL (CUSTOM HIRING CENTER) -->
+        <div class="space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">Custom Hiring Center</span>
+              <h3 class="text-xl font-extrabold text-slate-900 mt-0.5">कृषि यंत्र व ट्रैक्टर किराया सेवा (Itia Thok)</h3>
+              <p class="text-xs text-slate-500">स्थानीय सत्यापित ऑपरेटरों द्वारा प्रति घंटा व प्रति एकड़ रियायती दरों पर बुकिंग</p>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="px-2.5 py-1 rounded-lg bg-emerald-100 text-emerald-800 text-xs font-bold">
+                🟢 5 मशीनें अभी उपलब्ध
+              </span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            
+            <!-- Machine 1 -->
+            <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-xs hover:shadow-md transition space-y-3 flex flex-col justify-between">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="text-2xl">🚜</span>
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
+                    🟢 उपलब्ध (Ready)
+                  </span>
+                </div>
+                <h4 class="font-bold text-slate-900 text-sm">महिंद्रा 575 DI (45 HP) + रोटावेटर</h4>
+                <p class="text-xs text-slate-500">गहरी जुताई व मिट्टी भुरभुरी करने हेतु 6 फीट रोटावेटर। डीजल सहित रियायती दर।</p>
+                <div class="pt-2 border-t border-slate-100 space-y-1 text-xs">
+                  <div class="flex justify-between"><span class="text-slate-400">किराया दर:</span> <strong class="text-slate-900 font-extrabold">₹750 / घंटा</strong></div>
+                  <div class="flex justify-between"><span class="text-slate-400">ऑपरेटर:</span> <span class="text-slate-700 font-medium">दिनेश मौर्य (इटियाथोक)</span></div>
+                  <div class="flex justify-between"><span class="text-slate-400">सत्यापन:</span> <span class="text-emerald-700 font-bold">✓ KVK Certified</span></div>
+                </div>
+              </div>
+              <button onclick="openMachineryModal('महिंद्रा 575 DI ट्रैक्टर + रोटावेटर', 750, 'दिनेश मौर्य', '+91 94508 21990')" class="w-full py-2 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs rounded-xl transition shadow-xs flex items-center justify-center space-x-1.5">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>किराया बुक करें</span>
+              </button>
+            </div>
+
+            <!-- Machine 2 -->
+            <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-xs hover:shadow-md transition space-y-3 flex flex-col justify-between">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="text-2xl">🌱</span>
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
+                    🟢 उपलब्ध (Ready)
+                  </span>
+                </div>
+                <h4 class="font-bold text-slate-900 text-sm">जीरो-टिल मल्टी-क्रॉप सीड ड्रिल</h4>
+                <p class="text-xs text-slate-500">धान की पराली के बीच बिना जुताई गेहूं बुवाई व खाद प्लेसमेंट हेतु 9-टाइन ड्रिल।</p>
+                <div class="pt-2 border-t border-slate-100 space-y-1 text-xs">
+                  <div class="flex justify-between"><span class="text-slate-400">किराया दर:</span> <strong class="text-slate-900 font-extrabold">₹500 / घंटा</strong></div>
+                  <div class="flex justify-between"><span class="text-slate-400">ऑपरेटर:</span> <span class="text-slate-700 font-medium">राम मूरत वर्मा (धनेपुर)</span></div>
+                  <div class="flex justify-between"><span class="text-slate-400">सत्यापन:</span> <span class="text-emerald-700 font-bold">✓ FPO Linked</span></div>
+                </div>
+              </div>
+              <button onclick="openMachineryModal('जीरो-टिल मल्टी-क्रॉप सीड ड्रिल', 500, 'राम मूरत वर्मा', '+91 94150 54321')" class="w-full py-2 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs rounded-xl transition shadow-xs flex items-center justify-center space-x-1.5">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>किराया बुक करें</span>
+              </button>
+            </div>
+
+            <!-- Machine 3 -->
+            <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-xs hover:shadow-md transition space-y-3 flex flex-col justify-between">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="text-2xl">🌾</span>
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-800 border border-amber-300">
+                    🟡 फील्ड में (1 घंटे में उपलब्ध)
+                  </span>
+                </div>
+                <h4 class="font-bold text-slate-900 text-sm">कंबाइन हार्वेस्टर व स्ट्रॉ रीपर</h4>
+                <p class="text-xs text-slate-500">धान व गेहूं की कटाई, मढ़ाई व भूसा निर्माण एक साथ। प्रति एकड़ न्यूनतम समय।</p>
+                <div class="pt-2 border-t border-slate-100 space-y-1 text-xs">
+                  <div class="flex justify-between"><span class="text-slate-400">किराया दर:</span> <strong class="text-slate-900 font-extrabold">₹1,300 / एकड़</strong></div>
+                  <div class="flex justify-between"><span class="text-slate-400">ऑपरेटर:</span> <span class="text-slate-700 font-medium">अवध एग्री सर्विसेज</span></div>
+                  <div class="flex justify-between"><span class="text-slate-400">सत्यापन:</span> <span class="text-emerald-700 font-bold">✓ Tracked GPS</span></div>
+                </div>
+              </div>
+              <button onclick="openMachineryModal('कंबाइन हार्वेस्टर व स्ट्रॉ रीपर', 1300, 'अवध एग्री सर्विसेज', '+91 94150 67890')" class="w-full py-2 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs rounded-xl transition shadow-xs flex items-center justify-center space-x-1.5">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>किराया बुक करें</span>
+              </button>
+            </div>
+
+            <!-- Machine 4 -->
+            <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-xs hover:shadow-md transition space-y-3 flex flex-col justify-between">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="text-2xl">📐</span>
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
+                    🟢 उपलब्ध (Ready)
+                  </span>
+                </div>
+                <h4 class="font-bold text-slate-900 text-sm">लेजर लैंड लेवलर (समतलीकरण)</h4>
+                <p class="text-xs text-slate-500">कंप्यूटराइज्ड लेजर ट्रांसमीटर से खेत समतल करना; 30% सिंचाई पानी व 15% खाद बचत।</p>
+                <div class="pt-2 border-t border-slate-100 space-y-1 text-xs">
+                  <div class="flex justify-between"><span class="text-slate-400">किराया दर:</span> <strong class="text-slate-900 font-extrabold">₹800 / घंटा</strong></div>
+                  <div class="flex justify-between"><span class="text-slate-400">ऑपरेटर:</span> <span class="text-slate-700 font-medium">किसान सेवा केंद्र (मनकापुर)</span></div>
+                  <div class="flex justify-between"><span class="text-slate-400">सत्यापन:</span> <span class="text-emerald-700 font-bold">✓ KVK Approved</span></div>
+                </div>
+              </div>
+              <button onclick="openMachineryModal('लेजर लैंड लेवलर (समतलीकरण)', 800, 'किसान सेवा केंद्र', '+91 94150 77112')" class="w-full py-2 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs rounded-xl transition shadow-xs flex items-center justify-center space-x-1.5">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>किराया बुक करें</span>
+              </button>
+            </div>
+
+            <!-- Machine 5 -->
+            <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-xs hover:shadow-md transition space-y-3 flex flex-col justify-between">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="text-2xl">🔋</span>
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
+                    🟢 5 यूनिट उपलब्ध
+                  </span>
+                </div>
+                <h4 class="font-bold text-slate-900 text-sm">बैटरी नैपसैक स्प्रेयर पंप (16L)</h4>
+                <p class="text-xs text-slate-500">12V रिचार्जेबल स्प्रेयर। कीटनाशक व सूक्ष्म पोषक तत्वों के सटीक छिड़काव हेतु।</p>
+                <div class="pt-2 border-t border-slate-100 space-y-1 text-xs">
+                  <div class="flex justify-between"><span class="text-slate-400">किराया दर:</span> <strong class="text-slate-900 font-extrabold">₹150 / दिन</strong></div>
+                  <div class="flex justify-between"><span class="text-slate-400">पिकअप:</span> <span class="text-slate-700 font-medium">पाण्डेय ट्रेडर्स काउंटर</span></div>
+                  <div class="flex justify-between"><span class="text-slate-400">सत्यापन:</span> <span class="text-emerald-700 font-bold">✓ Zero Deposit</span></div>
+                </div>
+              </div>
+              <button onclick="openMachineryModal('बैटरी नैपसैक स्प्रेयर पंप (16L)', 150, 'पाण्डेय ट्रेडर्स काउंटर', '+91 7703079301')" class="w-full py-2 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs rounded-xl transition shadow-xs flex items-center justify-center space-x-1.5">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>किराया बुक करें</span>
+              </button>
+            </div>
+
+            <!-- Machine 6 -->
+            <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-xs hover:shadow-md transition space-y-3 flex flex-col justify-between">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="text-2xl">☀️</span>
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
+                    🟢 उपलब्ध (Ready)
+                  </span>
+                </div>
+                <h4 class="font-bold text-slate-900 text-sm">सोलर पोर्टेबल वाटर पंप (5 HP)</h4>
+                <p class="text-xs text-slate-500">बिजली कट या डीजल की कमी में सौर ऊर्जा से बोरवेल सिंचाई। ट्रॉली माउंटेड यूनिट।</p>
+                <div class="pt-2 border-t border-slate-100 space-y-1 text-xs">
+                  <div class="flex justify-between"><span class="text-slate-400">किराया दर:</span> <strong class="text-slate-900 font-extrabold">₹100 / घंटा</strong></div>
+                  <div class="flex justify-between"><span class="text-slate-400">ऑपरेटर:</span> <span class="text-slate-700 font-medium">सुखदेव पाण्डेय (इटियाथोक)</span></div>
+                  <div class="flex justify-between"><span class="text-slate-400">सत्यापन:</span> <span class="text-emerald-700 font-bold">✓ MNRE Certified</span></div>
+                </div>
+              </div>
+              <button onclick="openMachineryModal('सोलर पोर्टेबल वाटर पंप (5 HP)', 100, 'सुखदेव पाण्डेय', '+91 7703079301')" class="w-full py-2 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs rounded-xl transition shadow-xs flex items-center justify-center space-x-1.5">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>किराया बुक करें</span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 2. SEASONAL CROP SOWING CALENDAR (ICAR GONDA REGION) -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-xs space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
+            <div>
+              <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Agronomic Advisory</span>
+              <h3 class="text-xl font-extrabold text-slate-900 mt-0.5">पूर्वी उत्तर प्रदेश (गोंडा) फसल चक्र व बुवाई समय-सारणी</h3>
+              <p class="text-xs text-slate-500">ICAR व कृषि विज्ञान केंद्र (KVK) गोंडा द्वारा अनुशंसित बुवाई तारीखें, बीज किस्में व खाद मात्रा</p>
+            </div>
+            
+            <!-- Season switcher buttons -->
+            <div class="flex items-center space-x-2 bg-slate-100 p-1 rounded-xl">
+              <button onclick="selectCropSeason('kharif')" id="seasonBtn-kharif" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-white text-emerald-800 shadow-xs transition">
+                🌾 खरीफ (Kharif)
+              </button>
+              <button onclick="selectCropSeason('rabi')" id="seasonBtn-rabi" class="px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 transition">
+                🌾 रबी (Rabi)
+              </button>
+              <button onclick="selectCropSeason('zaid')" id="seasonBtn-zaid" class="px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 transition">
+                🍉 जायद (Zaid)
+              </button>
+            </div>
+          </div>
+
+          <!-- Dynamic Season Content Area -->
+          <div id="cropSeasonContainer" class="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <!-- Dynamically populated by selectCropSeason() -->
+          </div>
+        </div>
+
+        <!-- 3. PMFBY CROP INSURANCE PREMIUM CALCULATOR -->
+        <div class="bg-gradient-to-br from-indigo-950 via-slate-900 to-slate-950 text-white rounded-3xl p-6 sm:p-8 shadow-xl border border-indigo-500/30 space-y-6">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-indigo-800/60 pb-5">
+            <div class="space-y-1">
+              <div class="inline-flex items-center space-x-2 px-2.5 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 text-[10px] font-bold border border-indigo-400/30">
+                <i class="fa-solid fa-shield-heart"></i>
+                <span>PM Fasal Bima Yojana (PMFBY)</span>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-black text-white">प्रधानमंत्री फसल बीमा प्रीमियम गणक (Insurance Calculator)</h3>
+              <p class="text-xs text-indigo-200">ओलावृष्टि, सूखा, अत्यधिक वर्षा अथवा बाढ़ से फसल नुकसान पर शत-प्रतिशत वित्तीय सुरक्षा।</p>
+            </div>
+            <div class="text-right shrink-0">
+              <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 text-xs font-bold font-mono">
+                किसान अंश: मात्र 1.5% - 2%
+              </span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+            <!-- Inputs -->
+            <div class="md:col-span-7 space-y-4 text-xs">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="space-y-1.5">
+                  <label class="font-bold text-slate-300">फसल का चयन करें (Crop):</label>
+                  <select id="pmfbyCropSelect" onchange="calcPmfby()" class="w-full px-3 py-2.5 bg-slate-800 border border-slate-700 rounded-xl text-white font-semibold focus:outline-none focus:border-indigo-400">
+                    <option value="wheat">🌾 गेहूं (Wheat - रबी: 1.5% अंश)</option>
+                    <option value="paddy">🌾 धान (Paddy - खरीफ: 2.0% अंश)</option>
+                    <option value="mustard">🌼 सरसों (Mustard - रबी: 1.5% अंश)</option>
+                    <option value="sugarcane">🎋 गन्ना (Commercial: 5.0% अंश)</option>
+                  </select>
+                </div>
+
+                <div class="space-y-1.5">
+                  <label class="font-bold text-slate-300">खेत का क्षेत्रफल (एकड़ में):</label>
+                  <input type="number" id="pmfbyAcresInput" value="2.5" min="0.5" max="50" step="0.5" oninput="calcPmfby()" class="w-full px-3 py-2.5 bg-slate-800 border border-slate-700 rounded-xl text-white font-bold text-sm focus:outline-none focus:border-indigo-400">
+                </div>
+              </div>
+
+              <div class="p-4 bg-white/5 border border-white/10 rounded-2xl space-y-2">
+                <div class="flex justify-between items-center text-slate-400">
+                  <span>प्रति एकड़ बीमित राशि (Sum Insured):</span>
+                  <span id="pmfbySumPerAcre" class="font-mono font-bold text-white">₹35,000 / एकड़</span>
+                </div>
+                <div class="flex justify-between items-center text-slate-400">
+                  <span>सरकारी अनुदान अंश (Govt Subsidy 98.5%):</span>
+                  <span id="pmfbyGovtShare" class="font-mono font-bold text-emerald-400">₹86,187.50</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Output Display Card -->
+            <div class="md:col-span-5 bg-gradient-to-br from-indigo-900/60 to-slate-900 border-2 border-indigo-500/40 rounded-2xl p-5 text-center space-y-3 shadow-lg">
+              <div class="text-xs font-bold uppercase tracking-wider text-indigo-300">किसान द्वारा देय कुल प्रीमियम (Your Share)</div>
+              <div id="pmfbyFarmerPremium" class="text-3xl sm:text-4xl font-black text-amber-400">₹1,312.50</div>
+              <div class="text-[11px] text-slate-300">
+                कुल बीमा सुरक्षा: <strong id="pmfbyTotalSum" class="text-white font-mono">₹87,500.00</strong>
+              </div>
+              <div class="pt-2">
+                <button onclick="triggerPmfbyClaimModal()" class="w-full py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs rounded-xl transition shadow-md flex items-center justify-center space-x-1.5">
+                  <i class="fa-solid fa-file-circle-check"></i>
+                  <span>फसल क्षति सर्वे आवेदन (Submit Loss Claim)</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. OFFICIAL EMERGENCY AGRI HELPLINES DIRECTORY -->
+        <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-xs space-y-4">
+          <div class="flex items-center justify-between">
+            <div>
+              <span class="text-xs font-bold text-rose-600 uppercase tracking-wider">24x7 Emergency Support</span>
+              <h3 class="text-lg font-black text-slate-900">सरकारी कृषि सहायता एवं आपातकालीन हेल्पलाइन</h3>
+            </div>
+            <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-rose-100 text-rose-800">
+              🔴 Live Direct Dial
+            </span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
+            
+            <a href="tel:18001801551" class="p-3.5 rounded-2xl border border-slate-200 bg-slate-50 hover:bg-emerald-50 hover:border-emerald-300 transition group space-y-1 block">
+              <div class="font-extrabold text-slate-900 group-hover:text-emerald-700 flex items-center space-x-1.5">
+                <i class="fa-solid fa-phone text-emerald-600"></i>
+                <span>किसान कॉल सेंटर (KCC)</span>
+              </div>
+              <div class="text-[11px] text-slate-500 font-mono">1800-180-1551 (टोल-फ्री)</div>
+              <div class="text-[10px] text-emerald-700 font-semibold">22 भारतीय भाषाओं में विशेषज्ञ सलाह</div>
+            </a>
+
+            <a href="tel:05262230101" class="p-3.5 rounded-2xl border border-slate-200 bg-slate-50 hover:bg-rose-50 hover:border-rose-300 transition group space-y-1 block">
+              <div class="font-extrabold text-slate-900 group-hover:text-rose-700 flex items-center space-x-1.5">
+                <i class="fa-solid fa-building-shield text-rose-600"></i>
+                <span>खाद कालाबाजारी नियंत्रण (DAO)</span>
+              </div>
+              <div class="text-[11px] text-slate-500 font-mono">05262-230101 (गोंडा कंट्रोल)</div>
+              <div class="text-[10px] text-rose-700 font-semibold">ओवररेटिंग व मिलावट त्वरित शिकायत</div>
+            </a>
+
+            <a href="tel:155261" class="p-3.5 rounded-2xl border border-slate-200 bg-slate-50 hover:bg-blue-50 hover:border-blue-300 transition group space-y-1 block">
+              <div class="font-extrabold text-slate-900 group-hover:text-blue-700 flex items-center space-x-1.5">
+                <i class="fa-solid fa-landmark text-blue-600"></i>
+                <span>उ.प्र. कृषि विभाग हेल्पलाइन</span>
+              </div>
+              <div class="text-[11px] text-slate-500 font-mono">155261 / 1800-200-1050</div>
+              <div class="text-[10px] text-blue-700 font-semibold">सब्सिडी, बीज मिनीकिट व योजनाएं</div>
+            </a>
+
+            <a href="tel:05262230412" class="p-3.5 rounded-2xl border border-slate-200 bg-slate-50 hover:bg-purple-50 hover:border-purple-300 transition group space-y-1 block">
+              <div class="font-extrabold text-slate-900 group-hover:text-purple-700 flex items-center space-x-1.5">
+                <i class="fa-solid fa-microscope text-purple-600"></i>
+                <span>KVK गोंडा वैज्ञानिक केंद्र</span>
+              </div>
+              <div class="text-[11px] text-slate-500 font-mono">05262-230412 (वैज्ञानिक सलाह)</div>
+              <div class="text-[10px] text-purple-700 font-semibold">मृदा परीक्षण व कीट व्याधि निदान</div>
+            </a>
+
           </div>
         </div>
 
@@ -5323,7 +5672,7 @@
     }
 
     function showTab(tabId) {
-      ['marketTab', 'storesTab', 'calcsTab', 'doctorTab', 'bahiTab', 'schemesTab', 'ordersTab', 'aboutTab'].forEach(t => {
+      ['marketTab', 'storesTab', 'calcsTab', 'doctorTab', 'bahiTab', 'schemesTab', 'ordersTab', 'toolsTab', 'aboutTab'].forEach(t => {
         const el = document.getElementById(`tab-${t}`);
         const btn = document.getElementById(`tabBtn-${t.replace('Tab', '')}`);
         if (el) el.classList.add('hidden');
@@ -6415,11 +6764,199 @@ ${step.desc}`;
       }
     });
 
+    
+    // --- 14. KISAN SMART AGRI-TOOLS & EXTENSIONS ---
+    const cropSeasonData = {
+      kharif: [
+        {
+          name: 'धान (Paddy / Rice)',
+          varieties: 'पूसा बासमती 1509, सम्भा सब-1, सरजू-52',
+          sowing: '15 जून से 15 जुलाई',
+          seed_rate: '20-25 किग्रा / हेक्टेयर',
+          treatment: 'कार्बेन्डाजिम 50% WP (2 ग्राम/किग्रा बीज)',
+          fertilizer: 'DAP 50kg + यूरिया 45kg + जिंक 10kg प्रति एकड़',
+          icon: '🌾'
+        },
+        {
+          name: 'मक्का (Maize / Corn)',
+          varieties: 'गंगा-11, दकन-103, पूसा संकर मक्का-5',
+          sowing: '20 जून से 10 जुलाई',
+          seed_rate: '18-20 किग्रा / हेक्टेयर',
+          treatment: 'थिरम 75% WP (2.5 ग्राम/किग्रा)',
+          fertilizer: 'DAP 40kg + यूरिया 50kg प्रति एकड़',
+          icon: '🌽'
+        },
+        {
+          name: 'अरहर / तूर (Pigeon Pea)',
+          varieties: 'यूपीएएस 120, पारस, पूसा-9',
+          sowing: '15 जून से 30 जून',
+          seed_rate: '12-15 किग्रा / हेक्टेयर',
+          treatment: 'राइजोबियम कल्चर + ट्राइकोडर्मा',
+          fertilizer: 'DAP 40kg + सल्फर 10kg प्रति एकड़',
+          icon: '🌱'
+        }
+      ],
+      rabi: [
+        {
+          name: 'गेहूं (Wheat)',
+          varieties: 'PBW 502, HD 2967, DBW 187 (करण वंदना)',
+          sowing: '05 नवम्बर से 25 नवम्बर (समय पर बुवाई)',
+          seed_rate: '40-45 किग्रा प्रति एकड़',
+          treatment: 'विटावैक्स या कार्बेन्डाजिम (2 ग्राम/किग्रा)',
+          fertilizer: 'DAP 55kg + यूरिया 65kg + पोटाश 20kg प्रति एकड़',
+          icon: '🌾'
+        },
+        {
+          name: 'सरसों (Mustard / Toria)',
+          varieties: 'पूसा बोल्ड, क्रांति, वरुणा (टी-59)',
+          sowing: '25 सितम्बर से 20 अक्टूबर',
+          seed_rate: '2.0-2.5 किग्रा प्रति एकड़',
+          treatment: 'एप्रोन 35 SD (6 ग्राम/किग्रा)',
+          fertilizer: 'DAP 35kg + यूरिया 40kg + सल्फर 15kg प्रति एकड़',
+          icon: '🌼'
+        },
+        {
+          name: 'चना (Chickpea / Gram)',
+          varieties: 'राधे, पूसा 372, जेजी 11',
+          sowing: '15 अक्टूबर से 10 नवम्बर',
+          seed_rate: '30-35 किग्रा प्रति एकड़',
+          treatment: 'राइजोबियम कल्चर + ट्राइकोडर्मा विरिडी',
+          fertilizer: 'DAP 30kg + SSP 50kg प्रति एकड़ (यूरिया न दें)',
+          icon: '🌿'
+        }
+      ],
+      zaid: [
+        {
+          name: 'मूंग (Green Gram / Moong)',
+          varieties: 'पूसा विशाल, सम्राट, एसएमएल 668',
+          sowing: '15 मार्च से 15 अप्रैल',
+          seed_rate: '10-12 किग्रा प्रति एकड़',
+          treatment: 'राइजोबियम दलहनी कल्चर (5 ग्राम/किग्रा)',
+          fertilizer: 'DAP 25kg प्रति एकड़',
+          icon: '🌱'
+        },
+        {
+          name: 'उड़द (Black Gram / Urad)',
+          varieties: 'पंत यू 31, नरेंद्र उड़द 1, आजाद उड़द 2',
+          sowing: '20 मार्च से 10 अप्रैल',
+          seed_rate: '10-12 किग्रा प्रति एकड़',
+          treatment: 'कार्बेन्डाजिम 2g + राइजोबियम',
+          fertilizer: 'DAP 25kg प्रति एकड़',
+          icon: '🌿'
+        },
+        {
+          name: 'खीरा व ककड़ी (Cucumber)',
+          varieties: 'पूसा संयोग, कल्यानपुर हरा, स्वर्ण शीतल',
+          sowing: 'फरवरी अंत से मार्च',
+          seed_rate: '1.5-2 किग्रा प्रति एकड़',
+          treatment: 'कैप्टन 2.5 ग्राम/किग्रा बीज',
+          fertilizer: 'गोबर की सड़ी खाद 5 टन + NPK 19:19:19',
+          icon: '🥒'
+        }
+      ]
+    };
+
+    function selectCropSeason(seasonKey) {
+      ['kharif', 'rabi', 'zaid'].forEach(k => {
+        const btn = document.getElementById(`seasonBtn-${k}`);
+        if (btn) {
+          if (k === seasonKey) {
+            btn.className = 'px-3 py-1.5 rounded-lg text-xs font-bold bg-white text-emerald-800 shadow-xs transition';
+          } else {
+            btn.className = 'px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 transition';
+          }
+        }
+      });
+
+      const container = document.getElementById('cropSeasonContainer');
+      if (!container) return;
+      const list = cropSeasonData[seasonKey] || cropSeasonData.rabi;
+      container.innerHTML = list.map(c => `
+        <div class="p-5 rounded-2xl border border-slate-200 bg-slate-50/70 space-y-2.5 hover:shadow-xs transition">
+          <div class="flex items-center space-x-2">
+            <span class="text-2xl">${c.icon}</span>
+            <h4 class="font-extrabold text-slate-900 text-sm">${c.name}</h4>
+          </div>
+          <div class="text-xs space-y-1">
+            <div><span class="text-slate-400">उन्नत किस्में:</span> <strong class="text-slate-800">${c.varieties}</strong></div>
+            <div><span class="text-slate-400">बुवाई समय:</span> <span class="text-emerald-700 font-bold">${c.sowing}</span></div>
+            <div><span class="text-slate-400">बीज दर:</span> <span class="text-slate-700">${c.seed_rate}</span></div>
+            <div><span class="text-slate-400">बीज शोधन:</span> <span class="text-amber-800 font-medium">${c.treatment}</span></div>
+            <div><span class="text-slate-400">खाद अनुशंसा:</span> <span class="text-blue-800 font-medium">${c.fertilizer}</span></div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Initialize Kharif/Rabi
+    window.addEventListener('DOMContentLoaded', () => selectCropSeason('rabi'));
+
+    // PMFBY Calculator
+    function calcPmfby() {
+      const crop = document.getElementById('pmfbyCropSelect')?.value || 'wheat';
+      const acres = parseFloat(document.getElementById('pmfbyAcresInput')?.value || '1');
+      
+      const rates = {
+        wheat: { sum: 35000, farmerRate: 0.015 },
+        paddy: { sum: 38000, farmerRate: 0.02 },
+        mustard: { sum: 32000, farmerRate: 0.015 },
+        sugarcane: { sum: 55000, farmerRate: 0.05 }
+      };
+
+      const cfg = rates[crop] || rates.wheat;
+      const totalSum = cfg.sum * acres;
+      const farmerShare = totalSum * cfg.farmerRate;
+      const govtShare = totalSum - farmerShare;
+
+      if (document.getElementById('pmfbySumPerAcre')) document.getElementById('pmfbySumPerAcre').innerText = `₹${cfg.sum.toLocaleString('en-IN')} / एकड़`;
+      if (document.getElementById('pmfbyGovtShare')) document.getElementById('pmfbyGovtShare').innerText = `₹${govtShare.toLocaleString('en-IN', {minimumFractionDigits: 2})}`;
+      if (document.getElementById('pmfbyFarmerPremium')) document.getElementById('pmfbyFarmerPremium').innerText = `₹${farmerShare.toLocaleString('en-IN', {minimumFractionDigits: 2})}`;
+      if (document.getElementById('pmfbyTotalSum')) document.getElementById('pmfbyTotalSum').innerText = `₹${totalSum.toLocaleString('en-IN', {minimumFractionDigits: 2})}`;
+    }
+
+    function triggerPmfbyClaimModal() {
+      showToast('फसल क्षति सर्वे आवेदन पोर्टल से सम्बद्ध हो गया है। KVK गोंडा सर्वेक्षक टीम को सूचित कर दिया गया है।', 'success');
+    }
+
+    // Passbook Modal
+    function openPassbookModal() {
+      const modal = document.getElementById('kisanPassbookModal');
+      if (modal) modal.classList.remove('hidden');
+    }
+
+    function closePassbookModal() {
+      const modal = document.getElementById('kisanPassbookModal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    // Machinery Modal
+    let currentMachinerySelected = {};
+    function openMachineryModal(title, rate, operator, phone) {
+      currentMachinerySelected = { title, rate, operator, phone };
+      if (document.getElementById('mbMachineTitle')) document.getElementById('mbMachineTitle').innerText = title;
+      if (document.getElementById('mbRateDisplay')) document.getElementById('mbRateDisplay').innerText = `₹${rate} / इकाई`;
+      if (document.getElementById('mbOperatorName')) document.getElementById('mbOperatorName').innerText = operator;
+      const modal = document.getElementById('machineryBookingModal');
+      if (modal) modal.classList.remove('hidden');
+    }
+
+    function closeMachineryModal() {
+      const modal = document.getElementById('machineryBookingModal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function confirmMachineryBooking() {
+      closeMachineryModal();
+      showToast(`बुकिंग पुष्ट! ऑपरेटर ${currentMachinerySelected.operator} (${currentMachinerySelected.phone}) से इटियाथोक हब द्वारा समन्वय किया जाएगा।`, 'success');
+    }
+
     // --- L. URL Hash Router for Quick View & Screenshot Navigation ---
     function handleUrlHash() {
       const h = window.location.hash;
       if (!h) return;
-      if (h === '#about') {
+      if (h === '#tools') {
+        showTab('toolsTab');
+      } else if (h === '#about') {
         showTab('aboutTab');
       } else if (h === '#stores') {
         showTab('storesTab');
@@ -6453,6 +6990,184 @@ ${step.desc}`;
     setTimeout(handleUrlHash, 200);
 
   </script>
+
+
+  <!-- PASSBOOK PRINTABLE MODAL -->
+  <div id="kisanPassbookModal" class="hidden fixed inset-0 bg-slate-900/80 backdrop-blur-xs z-50 flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl relative border-2 border-slate-300 text-left">
+      <div class="bg-slate-900 text-white p-5 flex items-center justify-between border-b border-slate-800">
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-xl">📖</div>
+          <div>
+            <h3 class="font-extrabold text-base">डिजिटल बही-खाता पासबुक (Kisan Passbook)</h3>
+            <p class="text-xs text-slate-400">पाण्डेय ट्रेडर्स — अधिकृत साख विवरण</p>
+          </div>
+        </div>
+        <button onclick="closePassbookModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div id="printablePassbookContent" class="p-6 space-y-4 max-h-[70vh] overflow-y-auto text-xs">
+        <div class="border-b border-slate-200 pb-3 flex justify-between items-center">
+          <div>
+            <div class="text-base font-black text-slate-900">पाण्डेय ट्रेडर्स (सुखदेव पाण्डेय खाद एवं बीज भंडार)</div>
+            <div class="text-slate-500">मुख्य बाजार, इटियाथोक, जनपद गोंडा (पिन: 271202) • फोन: +91 7703079301</div>
+            <div class="text-slate-500">SeedTrace ID: 24-076000 • DAO Lic: DAO SEED/147/GDN/123</div>
+          </div>
+          <div class="text-right">
+            <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold text-[10px]">VERIFIED PASSBOOK</span>
+            <div class="text-slate-400 text-[10px] mt-1">Date: 18-Nov-2026</div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-slate-50 p-3 rounded-xl border border-slate-200">
+          <div>
+            <span class="text-slate-400">खाताधारक:</span>
+            <div class="font-bold text-slate-900" id="pbFarmerName">अमित कुमार (Amit Kumar)</div>
+          </div>
+          <div>
+            <span class="text-slate-400">ग्राम/ब्लॉक:</span>
+            <div class="font-bold text-slate-900">धनेपुर, इटियाथोक</div>
+          </div>
+          <div>
+            <span class="text-slate-400">स्वीकृत साख सीमा:</span>
+            <div class="font-bold text-slate-900">₹10,000.00</div>
+          </div>
+          <div>
+            <span class="text-slate-400">वर्तमान कुल बकाया:</span>
+            <div class="font-black text-rose-600">₹2,500.00</div>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-900 mb-2">लेजर ट्रांजेक्शन स्टेटमेंट (Ledger Statement)</h4>
+          <table class="w-full text-left border border-slate-200 rounded-lg overflow-hidden text-[11px]">
+            <thead class="bg-slate-100 text-slate-600 font-bold uppercase text-[9px]">
+              <tr>
+                <th class="p-2">दिनांक व संदर्भ</th>
+                <th class="p-2">विवरण</th>
+                <th class="p-2 text-rose-600">उधार (Debit)</th>
+                <th class="p-2 text-emerald-600">जमा (Credit)</th>
+                <th class="p-2">बाकी (Balance)</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 font-medium">
+              <tr>
+                <td class="p-2 font-mono">15-Oct-2026<br><span class="text-[9px] text-slate-400">BK-TXN-01</span></td>
+                <td class="p-2">Kharif/Rabi Sanction Credit Limit</td>
+                <td class="p-2 font-mono">-</td>
+                <td class="p-2 font-mono">-</td>
+                <td class="p-2 font-mono font-bold">₹0.00</td>
+              </tr>
+              <tr>
+                <td class="p-2 font-mono">20-Oct-2026<br><span class="text-[9px] text-slate-400">BK-TXN-02</span></td>
+                <td class="p-2">1x Neem Coated Urea + 1x Hybrid Mustard</td>
+                <td class="p-2 font-mono text-rose-600 font-bold">₹716.50</td>
+                <td class="p-2 font-mono">-</td>
+                <td class="p-2 font-mono font-bold">₹716.50</td>
+              </tr>
+              <tr>
+                <td class="p-2 font-mono">28-Oct-2026<br><span class="text-[9px] text-slate-400">BK-TXN-03</span></td>
+                <td class="p-2">Cash Repayment at Shop Counter</td>
+                <td class="p-2 font-mono">-</td>
+                <td class="p-2 font-mono text-emerald-600 font-bold">₹716.50</td>
+                <td class="p-2 font-mono font-bold">₹0.00</td>
+              </tr>
+              <tr>
+                <td class="p-2 font-mono">05-Nov-2026<br><span class="text-[9px] text-slate-400">BK-TXN-04</span></td>
+                <td class="p-2">Wheat Sowing: 2x IFFCO DAP (50kg)</td>
+                <td class="p-2 font-mono text-rose-600 font-bold">₹2,680.00</td>
+                <td class="p-2 font-mono">-</td>
+                <td class="p-2 font-mono font-bold">₹2,680.00</td>
+              </tr>
+              <tr>
+                <td class="p-2 font-mono">12-Nov-2026<br><span class="text-[9px] text-slate-400">BK-TXN-05</span></td>
+                <td class="p-2">UPI Part Repayment (9142223202@IBL)</td>
+                <td class="p-2 font-mono">-</td>
+                <td class="p-2 font-mono text-emerald-600 font-bold">₹180.00</td>
+                <td class="p-2 font-mono font-bold">₹2,500.00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pt-3 border-t border-slate-200 flex justify-between items-center text-[10px] text-slate-500">
+          <div>
+            <div>SHA-256 Tamper-Proof Audit Seal: <span class="font-mono text-slate-700 font-bold">e3b0c44298fc1c149afbf4c8996fb924</span></div>
+            <div>अधिकृत हस्ताक्षर: प्रो. सुखदेव प्रसाद पाण्डेय (पाण्डेय ट्रेडर्स, इटियाथोक)</div>
+          </div>
+          <div class="w-16 h-16 border-2 border-emerald-600 rounded-full flex items-center justify-center text-emerald-700 font-bold text-[9px] text-center transform -rotate-12 border-dashed">
+            PAID &<br>VERIFIED
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 bg-slate-50 border-t border-slate-200 flex justify-end space-x-2">
+        <button onclick="closePassbookModal()" class="px-4 py-2 border border-slate-300 text-slate-700 font-bold text-xs rounded-xl hover:bg-slate-100 transition">
+          बंद करें (Close)
+        </button>
+        <button onclick="window.print()" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl transition flex items-center space-x-1.5 shadow-sm">
+          <i class="fa-solid fa-print"></i>
+          <span>प्रिंट निकालें (Print / Save PDF)</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MACHINERY BOOKING MODAL -->
+  <div id="machineryBookingModal" class="hidden fixed inset-0 bg-slate-900/80 backdrop-blur-xs z-50 flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full overflow-hidden shadow-2xl relative border-2 border-amber-500 text-left">
+      <div class="bg-slate-900 text-white p-5 flex items-center justify-between border-b border-slate-800">
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-xl">🚜</div>
+          <div>
+            <h3 class="font-extrabold text-base">कृषि यंत्र किराया बुकिंग</h3>
+            <p class="text-xs text-slate-400" id="mbMachineTitle">महिंद्रा 575 DI ट्रैक्टर</p>
+          </div>
+        </div>
+        <button onclick="closeMachineryModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="p-5 space-y-4 text-xs">
+        <div class="bg-amber-50 p-3.5 rounded-2xl border border-amber-200 space-y-1">
+          <div class="flex justify-between"><span class="text-slate-500">किराया दर:</span> <strong class="text-amber-950 font-black text-sm" id="mbRateDisplay">₹750 / घंटा</strong></div>
+          <div class="flex justify-between"><span class="text-slate-500">ऑपरेटर:</span> <span class="text-slate-800 font-bold" id="mbOperatorName">दिनेश मौर्य</span></div>
+          <div class="flex justify-between"><span class="text-slate-500">स्थान:</span> <span class="text-slate-800">इटियाथोक, गोंडा (1.8 km)</span></div>
+        </div>
+
+        <div class="space-y-3">
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">खेत का पता / ग्राम:</label>
+            <input type="text" id="mbVillageAddress" value="ग्राम धनेपुर, इटियाथोक, गोंडा" class="w-full px-3 py-2 border border-slate-300 rounded-xl text-xs font-semibold">
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block font-bold text-slate-700 mb-1">बुकिंग तारीख:</label>
+              <input type="date" id="mbDateInput" value="2026-11-19" class="w-full px-3 py-2 border border-slate-300 rounded-xl text-xs font-semibold">
+            </div>
+            <div>
+              <label class="block font-bold text-slate-700 mb-1">आवश्यक घंटे / एकड़:</label>
+              <input type="number" id="mbHrsInput" value="2" min="1" max="24" class="w-full px-3 py-2 border border-slate-300 rounded-xl text-xs font-semibold">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 bg-slate-50 border-t border-slate-200 flex justify-end space-x-2">
+        <button onclick="closeMachineryModal()" class="px-4 py-2 border border-slate-300 text-slate-700 font-bold text-xs rounded-xl hover:bg-slate-100 transition">
+          रद्द करें
+        </button>
+        <button onclick="confirmMachineryBooking()" class="px-5 py-2.5 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs rounded-xl transition shadow-md flex items-center space-x-1.5">
+          <i class="fa-solid fa-check"></i>
+          <span>बुकिंग पुष्ट करें</span>
+        </button>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
