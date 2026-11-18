@@ -81,6 +81,23 @@
     ::-webkit-scrollbar-thumb:hover {
       background: #94a3b8;
     }
+    /* Kisan Lite (2G Ultra-Low Bandwidth Mode) */
+    body.kisan-lite-mode * {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      box-shadow: none !important;
+      text-shadow: none !important;
+    }
+    body.kisan-lite-mode {
+      background-color: #f8fafc !important;
+    }
+    body.kisan-lite-mode .bg-gradient-to-br,
+    body.kisan-lite-mode .bg-gradient-to-r,
+    body.kisan-lite-mode .bg-gradient-to-tr {
+      background-image: none !important;
+      background-color: #0f172a !important;
+    }
   </style>
 </head>
 <body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased selection:bg-emerald-500 selection:text-white">
@@ -1703,7 +1720,7 @@
               </div>
               <h3 class="font-extrabold text-slate-900 text-base">3. Central Escrow & OTP Handshake</h3>
               <p class="text-xs text-slate-600 leading-relaxed">
-                Guarantees zero payment leakage. Advance buyer funds are safely locked in the Central Escrow Vault (<code class="text-blue-600 font-bold">jaymani.escrow@upi</code>) and automatically released upon dynamic 4-digit OTP verification at doorstep or store pickup.
+                Guarantees zero payment leakage. Advance buyer funds are safely locked in the Central Escrow Vault (<code class="text-blue-600 font-bold">9142223202@IBL</code>) and automatically released upon dynamic 4-digit OTP verification at doorstep or store pickup.
               </p>
               <div class="bg-slate-50 rounded-xl p-2.5 text-[11px] text-slate-700 font-mono border border-slate-200">
                 Automated Split: Vendor 95% • Platform 3% • Delivery 2%
@@ -2130,7 +2147,7 @@
             </div>
             <p class="text-xs text-slate-500 mt-0.5">किसान का पैसा प्लेटफॉर्म एस्क्रो में सुरक्षित है। सामान सुपुर्द करने पर 'Release Funds' पर क्लिक करें।</p>
           </div>
-          <span class="px-2.5 py-1 rounded bg-blue-100 text-blue-800 text-[11px] font-bold">Holding: jaymani.escrow@upi</span>
+          <span class="px-2.5 py-1 rounded bg-blue-100 text-blue-800 text-[11px] font-bold">Holding: 9142223202@IBL</span>
         </div>
 
         <div id="vendorEscrowOrdersList" class="p-4 divide-y divide-slate-100">
@@ -2397,7 +2414,7 @@
               System Administrator & Cryptographic Audit Console
             </h1>
             <p class="text-xs sm:text-sm text-slate-400 mt-0.5">
-              Real Authentication • Central Escrow (jaymani.escrow@upi) • SHA-256 Tamper-Evident Ledger
+              Real Authentication • Central Escrow (9142223202@IBL) • SHA-256 Tamper-Evident Ledger
             </p>
           </div>
 
@@ -2428,7 +2445,7 @@
         <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs">
           <div class="text-xs font-bold uppercase text-slate-400">Escrow Security</div>
           <div class="text-lg font-extrabold text-blue-600 mt-1">Central Platform Pool</div>
-          <div class="text-xs text-emerald-600 font-semibold mt-1">jaymani.escrow@upi</div>
+          <div class="text-xs text-emerald-600 font-semibold mt-1">9142223202@IBL</div>
         </div>
 
         <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs">
@@ -2952,7 +2969,7 @@
       <div class="space-y-1">
         <div class="text-xs font-bold text-slate-500 uppercase">Payable Escrow Amount</div>
         <div id="upiEscrowAmount" class="text-2xl font-extrabold text-blue-700">₹0.00</div>
-        <div class="text-[11px] text-slate-500 font-mono">VPA: <strong>jaymani.escrow@upi</strong></div>
+        <div class="text-[11px] text-slate-500 font-mono">VPA: <strong>9142223202@IBL</strong></div>
         <div class="text-[10px] text-emerald-600 font-semibold">SBI Agritech Escrow Pool Account</div>
       </div>
 
@@ -4088,6 +4105,7 @@
     }
 
     // =========================================================================
+    // 4. AI CROP & SEED DOCTOR ENGINE (PHOTO SCAN & INSTANT REMEDY)
     // 4. CROP HEALTH & SEED DIAGNOSTICS (ICAR PLANT CLINIC)
     // =========================================================================
 
@@ -4652,7 +4670,7 @@
               <div class="flex items-center space-x-3">
                 <div class="text-right">
                   <div class="text-base font-extrabold text-slate-900">₹${o.final_payable.toLocaleString('en-IN', {minimumFractionDigits: 2})}</div>
-                  <div class="text-[10px] text-blue-600 font-semibold">Held in jaymani.escrow@upi</div>
+                  <div class="text-[10px] text-blue-600 font-semibold">Held in 9142223202@IBL</div>
                 </div>
 
                 ${o.payment_status === 'ESCROW_HOLD' ? `
@@ -5112,7 +5130,7 @@
 
     function renderEscrowUpiQrCode(amount) {
       document.getElementById('upiEscrowAmount').innerText = `₹${amount.toLocaleString('en-IN', {minimumFractionDigits: 2})}`;
-      const upiUrl = `upi://pay?pa=7703079301@upi&pn=JaymaniKrishiPlatform&am=${amount.toFixed(2)}&cu=INR`;
+      const upiUrl = `upi://pay?pa=9142223202@IBL&pn=JaymaniKrishiPlatform&am=${amount.toFixed(2)}&cu=INR`;
 
       new QRious({
         element: document.getElementById('upiEscrowCanvas'),

@@ -12,7 +12,7 @@ Stack:
 - Real Session-based Authentication (Email + Password only, no direct switcher)
 - Crop Health Diagnostics (ICAR Photo Scan & Treatment Engine)
 - Multi-Retailer Price & Distance Comparison (Best Deal Finder across 6 verified retailers)
-- Central Escrow UPI QR Payment Gateway (jaymani.escrow@upi holding account with handover release)
+- Central Escrow UPI QR Payment Gateway (9142223202@IBL holding account with handover release)
 - Concurrency-safe stock reservation, Decimal-precision Bahi-Khata credit engine, SHA-256 digital audit trail
 
 Authors: Manish Pandey & Jayant Raj (Sharda University)
@@ -2025,7 +2025,7 @@ def api_place_order():
     - Concurrency-safe stock reservation
     - Strict financial Decimal arithmetic
     - Enforces Bahi-Khata credit ceiling: Reject if (balance + amount > sanctioned limit)
-    - Central Platform Escrow UPI Gateway: Holds funds in jaymani.escrow@upi holding account
+    - Central Platform Escrow UPI Gateway: Holds funds in 9142223202@IBL holding account
     - Kisan Coins loyalty redemption (1 coin = ₹1 direct discount)
     - SHA-256 cryptographic receipt hash generation
     """
@@ -3138,7 +3138,7 @@ def api_admin_health():
         },
         'security_status': {
             'sha256_verification': 'ALL_HASHES_VALIDATED',
-            'escrow_protection': 'ACTIVE (jaymani.escrow@upi)',
+            'escrow_protection': 'ACTIVE (9142223202@IBL)',
             'tamper_evident_ledgers': True
         }
     })
