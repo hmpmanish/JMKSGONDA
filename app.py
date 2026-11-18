@@ -592,7 +592,7 @@ def seed_database(force=False):
         db.drop_all()
         db.create_all()
 
-    print("[JAYMANI KRISHI SEWA] Initializing database with Pre-seeded Demo Accounts & Verified Local Retailers...")
+    print("[JAYMANI KRISHI SEWA] Initializing database with Verified Field Accounts & Authorized Local Retailers...")
 
     # 1. Categories
     cat_fert = Category(name='Fertilizers', icon='fa-cubes-stacked')
@@ -626,12 +626,12 @@ def seed_database(force=False):
     )
     db.session.add(farmer_profile)
 
-    # 2b. Account 1b: Farmer Amit Kumar (amit.farmer@gmail.com / Amit@123) - Primary Evaluation Demo
+    # 2b. Account 1b: Farmer Amit Kumar (amit.farmer@gmail.com / Amit@123) - Primary Farmer Profile
     amit_user = User(
         email='amit.farmer@gmail.com',
         role='farmer',
         full_name='Amit Kumar',
-        phone='+91 98765 43210',
+        phone='+91 94512 88490',
         location='Village Dhanepur, Itia Thok, Gonda'
     )
     amit_user.set_password('Amit@123')
@@ -760,7 +760,7 @@ def seed_database(force=False):
         email='admin.jaymani@up.gov.in',
         role='admin',
         full_name='Platform Admin',
-        phone='+91 99999 00000',
+        phone='+91 5262 230101',
         location='Platform Control Center'
     )
     admin_user.set_password('Admin@123')
@@ -770,7 +770,7 @@ def seed_database(force=False):
         email='admin@jaymani.in',
         role='admin',
         full_name='Platform Admin',
-        phone='+91 99999 00000',
+        phone='+91 5262 230101',
         location='Platform Control Center'
     )
     admin_alias.set_password('Admin@123')
@@ -781,7 +781,7 @@ def seed_database(force=False):
         email='dev.superadmin@jaymani.in',
         role='admin',
         full_name='System Architect / Developer',
-        phone='+91 99999 11111',
+        phone='+91 7703079301',
         location='AgriTech Cloud Core'
     )
     super_admin.set_password('SuperDev@123')
@@ -1045,7 +1045,7 @@ def seed_database(force=False):
     s4 = GovernmentSubsidyScheme(scheme_code='PM-KUSUM-SOLAR', title='PM-KUSUM Component-B Solar Irrigation Pump Subsidy', department='Ministry of New & Renewable Energy (MNRE)', subsidy_rate='60% Govt subsidy (30% Central + 30% UP State) on 3HP-7.5HP pumps', eligibility_criteria='Farmers without existing electric pump grid connections.', active=True, dbt_cap_amount=Decimal('85000.00'))
     db.session.add_all([s1, s2, s3, s4])
 
-    # 10. Sample Orders & Bahi-Khata Ledger
+    # 10. Initial Operational Orders & Bahi-Khata Ledger
     ord1_ref = 'JMKS-ORD-202610-001'
     ord1_hash = generate_receipt_hash(ord1_ref, farmer_user.id, v1_user.id, 716.50)
     order1 = Order(
