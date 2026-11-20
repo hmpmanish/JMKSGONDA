@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="100%" height="100%">
+  <rect width="300" height="300" fill="#f8fafc" rx="12"/>
+  <!-- Pack Body -->
+  <rect x="75" y="45" width="150" height="220" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="3"/>
+  <rect x="75" y="45" width="150" height="40" fill="#b45309"/>
+  <text x="150" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="14" fill="#ffffff">ICAR-IARI</text>
+  <!-- Central Crop Symbol -->
+  <circle cx="150" cy="130" r="32" fill="#ffffff" stroke="#f59e0b" stroke-width="2"/>
+  <path d="M150 110 C140 120 140 140 150 150 C160 140 160 120 150 110 Z" fill="#16a34a"/>
+  <!-- Details -->
+  <text x="150" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="13" fill="#0f172a">HYBRID MUSTARD</text>
+  <text x="150" y="198" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="11" fill="#b45309">Pusa Bold (हाई यील्ड सरसों)</text>
+  <rect x="90" y="212" width="120" height="22" rx="4" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="150" y="227" text-anchor="middle" font-family="Arial, sans-serif" font-weight="800" font-size="10" fill="#334155">NET WT: 2.0 KG</text>
+  <!-- Seed Certification Tag -->
+  <rect x="85" y="242" width="130" height="16" fill="#2563eb" rx="2"/>
+  <text x="150" y="253" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="8" fill="#ffffff">CERTIFIED SEED • NSC / UPSS</text>
+</svg>

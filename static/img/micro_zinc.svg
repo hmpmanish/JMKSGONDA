@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="100%" height="100%">
+  <rect width="300" height="300" fill="#f8fafc" rx="12"/>
+  <!-- Bag Body -->
+  <path d="M70 60 L230 60 L240 260 L60 260 Z" fill="#eff6ff" stroke="#2563eb" stroke-width="4"/>
+  <!-- Top Hem -->
+  <path d="M65 60 L235 60 L230 45 L70 45 Z" fill="#3b82f6" stroke="#2563eb" stroke-width="3"/>
+  <!-- Stitched Lines -->
+  <line x1="70" y1="52" x2="230" y2="52" stroke="#ffffff" stroke-width="2" stroke-dasharray="4,4"/>
+  <!-- Center Badge -->
+  <rect x="80" y="80" width="140" height="150" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <!-- Brand Header -->
+  <rect x="80" y="80" width="140" height="35" rx="8" fill="#1d4ed8"/>
+  <text x="150" y="103" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="16" fill="#ffffff">UTKARSH</text>
+  <!-- Product Name -->
+  <text x="150" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="14" fill="#0f172a">ZINC SULFATE 21%</text>
+  <text x="150" y="156" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="12" fill="#1e40af">HEPTAHYDRATE MICRONUTRIENT</text>
+  <!-- Net Weight & Seal -->
+  <rect x="95" y="172" width="110" height="26" rx="4" fill="#f1f5f9"/>
+  <text x="150" y="189" text-anchor="middle" font-family="Arial, sans-serif" font-weight="800" font-size="12" fill="#334155">NET WT: 5.0 KG</text>
+  <!-- Govt Stamp -->
+  <circle cx="150" cy="214" r="10" fill="none" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="150" y="217" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="6" fill="#16a34a">FCO 1985</text>
+</svg>

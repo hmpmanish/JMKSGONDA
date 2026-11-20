@@ -882,29 +882,29 @@ def seed_database(force=False):
     # 8. Essential Products & Multi-Retailer Matrix
     products_to_seed = [
         # --- DAP Across Retailers (Shows Multi-Retailer Best Deal Finder) ---
-        Product(vendor_id=v1_user.id, category_id=cat_fert.id, name='IFFCO DAP Fertilizer (50kg Bag)', hindi_name='इफको डीएपी खाद (50 किग्रा)', description='Di-Ammonium Phosphate (18:46:0) for root development and sowing.', unit='50kg Bag', price=Decimal('1340.00'), gov_msp_cap=Decimal('1350.00'), is_subsidized=True, subsidy_amount=Decimal('500.00'), stock_quantity=65, low_stock_threshold=15, image_url='https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?auto=format&fit=crop&w=400&q=80', tags='dap, phosphate, iffco, fertilizer'),
-        Product(vendor_id=v3_user.id, category_id=cat_fert.id, name='IFFCO DAP Fertilizer (50kg Bag)', hindi_name='इफको डीएपी खाद (50 किग्रा)', description='Govt subsidized certified DAP.', unit='50kg Bag', price=Decimal('1350.00'), gov_msp_cap=Decimal('1350.00'), is_subsidized=True, subsidy_amount=Decimal('500.00'), stock_quantity=120, low_stock_threshold=20, image_url='https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?auto=format&fit=crop&w=400&q=80', tags='dap, phosphate, iffco, fertilizer'),
-        Product(vendor_id=v2_user.id, category_id=cat_fert.id, name='IFFCO DAP Fertilizer (50kg Bag)', hindi_name='इफको डीएपी खाद (50 किग्रा)', description='High yield DAP.', unit='50kg Bag', price=Decimal('1355.00'), gov_msp_cap=Decimal('1350.00'), is_subsidized=True, subsidy_amount=Decimal('500.00'), stock_quantity=40, low_stock_threshold=15, image_url='https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?auto=format&fit=crop&w=400&q=80', tags='dap, phosphate, iffco, fertilizer'),
-        Product(vendor_id=v4_user.id, category_id=cat_fert.id, name='IFFCO DAP Fertilizer (50kg Bag)', hindi_name='इफको डीएपी खाद (50 किग्रा)', description='Genuine DAP.', unit='50kg Bag', price=Decimal('1360.00'), gov_msp_cap=Decimal('1350.00'), is_subsidized=True, subsidy_amount=Decimal('500.00'), stock_quantity=80, low_stock_threshold=15, image_url='https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?auto=format&fit=crop&w=400&q=80', tags='dap, phosphate, iffco, fertilizer'),
-        Product(vendor_id=v5_user.id, category_id=cat_fert.id, name='IFFCO DAP Fertilizer (50kg Bag)', hindi_name='इफको डीएपी खाद (50 किग्रा)', description='Quality DAP.', unit='50kg Bag', price=Decimal('1350.00'), gov_msp_cap=Decimal('1350.00'), is_subsidized=True, subsidy_amount=Decimal('500.00'), stock_quantity=55, low_stock_threshold=15, image_url='https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?auto=format&fit=crop&w=400&q=80', tags='dap, phosphate, iffco, fertilizer'),
-        Product(vendor_id=v6_user.id, category_id=cat_fert.id, name='IFFCO DAP Fertilizer (50kg Bag)', hindi_name='इफको डीएपी खाद (50 किग्रा)', description='Nearest stock of DAP at Dhanepur.', unit='50kg Bag', price=Decimal('1365.00'), gov_msp_cap=Decimal('1350.00'), is_subsidized=True, subsidy_amount=Decimal('500.00'), stock_quantity=25, low_stock_threshold=10, image_url='https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?auto=format&fit=crop&w=400&q=80', tags='dap, phosphate, iffco, fertilizer'),
+        Product(vendor_id=v1_user.id, category_id=cat_fert.id, name='IFFCO DAP Fertilizer (50kg Bag)', hindi_name='इफको डीएपी खाद (50 किग्रा)', description='Di-Ammonium Phosphate (18:46:0) for root development and sowing.', unit='50kg Bag', price=Decimal('1340.00'), gov_msp_cap=Decimal('1350.00'), is_subsidized=True, subsidy_amount=Decimal('500.00'), stock_quantity=65, low_stock_threshold=15, image_url='/static/img/fert_dap.svg', tags='dap, phosphate, iffco, fertilizer'),
+        Product(vendor_id=v3_user.id, category_id=cat_fert.id, name='IFFCO DAP Fertilizer (50kg Bag)', hindi_name='इफको डीएपी खाद (50 किग्रा)', description='Govt subsidized certified DAP.', unit='50kg Bag', price=Decimal('1350.00'), gov_msp_cap=Decimal('1350.00'), is_subsidized=True, subsidy_amount=Decimal('500.00'), stock_quantity=120, low_stock_threshold=20, image_url='/static/img/fert_dap.svg', tags='dap, phosphate, iffco, fertilizer'),
+        Product(vendor_id=v2_user.id, category_id=cat_fert.id, name='IFFCO DAP Fertilizer (50kg Bag)', hindi_name='इफको डीएपी खाद (50 किग्रा)', description='High yield DAP.', unit='50kg Bag', price=Decimal('1355.00'), gov_msp_cap=Decimal('1350.00'), is_subsidized=True, subsidy_amount=Decimal('500.00'), stock_quantity=40, low_stock_threshold=15, image_url='/static/img/fert_dap.svg', tags='dap, phosphate, iffco, fertilizer'),
+        Product(vendor_id=v4_user.id, category_id=cat_fert.id, name='IFFCO DAP Fertilizer (50kg Bag)', hindi_name='इफको डीएपी खाद (50 किग्रा)', description='Genuine DAP.', unit='50kg Bag', price=Decimal('1360.00'), gov_msp_cap=Decimal('1350.00'), is_subsidized=True, subsidy_amount=Decimal('500.00'), stock_quantity=80, low_stock_threshold=15, image_url='/static/img/fert_dap.svg', tags='dap, phosphate, iffco, fertilizer'),
+        Product(vendor_id=v5_user.id, category_id=cat_fert.id, name='IFFCO DAP Fertilizer (50kg Bag)', hindi_name='इफको डीएपी खाद (50 किग्रा)', description='Quality DAP.', unit='50kg Bag', price=Decimal('1350.00'), gov_msp_cap=Decimal('1350.00'), is_subsidized=True, subsidy_amount=Decimal('500.00'), stock_quantity=55, low_stock_threshold=15, image_url='/static/img/fert_dap.svg', tags='dap, phosphate, iffco, fertilizer'),
+        Product(vendor_id=v6_user.id, category_id=cat_fert.id, name='IFFCO DAP Fertilizer (50kg Bag)', hindi_name='इफको डीएपी खाद (50 किग्रा)', description='Nearest stock of DAP at Dhanepur.', unit='50kg Bag', price=Decimal('1365.00'), gov_msp_cap=Decimal('1350.00'), is_subsidized=True, subsidy_amount=Decimal('500.00'), stock_quantity=25, low_stock_threshold=10, image_url='/static/img/fert_dap.svg', tags='dap, phosphate, iffco, fertilizer'),
 
         # --- Neem Coated Urea ---
-        Product(vendor_id=v1_user.id, category_id=cat_fert.id, name='Neem Coated Urea (45kg Bag)', hindi_name='नीम लेपित यूरिया (45 किग्रा)', description='Govt subsidized Urea 46% N with neem coating.', unit='45kg Bag', price=Decimal('266.50'), gov_msp_cap=Decimal('266.50'), is_subsidized=True, subsidy_amount=Decimal('225.00'), stock_quantity=140, low_stock_threshold=20, image_url='https://images.unsplash.com/photo-1595246140625-573b715d11dc?auto=format&fit=crop&w=400&q=80', tags='urea, khad, nitrogen, fertilizer'),
-        Product(vendor_id=v6_user.id, category_id=cat_fert.id, name='Neem Coated Urea (45kg Bag)', hindi_name='नीम लेपित यूरिया (45 किग्रा)', description='Immediate pickup at Dhanepur Chauraha.', unit='45kg Bag', price=Decimal('266.50'), gov_msp_cap=Decimal('266.50'), is_subsidized=True, subsidy_amount=Decimal('225.00'), stock_quantity=90, low_stock_threshold=20, image_url='https://images.unsplash.com/photo-1595246140625-573b715d11dc?auto=format&fit=crop&w=400&q=80', tags='urea, khad, nitrogen, fertilizer'),
+        Product(vendor_id=v1_user.id, category_id=cat_fert.id, name='Neem Coated Urea (45kg Bag)', hindi_name='नीम लेपित यूरिया (45 किग्रा)', description='Govt subsidized Urea 46% N with neem coating.', unit='45kg Bag', price=Decimal('266.50'), gov_msp_cap=Decimal('266.50'), is_subsidized=True, subsidy_amount=Decimal('225.00'), stock_quantity=140, low_stock_threshold=20, image_url='/static/img/fert_urea.svg', tags='urea, khad, nitrogen, fertilizer'),
+        Product(vendor_id=v6_user.id, category_id=cat_fert.id, name='Neem Coated Urea (45kg Bag)', hindi_name='नीम लेपित यूरिया (45 किग्रा)', description='Immediate pickup at Dhanepur Chauraha.', unit='45kg Bag', price=Decimal('266.50'), gov_msp_cap=Decimal('266.50'), is_subsidized=True, subsidy_amount=Decimal('225.00'), stock_quantity=90, low_stock_threshold=20, image_url='/static/img/fert_urea.svg', tags='urea, khad, nitrogen, fertilizer'),
 
         # --- Hybrid Mustard Seeds ---
-        Product(vendor_id=v1_user.id, category_id=cat_seeds.id, name='Hybrid Mustard Seeds (Pusa Bold - 2kg)', hindi_name='पूसा बोल्ड सरसों उन्नत बीज (2 किग्रा)', description='Certified high-yielding hybrid mustard seeds (42% oil).', unit='2kg Pack', price=Decimal('450.00'), gov_msp_cap=Decimal('480.00'), is_subsidized=False, subsidy_amount=Decimal('0.00'), stock_quantity=28, low_stock_threshold=10, image_url='https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=400&q=80', tags='mustard, sarson, beej, seeds, pusa bold'),
+        Product(vendor_id=v1_user.id, category_id=cat_seeds.id, name='Hybrid Mustard Seeds (Pusa Bold - 2kg)', hindi_name='पूसा बोल्ड सरसों उन्नत बीज (2 किग्रा)', description='Certified high-yielding hybrid mustard seeds (42% oil).', unit='2kg Pack', price=Decimal('450.00'), gov_msp_cap=Decimal('480.00'), is_subsidized=False, subsidy_amount=Decimal('0.00'), stock_quantity=28, low_stock_threshold=10, image_url='/static/img/chem_rogor.svg', tags='mustard, sarson, beej, seeds, pusa bold'),
 
         # --- Micro-Nutrients: Zinc Sulfate ---
-        Product(vendor_id=v1_user.id, category_id=cat_micro.id, name='Zinc Sulfate Heptahydrate 21% (5kg)', hindi_name='जिंक सल्फेट 21% (5 किग्रा बैग)', description='Cures Khaira disease and zinc chlorosis in paddy/wheat.', unit='5kg Bag', price=Decimal('320.00'), gov_msp_cap=Decimal('350.00'), is_subsidized=False, subsidy_amount=Decimal('0.00'), stock_quantity=8, low_stock_threshold=15, image_url='https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=400&q=80', tags='zinc, jink, khaira rog, micro nutrient'),
+        Product(vendor_id=v1_user.id, category_id=cat_micro.id, name='Zinc Sulfate Heptahydrate 21% (5kg)', hindi_name='जिंक सल्फेट 21% (5 किग्रा बैग)', description='Cures Khaira disease and zinc chlorosis in paddy/wheat.', unit='5kg Bag', price=Decimal('320.00'), gov_msp_cap=Decimal('350.00'), is_subsidized=False, subsidy_amount=Decimal('0.00'), stock_quantity=8, low_stock_threshold=15, image_url='/static/img/fert_bionpk.svg', tags='zinc, jink, khaira rog, micro nutrient'),
 
         # --- Plant Health Clinic Prescribed Formulations ---
-        Product(vendor_id=v1_user.id, category_id=cat_med.id, name='Tilt Propiconazole 25% EC (250ml)', hindi_name='टिल्ट प्रोपिकोनाजोल 25% ईसी (250 मिली)', description='Prescribed cure for Wheat Yellow Rust (गेहूं का पीला रतुआ). Systemic broad-spectrum fungicide.', unit='250ml Bottle', price=Decimal('380.00'), gov_msp_cap=Decimal('400.00'), is_subsidized=False, subsidy_amount=Decimal('0.00'), stock_quantity=24, low_stock_threshold=8, image_url='https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=400&q=80', tags='tilt, propiconazole, yellow rust, pila ratua, fungicide, medicine'),
-        Product(vendor_id=v1_user.id, category_id=cat_med.id, name='Rogor Dimethoate 30% EC (500ml)', hindi_name='रोगोर डाइमेथोएट 30% ईसी (500 मिली)', description='Prescribed insecticide for Mustard Aphid / Mahu (सरसों का माहू कीट).', unit='500ml Bottle', price=Decimal('290.00'), gov_msp_cap=Decimal('310.00'), is_subsidized=False, subsidy_amount=Decimal('0.00'), stock_quantity=30, low_stock_threshold=10, image_url='https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=400&q=80', tags='rogor, dimethoate, aphid, mahu, insecticide, medicine'),
+        Product(vendor_id=v1_user.id, category_id=cat_med.id, name='Tilt Propiconazole 25% EC (250ml)', hindi_name='टिल्ट प्रोपिकोनाजोल 25% ईसी (250 मिली)', description='Prescribed cure for Wheat Yellow Rust (गेहूं का पीला रतुआ). Systemic broad-spectrum fungicide.', unit='250ml Bottle', price=Decimal('380.00'), gov_msp_cap=Decimal('400.00'), is_subsidized=False, subsidy_amount=Decimal('0.00'), stock_quantity=24, low_stock_threshold=8, image_url='/static/img/chem_tilt.svg', tags='tilt, propiconazole, yellow rust, pila ratua, fungicide, medicine'),
+        Product(vendor_id=v1_user.id, category_id=cat_med.id, name='Rogor Dimethoate 30% EC (500ml)', hindi_name='रोगोर डाइमेथोएट 30% ईसी (500 मिली)', description='Prescribed insecticide for Mustard Aphid / Mahu (सरसों का माहू कीट).', unit='500ml Bottle', price=Decimal('290.00'), gov_msp_cap=Decimal('310.00'), is_subsidized=False, subsidy_amount=Decimal('0.00'), stock_quantity=30, low_stock_threshold=10, image_url='/static/img/micro_zinc.svg', tags='rogor, dimethoate, aphid, mahu, insecticide, medicine'),
 
         # --- Bio-Fertilizer ---
-        Product(vendor_id=v2_user.id, category_id=cat_bio.id, name='IFFCO Bio-NPK Liquid Consortium (1 Litre)', hindi_name='इफको तरल जैव-उर्वरक (1 लीटर)', description='Azotobacter + PSB + KMB carrier bio-fertilizer.', unit='1 Litre Bottle', price=Decimal('220.00'), gov_msp_cap=Decimal('250.00'), is_subsidized=True, subsidy_amount=Decimal('50.00'), stock_quantity=50, low_stock_threshold=12, image_url='https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=400&q=80', tags='bio fertilizer, organic, liquid npk, jaivik khad'),
+        Product(vendor_id=v2_user.id, category_id=cat_bio.id, name='IFFCO Bio-NPK Liquid Consortium (1 Litre)', hindi_name='इफको तरल जैव-उर्वरक (1 लीटर)', description='Azotobacter + PSB + KMB carrier bio-fertilizer.', unit='1 Litre Bottle', price=Decimal('220.00'), gov_msp_cap=Decimal('250.00'), is_subsidized=True, subsidy_amount=Decimal('50.00'), stock_quantity=50, low_stock_threshold=12, image_url='/static/img/chem_tilt.svg', tags='bio fertilizer, organic, liquid npk, jaivik khad'),
 
         # --- Real Branded Catalog: Insecticides India Ltd (https://insecticidesindia.com/insecticide/) ---
         # 1. Lethal (Chlorpyrifos 20% EC)
@@ -921,7 +921,7 @@ def seed_database(force=False):
             subsidy_amount=Decimal('0.00'),
             stock_quantity=45,
             low_stock_threshold=10,
-            image_url='https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=400&q=80',
+            image_url='/static/img/chem_tilt.svg',
             tags='lethal, chlorpyrifos, insecticide, termite, deemak, stem borer, insecticides india, keetnashak',
             technical_name='Chlorpyriphos 50% + Cypermethrin 5% EC / 20% EC',
             dosage='2.0 - 2.5 ml per litre of water (350-400 ml/acre)',
@@ -942,7 +942,7 @@ def seed_database(force=False):
             subsidy_amount=Decimal('0.00'),
             stock_quantity=80,
             low_stock_threshold=15,
-            image_url='https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=400&q=80',
+            image_url='/static/img/micro_zinc.svg',
             tags='thimet, phorate, soil pest, root grub, deemak, safed lat, granular, insecticides india',
             technical_name='Phorate 10% CG (Granular Formulation)',
             dosage='4.0 - 5.0 kg per acre broadcast with sand at sowing',
@@ -963,7 +963,7 @@ def seed_database(force=False):
             subsidy_amount=Decimal('0.00'),
             stock_quantity=35,
             low_stock_threshold=8,
-            image_url='https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=400&q=80',
+            image_url='/static/img/fert_bionpk.svg',
             tags='victor, imidacloprid, aphid, mahu, jassid, whitefly, safed makkhi, insecticides india',
             technical_name='Imidacloprid 17.8% SL (Systemic Neonicotinoid)',
             dosage='0.5 - 0.75 ml per litre of water (50-60 ml/acre)',
@@ -984,7 +984,7 @@ def seed_database(force=False):
             subsidy_amount=Decimal('0.00'),
             stock_quantity=50,
             low_stock_threshold=12,
-            image_url='https://images.unsplash.com/photo-1595246140625-573b715d11dc?auto=format&fit=crop&w=400&q=80',
+            image_url='/static/img/fert_urea.svg',
             tags='monocil, monocrotophos, sucking pests, chewing pests, insecticide, insecticides india',
             technical_name='Monocrotophos 36% SL (Broad-Spectrum Foliar)',
             dosage='1.5 - 2.0 ml per litre of water (250-300 ml/acre)',
@@ -1005,7 +1005,7 @@ def seed_database(force=False):
             subsidy_amount=Decimal('0.00'),
             stock_quantity=25,
             low_stock_threshold=6,
-            image_url='https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=400&q=80',
+            image_url='/static/img/chem_rogor.svg',
             tags='hercules, diafenthiuron, whitefly, mites, thrips, makdi, insecticides india',
             technical_name='Diafenthiuron 50% WP (Vapor Action Miticide)',
             dosage='1.0 - 1.25 gm per litre of water (200-250 gm/acre)',
@@ -1026,7 +1026,7 @@ def seed_database(force=False):
             subsidy_amount=Decimal('0.00'),
             stock_quantity=30,
             low_stock_threshold=8,
-            image_url='https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?auto=format&fit=crop&w=400&q=80',
+            image_url='/static/img/fert_dap.svg',
             tags='pulsor, thifluzamide, sheath blight, stem rot, tana sadan, fungicide, insecticides india',
             technical_name='Thifluzamide 24% SC (World-Class Succinate Dehydrogenase Inhibitor)',
             dosage='1.0 ml per litre of water (150 ml/acre)',
@@ -1179,6 +1179,11 @@ def seed_database(force=False):
 # ============================================================================
 # API CONTROLLERS
 # ============================================================================
+
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'), 'favicon.svg', mimetype='image/svg+xml')
 
 @app.route('/')
 def index():
@@ -1424,7 +1429,7 @@ def api_bootstrap():
         'seasonal_kits': [
             {
                 'id': 'kit-wheat-rabi',
-                'title': '🌾 Complete Wheat Rabi Protection Kit (गेहूं रबी संपूर्ण किट)',
+                'title': 'Complete Wheat Rabi Protection Kit (गेहूं रबी संपूर्ण किट)',
                 'badge': '5% COMBO DISCOUNT',
                 'description': 'Recommended by KVK Gonda for CRI & tillering stage. Includes Neem Urea (45kg), DAP (50kg), Zinc Sulphate (5kg), and Lethal (500ml).',
                 'original_price': 1996.50,
@@ -1434,7 +1439,7 @@ def api_bootstrap():
             },
             {
                 'id': 'kit-mustard-shield',
-                'title': '🌼 Mustard Aphid & Pod Shield Kit (सरसों सुरक्षा किट)',
+                'title': 'Mustard Aphid & Pod Shield Kit (सरसों सुरक्षा किट)',
                 'badge': '5% COMBO DISCOUNT',
                 'description': 'Targeted defense against Mustard Aphid and Alternaria Blight. Includes Victor 250ml + Pulsor 150ml + Micronutrient Mix.',
                 'original_price': 1790.00,
@@ -1615,32 +1620,32 @@ def compute_weather_advisory(scenario='sunny', overrides=None):
     if rain >= 50 or cond == 'RAINY':
         irrigation = {
             'decision': 'STOP',
-            'badge': '🛑 सिंचाई तुरंत रोकें (Do Not Irrigate)',
+            'badge': 'सिंचाई तुरंत रोकें (Do Not Irrigate)',
             'badge_color': 'bg-rose-100 text-rose-800 border-rose-300',
             'accent_border': 'border-rose-400',
             'advisory': 'अगले 24-48 घंटों में बारिश की संभावना है। बेवजह पानी, बिजली और डीजल का खर्च न करें।',
             'reasoning': 'बारिश के पानी से मिट्टी में पर्याप्त नमी आ जाएगी। अतिरिक्त पानी से फसलों (विशेषकर सरसों और गेहूं) की जड़ों में गलन का खतरा हो सकता है।',
-            'saving_estimate': '💡 अनुमानित बचत: लगभग ₹450-₹800 प्रति एकड़ (डीजल पम्प / बिजली खर्च)'
+            'saving_estimate': 'अनुमानित बचत: लगभग ₹450-₹800 प्रति एकड़ (डीजल पम्प / बिजली खर्च)'
         }
     elif rain < 20 and cond in ['CLEAR_SUNNY', 'SUNNY', 'WINDY']:
         irrigation = {
             'decision': 'RECOMMENDED',
-            'badge': '✅ सिंचाई का अनुकूल समय (Irrigation Recommended)',
+            'badge': 'सिंचाई का अनुकूल समय (Irrigation Recommended)',
             'badge_color': 'bg-emerald-100 text-emerald-800 border-emerald-300',
             'accent_border': 'border-emerald-400',
             'advisory': 'मौसम साफ और शुष्क है। फसल की जरूरत के हिसाब से हल्की सिंचाई करें।',
             'reasoning': 'तेज धूप और शुष्कता के कारण वाष्पीकरण बढ़ रहा है। पौधों में कल्ले फूटने और दाना भरने हेतु पर्याप्त नमी आवश्यक है।',
-            'saving_estimate': '💡 सुझाव: शाम 4 बजे के बाद हल्की सिंचाई करें ताकि पानी का वाष्पीकरण न्यूनतम रहे।'
+            'saving_estimate': 'सुझाव: शाम 4 बजे के बाद हल्की सिंचाई करें ताकि पानी का वाष्पीकरण न्यूनतम रहे।'
         }
     else:
         irrigation = {
             'decision': 'CAUTION',
-            'badge': '⚠️ सावधानीपूर्वक सीमित सिंचाई (Irrigate with Caution)',
+            'badge': 'सावधानीपूर्वक सीमित सिंचाई (Irrigate with Caution)',
             'badge_color': 'bg-amber-100 text-amber-800 border-amber-300',
             'accent_border': 'border-amber-400',
             'advisory': 'आंशिक बादल छाए रहने की संभावना है। केवल अत्यधिक आवश्यकता होने पर ही हल्की सिंचाई करें।',
             'reasoning': 'मौसम अनिश्चित है। अगले 12 घंटों का रडार व मौसम अपडेट देखकर ही पूर्ण सिंचाई का फैसला लें।',
-            'saving_estimate': '💡 सुझाव: गहरी सिंचाई न करें, केवल जड़ों के पास हल्की नमी दें।'
+            'saving_estimate': 'सुझाव: गहरी सिंचाई न करें, केवल जड़ों के पास हल्की नमी दें।'
         }
 
     # Rule B: Chemical Spray & Market Purchase Advisory (दवा खरीद एवं छिड़काव सलाह)
@@ -1649,7 +1654,7 @@ def compute_weather_advisory(scenario='sunny', overrides=None):
     if rain >= 40 or wind > 15:
         spray = {
             'decision': 'AVOID',
-            'badge': '⚠️ दवा का छिड़काव आज न करें (Avoid Spraying Today)',
+            'badge': 'दवा का छिड़काव आज न करें (Avoid Spraying Today)',
             'badge_color': 'bg-rose-100 text-rose-800 border-rose-300',
             'accent_border': 'border-rose-400',
             'advisory': 'तेज हवा से दवा उड़ जाएगी और बारिश से धुल जाएगी, जिससे आपका पैसा बर्बाद होगा। बाजार से दवा खरीदकर रख सकते हैं, लेकिन छिड़काव मौसम साफ होने पर ही करें।',
@@ -1666,7 +1671,7 @@ def compute_weather_advisory(scenario='sunny', overrides=None):
     elif cond in ['CLEAR_SUNNY', 'SUNNY'] and wind <= 12 and rain < 20:
         spray = {
             'decision': 'IDEAL',
-            'badge': '🎯 छिड़काव के लिए सर्वोत्तम मौसम (Ideal Spray Conditions)',
+            'badge': 'छिड़काव के लिए सर्वोत्तम मौसम (Ideal Spray Conditions)',
             'badge_color': 'bg-emerald-100 text-emerald-800 border-emerald-300',
             'accent_border': 'border-emerald-400',
             'advisory': 'मौसम बिल्कुल अनुकूल है। सुबह 8-11 बजे या शाम 4-6 बजे छिड़काव करें।',
@@ -1683,7 +1688,7 @@ def compute_weather_advisory(scenario='sunny', overrides=None):
     else:
         spray = {
             'decision': 'CAUTION',
-            'badge': '⚠️ सावधानीपूर्वक सीमित छिड़काव (Spray with Caution)',
+            'badge': 'सावधानीपूर्वक सीमित छिड़काव (Spray with Caution)',
             'badge_color': 'bg-amber-100 text-amber-800 border-amber-300',
             'accent_border': 'border-amber-400',
             'advisory': 'हवा की गति मध्यम है। दोपहर में तेज धूप में छिड़काव न करें, केवल सुबह शांत हवा में ही स्प्रे करें।',
@@ -1919,7 +1924,7 @@ DISEASE_KNOWLEDGE_BASE = {
         'cure_remedy': 'टिल्ट (Propiconazole 25% EC) फफूंदनाशक दवा का 1 मिलीलीटर प्रति लीटर पानी (200 मिली प्रति एकड़) की दर से 200 लीटर पानी में घोलकर तुरंत छिड़काव करें।',
         'recommended_product_query': 'Propiconazole',
         'recommended_product_name': 'Tilt Propiconazole 25% EC (250ml)',
-        'sample_image': 'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=500&q=80'
+        'sample_image': '/static/img/clinic_yellow_rust.svg'
     },
     'mustard_aphid': {
         'id': 'mustard_aphid',
@@ -1933,7 +1938,7 @@ DISEASE_KNOWLEDGE_BASE = {
         'cure_remedy': 'रोगोर (Dimethoate 30% EC) 1.5 मिलीलीटर प्रति लीटर पानी अथवा इमिडाक्लोप्रिड 17.8% SL 0.5 मिली प्रति लीटर पानी की दर से शाम के समय छिड़काव करें।',
         'recommended_product_query': 'Dimethoate',
         'recommended_product_name': 'Rogor Dimethoate 30% EC (500ml)',
-        'sample_image': 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=500&q=80'
+        'sample_image': '/static/img/clinic_stem_borer.svg'
     },
     'zinc_deficiency': {
         'id': 'zinc_deficiency',
@@ -1947,7 +1952,7 @@ DISEASE_KNOWLEDGE_BASE = {
         'cure_remedy': 'जिंक सल्फेट 21% (5 किग्रा) + यूरिया (2.5 किग्रा) को 200 लीटर पानी में घोलकर प्रति एकड़ खड़ी फसल पर छिड़काव करें।',
         'recommended_product_query': 'Zinc',
         'recommended_product_name': 'Zinc Sulfate Heptahydrate 21% (5kg)',
-        'sample_image': 'https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=500&q=80'
+        'sample_image': '/static/img/clinic_aphids.svg'
     },
     'nitrogen_chlorosis': {
         'id': 'nitrogen_chlorosis',
@@ -1961,7 +1966,7 @@ DISEASE_KNOWLEDGE_BASE = {
         'cure_remedy': 'नीम लेपित यूरिया (45 किग्रा बोरी) की टॉप ड्रेसिंग करें अथवा इफको नैनो यूरिया (4 मिली/लीटर) का पर्णीय छिड़काव करें।',
         'recommended_product_query': 'Urea',
         'recommended_product_name': 'Neem Coated Urea (45kg Bag)',
-        'sample_image': 'https://images.unsplash.com/photo-1595246140625-573b715d11dc?auto=format&fit=crop&w=500&q=80'
+        'sample_image': '/static/img/clinic_wilt.svg'
     },
     'soil_salinity': {
         'id': 'soil_salinity',
@@ -1975,7 +1980,7 @@ DISEASE_KNOWLEDGE_BASE = {
         'cure_remedy': 'इफको तरल जैव-उर्वरक (Bio-NPK Consortium) 1 लीटर प्रति एकड़ सिंचाई के पानी के साथ चलाएं या बीज शोधन करें।',
         'recommended_product_query': 'Bio',
         'recommended_product_name': 'IFFCO Bio-NPK Liquid Consortium (1 Litre)',
-        'sample_image': 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=500&q=80'
+        'sample_image': '/static/img/clinic_deficiency.svg'
     }
 }
 

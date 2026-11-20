@@ -3,7 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  <title>JAYMANI KRISHI SEWA — Digital Agritech Marketplace & Synchronized Bahi-Khata Ledger</title>
+  <!-- Official Custom Domain & Canonical Identity -->
+  <link rel="canonical" href="https://jaymani.in/">
+  <meta name="custom-domain" content="jaymani.in">
+  <meta property="og:url" content="https://jaymani.in/">
+  <meta property="og:title" content="JAYMANI KRISHI SEWA - Digital Agritech Marketplace &amp; Synchronized Bahi-Khata Ledger">
+  <meta property="og:description" content="District Gonda Authorized Agricultural Input Marketplace and Digital Bahi-Khata Credit Ledger. Verified Dealer: Pandey Traders (DAO SEED/147/GDN/123).">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+  <link rel="alternate icon" href="/static/favicon.svg">
+
+  <title>JAYMANI KRISHI SEWA - Digital Agritech Marketplace & Synchronized Bahi-Khata Ledger</title>
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -48,23 +59,12 @@
     .hindi-text {
       font-family: 'Hind', sans-serif;
     }
-    /* Pulse wave for voice recognition */
-    @keyframes pulse-ring {
-      0% { transform: scale(0.95); opacity: 0.8; }
-      50% { transform: scale(1.15); opacity: 0.4; }
-      100% { transform: scale(0.95); opacity: 0.8; }
-    }
+    /* Static hairline indicator */
     .voice-pulse {
-      animation: pulse-ring 1.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-    }
-    /* Scanning laser beam for Crop Diagnostic Scanner */
-    @keyframes scan-beam {
-      0% { top: 0%; opacity: 0.8; }
-      50% { top: 95%; opacity: 1; }
-      100% { top: 0%; opacity: 0.8; }
+      border: 2px solid #10b981;
     }
     .scan-beam {
-      animation: scan-beam 2.2s ease-in-out infinite;
+      display: none;
     }
     /* Custom scrollbar */
     ::-webkit-scrollbar {
@@ -116,7 +116,7 @@
           <i class="fa-solid fa-chart-line mr-1 text-emerald-400"></i> APMC मंडी भाव (Live)
         </span>
         <div id="mandiTickerContent" class="flex items-center space-x-4 text-[11px] overflow-x-auto no-scrollbar whitespace-nowrap text-slate-300">
-          <span>🏛️ <b>गोंडा:</b> गेहूं ₹2,275 <span class="text-emerald-400 font-bold">▲</span></span>
+          <span><i class="fa-solid fa-building-columns text-emerald-400 mr-1"></i><b>गोंडा:</b> गेहूं ₹2,275 <span class="text-emerald-400 font-bold">▲</span></span>
           <span class="text-slate-600">|</span>
           <span>धान ₹2,183 <span class="text-slate-400 font-bold">▬</span></span>
           <span class="text-slate-600">|</span>
@@ -126,9 +126,9 @@
           <span class="text-slate-600">|</span>
           <span>चना ₹5,600 <span class="text-emerald-400 font-bold">▲</span></span>
           <span class="text-slate-600">|</span>
-          <span>🏛️ <b>बलरामपुर:</b> गेहूं ₹2,260 ▬</span>
+          <span><i class="fa-solid fa-building-columns text-emerald-400 mr-1"></i><b>बलरामपुर:</b> गेहूं ₹2,260 ▬</span>
           <span class="text-slate-600">|</span>
-          <span>🏛️ <b>अयोध्या:</b> नया आलू ₹1,450 ▲</span>
+          <span><i class="fa-solid fa-building-columns text-emerald-400 mr-1"></i><b>अयोध्या:</b> नया आलू ₹1,450 ▲</span>
         </div>
       </div>
 
@@ -178,7 +178,7 @@
         </div>
 
         <!-- Evaluator Guided Tour Pill -->
-        <button onclick="startEvaluatorTour()" class="px-2.5 py-0.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold shadow-sm transition flex items-center space-x-1">
+        <button onclick="startEvaluatorTour()" class="px-2.5 py-0.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-extrabold shadow-sm transition flex items-center space-x-1">
           <i class="fa-solid fa-graduation-cap"></i>
           <span>Evaluator Tour</span>
         </button>
@@ -196,7 +196,7 @@
         <!-- Logo & Branding -->
         <div class="flex items-center space-x-3 cursor-pointer" onclick="navGoTo('home')">
           <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-tr from-emerald-700 to-green-500 flex items-center justify-center text-white shadow-md shadow-emerald-500/20 text-xl font-bold">
-            🌾
+            
           </div>
           <div>
             <div class="flex items-center space-x-2">
@@ -231,6 +231,14 @@
             <i class="fa-solid fa-circle-info text-blue-600"></i>
             <span>About Us</span>
           </button>
+          <button onclick="navGoTo('privacy')" class="px-3 py-1.5 rounded-lg text-xs font-bold text-slate-700 hover:text-emerald-700 hover:bg-emerald-50 transition flex items-center space-x-1.5">
+            <i class="fa-solid fa-shield-halved text-emerald-700"></i>
+            <span>Privacy Policy</span>
+          </button>
+          <button onclick="navGoTo('terms')" class="px-3 py-1.5 rounded-lg text-xs font-bold text-slate-700 hover:text-emerald-700 hover:bg-emerald-50 transition flex items-center space-x-1.5">
+            <i class="fa-solid fa-scale-balanced text-slate-700"></i>
+            <span>Terms &amp; Conditions</span>
+          </button>
         </nav>
 
         <!-- Authenticated State Badges & User Header Actions -->
@@ -238,7 +246,7 @@
           
           <!-- Kisan Coins Badge (Farmer Role) -->
           <div id="topCoinBadge" class="hidden items-center space-x-1.5 px-3 py-1.5 bg-amber-50 border border-amber-200 rounded-full text-amber-800 text-xs sm:text-sm font-bold shadow-xs cursor-pointer hover:bg-amber-100 transition" onclick="showTab('bahiTab')">
-            <span class="text-amber-500 animate-bounce">🪙</span>
+            <span class="text-amber-500 "><i class="fa-solid fa-coins text-amber-500"></i></span>
             <span id="navKisanCoins">150</span>
             <span class="hidden md:inline font-normal text-amber-700 text-xs">(Coins ₹150)</span>
           </div>
@@ -252,15 +260,15 @@
           </div>
 
           <!-- Emergency Govt Helpline (1800-180-1551) -->
-          <button onclick="triggerCallModal('1800-180-1551', 'Kisan Call Center (24x7 Govt Helpline)')" class="hidden xl:flex items-center space-x-1.5 px-3 py-1.5 bg-rose-50 border border-rose-200 text-rose-700 rounded-full text-xs font-semibold hover:bg-rose-100 transition" title="1-Click Kisan Helpline Call">
-            <i class="fa-solid fa-phone-volume text-rose-600 animate-pulse"></i>
+          <button onclick="triggerCallModal('1800-180-1551', 'Kisan Call Center (24x7 Govt Helpline)')" class="hidden xl:flex items-center space-x-1.5 px-3 py-1.5 bg-rose-50 border border-rose-200 text-rose-700 rounded-lg text-xs font-semibold hover:bg-rose-100 transition" title="1-Click Kisan Helpline Call">
+            <i class="fa-solid fa-phone-volume text-rose-600 "></i>
             <span>Helpline: <strong>1800-180-1551</strong></span>
           </button>
 
           <!-- Cart Drawer Button -->
           <button id="navCartBtn" onclick="toggleCartDrawer(true)" class="relative p-2.5 rounded-xl bg-slate-100 hover:bg-emerald-50 hover:text-emerald-700 border border-slate-200 transition">
             <i class="fa-solid fa-cart-shopping text-base"></i>
-            <span id="cartCountBadge" class="absolute -top-1 -right-1 w-5 h-5 bg-emerald-600 text-white rounded-full text-[11px] font-bold flex items-center justify-center shadow-xs">0</span>
+            <span id="cartCountBadge" class="absolute -top-1 -right-1 w-5 h-5 bg-emerald-600 text-white rounded-md text-[11px] font-bold flex items-center justify-center shadow-xs">0</span>
           </button>
 
           <!-- ACTIVE USER PROFILE & EXPLICIT LOGOUT BUTTON -->
@@ -313,7 +321,7 @@
         <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <div class="flex flex-wrap items-center gap-2 text-emerald-200 text-xs sm:text-sm font-semibold tracking-wide uppercase">
-              <span class="inline-flex items-center space-x-1 bg-emerald-700/80 px-2.5 py-0.5 rounded-full text-[11px] text-emerald-100">
+              <span class="inline-flex items-center space-x-1 bg-emerald-700/80 px-2.5 py-0.5 rounded-md text-[11px] text-emerald-100">
                 <i class="fa-solid fa-shield-halved text-emerald-300"></i>
                 <span>UP Govt Approved Agritech Model</span>
               </span>
@@ -351,7 +359,7 @@
           </div>
         </div>
 
-        <div class="absolute -right-8 -bottom-8 opacity-10 text-9xl pointer-events-none">🌾</div>
+        <div class="absolute -right-8 -bottom-8 opacity-5 text-slate-400 pointer-events-none"><i class="fa-solid fa-seedling text-9xl"></i></div>
       </div>
 
       <!-- PINNED VERIFIED DEALERSHIP SHOWCASE (PANDEY TRADERS) -->
@@ -359,17 +367,17 @@
         <div class="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
           <div class="space-y-2">
             <div class="flex flex-wrap items-center gap-2">
-              <span class="px-3 py-0.5 rounded-full text-[11px] font-black bg-emerald-500 text-slate-950 flex items-center space-x-1 shadow-sm">
+              <span class="px-3 py-0.5 rounded-md text-[11px] font-black bg-emerald-500 text-slate-950 flex items-center space-x-1 shadow-sm">
                 <i class="fa-solid fa-certificate"></i>
                 <span>मुख्य प्रमाणित विक्रेता (Pinned Dealership)</span>
               </span>
-              <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-blue-500/30 text-blue-200 border border-blue-400/30">
-                📍 1.8 km - सबसे पास (Nearest Store)
+              <span class="px-2.5 py-0.5 rounded-md text-[11px] font-bold bg-blue-500/30 text-blue-200 border border-blue-400/30">
+                <i class="fa-solid fa-location-dot text-blue-400 mr-1"></i>1.8 km - सबसे पास (Nearest Store)
               </span>
-              <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-amber-500/30 text-amber-200 border border-amber-400/30">
-                ⭐ 4.9 (420+ समीक्षाएं)
+              <span class="px-2.5 py-0.5 rounded-md text-[11px] font-bold bg-amber-500/30 text-amber-200 border border-amber-400/30">
+                <i class="fa-solid fa-certificate text-emerald-400 mr-1"></i>DAO SEED/147/GDN/123
               </span>
-              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-950 text-emerald-300 border border-emerald-700/60 flex items-center space-x-1 cursor-pointer" onclick="openSeedTraceModal('24-076000')" title="Click to verify on Govt SeedTrace Portal">
+              <span class="px-2.5 py-0.5 rounded-md text-[10px] font-semibold bg-emerald-950 text-emerald-300 border border-emerald-700/60 flex items-center space-x-1 cursor-pointer" onclick="openSeedTraceModal('24-076000')" title="Click to verify on Govt SeedTrace Portal">
                 <i class="fa-solid fa-shield-check text-emerald-400"></i>
                 <span>Govt SeedTrace: 24-076000 • Lic: DAO SEED/147/GDN/123</span>
               </span>
@@ -382,7 +390,7 @@
               <span>Main Market, Itia Thok, Gonda, Uttar Pradesh • प्रो. सुखदेव प्रसाद पाण्डेय</span>
             </p>
             <p class="text-xs text-emerald-200/90 leading-relaxed max-w-2xl">
-              🌾 <strong>100% Genuine Branded Stock:</strong> अधिकृत Insecticides India कीटनाशक (Lethal, Thimet, Victor, Monocil, Hercules, Pulsor), सरकारी रेट पर IFFCO यूरिया व डीएपी, और बिना ब्याज डिजिटल बही-खाता साख सुविधा।
+              <strong>100% Genuine Branded Stock:</strong> अधिकृत Insecticides India कीटनाशक (Lethal, Thimet, Victor, Monocil, Hercules, Pulsor), सरकारी रेट पर IFFCO यूरिया व डीएपी, और बिना ब्याज डिजिटल बही-खाता साख सुविधा।
             </p>
           </div>
 
@@ -392,9 +400,9 @@
               <i class="fa-solid fa-phone text-slate-950"></i>
               <span>कॉल करें (+91 7703079301)</span>
             </button>
-            <button type="button" onclick="openStoreRouteModal(3)" class="flex-1 lg:flex-initial px-4 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-xs sm:text-sm rounded-xl shadow-md transition flex items-center justify-center space-x-2" title="Get Driving Directions & Live Route">
+            <button type="button" onclick="openStoreRouteModal(3)" class="flex-1 lg:flex-initial px-4 py-2.5 bg-emerald-700 hover:bg-emerald-800  text-white font-bold text-xs sm:text-sm rounded-xl shadow-md transition flex items-center justify-center space-x-2" title="Get Driving Directions & Live Route">
               <i class="fa-solid fa-diamond-turn-right text-amber-300"></i>
-              <span>📍 दुकान का रास्ता देखें</span>
+              <span><i class="fa-solid fa-route text-white mr-1"></i>दुकान का रास्ता देखें</span>
             </button>
             <a href="https://wa.me/917703079301?text=नमस्ते%20सुखदेव%20जी,%20मुझे%20खाद-बीज%20के%20बारे%20में%20जानकारी%20चाहिए।" target="_blank" rel="noopener noreferrer" class="flex-1 lg:flex-initial px-4 py-2.5 bg-green-600 hover:bg-green-500 text-white font-bold text-xs sm:text-sm rounded-xl shadow-md transition flex items-center justify-center space-x-2">
               <i class="fa-brands fa-whatsapp text-white text-sm"></i>
@@ -406,7 +414,7 @@
             </a>
           </div>
         </div>
-        <div class="absolute -right-6 -bottom-10 opacity-10 text-9xl pointer-events-none">🏪</div>
+        <div class="absolute -right-6 -bottom-10 opacity-5 text-slate-400 pointer-events-none"><i class="fa-solid fa-store text-9xl"></i></div>
       </div>
 
       <!-- ================================================================= -->
@@ -417,10 +425,10 @@
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200/80 pb-3">
           <div class="space-y-0.5">
             <div class="flex items-center space-x-2">
-              <span class="text-xl">🌤️</span>
+              <i class="fa-solid fa-cloud-sun text-xl text-amber-300"></i>
               <h3 class="font-black text-slate-900 text-sm sm:text-base">आज का मौसम एवं कृषि सलाह (Live Weather & Agro-Advisory)</h3>
-              <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-200 animate-pulse">
-                🔴 Live IMD Sync
+              <span class="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-200 ">
+                <span class="inline-block w-2 h-2 rounded-sm bg-rose-500 mr-1"></span>Live IMD Sync
               </span>
             </div>
             <p class="text-[11px] text-slate-500 font-medium flex items-center space-x-1">
@@ -474,7 +482,7 @@
           <div class="bg-white/90 p-3 rounded-xl border border-slate-200/90 shadow-2xs">
             <div class="text-[10px] font-bold text-slate-400 uppercase flex items-center justify-between">
               <span>बारिश संभावना (Rain)</span>
-              <i class="fa-solid fa-cloud-showers-heavy text-indigo-500"></i>
+              <i class="fa-solid fa-cloud-showers-heavy text-slate-700"></i>
             </div>
             <div class="text-lg sm:text-xl font-black text-slate-900 mt-1" id="weatherRainDisplay">12%</div>
             <div class="text-[10px] text-slate-500 font-medium" id="weatherRainRisk">कम संभावना (Low Risk)</div>
@@ -501,8 +509,8 @@
                 <i class="fa-solid fa-faucet-drip text-blue-600"></i>
                 <span>सिंचाई निर्णय (Irrigation Advisory)</span>
               </div>
-              <span id="irrigationBadge" class="px-2.5 py-0.5 rounded-full text-[11px] font-black bg-emerald-100 text-emerald-800 border border-emerald-300">
-                ✅ सिंचाई का अनुकूल समय
+              <span id="irrigationBadge" class="px-2.5 py-0.5 rounded-md text-[11px] font-black bg-emerald-100 text-emerald-800 border border-emerald-300">
+                 सिंचाई का अनुकूल समय
               </span>
             </div>
             <p id="irrigationAdvisoryText" class="text-xs text-slate-700 font-semibold leading-relaxed">
@@ -513,7 +521,7 @@
             </p>
             <div id="irrigationSavingBox" class="p-2 bg-emerald-50 rounded-lg border border-emerald-200 text-[11px] text-emerald-900 font-bold flex items-center space-x-1.5">
               <i class="fa-solid fa-piggy-bank text-emerald-600"></i>
-              <span id="irrigationSavingText">💡 सुझाव: शाम 4 बजे के बाद हल्की सिंचाई करें ताकि पानी का वाष्पीकरण न्यूनतम रहे।</span>
+              <span id="irrigationSavingText"> सुझाव: शाम 4 बजे के बाद हल्की सिंचाई करें ताकि पानी का वाष्पीकरण न्यूनतम रहे।</span>
             </div>
           </div>
 
@@ -522,11 +530,11 @@
             <div class="space-y-2">
               <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-1.5 font-bold text-xs text-slate-800">
-                  <i class="fa-solid fa-spray-can text-purple-600"></i>
+                  <i class="fa-solid fa-spray-can text-amber-700"></i>
                   <span>दवा छिड़काव व खरीद सलाह (Spray Advisory)</span>
                 </div>
-                <span id="sprayBadge" class="px-2.5 py-0.5 rounded-full text-[11px] font-black bg-emerald-100 text-emerald-800 border border-emerald-300">
-                  🎯 छिड़काव के लिए सर्वोत्तम मौसम
+                <span id="sprayBadge" class="px-2.5 py-0.5 rounded-md text-[11px] font-black bg-emerald-100 text-emerald-800 border border-emerald-300">
+                   छिड़काव के लिए सर्वोत्तम मौसम
                 </span>
               </div>
               <p id="sprayAdvisoryText" class="text-xs text-slate-700 font-semibold leading-relaxed">
@@ -581,20 +589,20 @@
         <!-- Voice Search Quick Prompt Chips (Hindi / English) -->
         <div class="flex items-center space-x-2 overflow-x-auto text-xs no-scrollbar pt-1">
           <span class="text-slate-400 font-semibold shrink-0">Try saying:</span>
-          <button onclick="simulateVoiceQuery('DAP beej dikhao')" class="px-2.5 py-1 bg-slate-100 hover:bg-emerald-50 hover:text-emerald-700 hover:border-emerald-200 border border-slate-200 rounded-full text-slate-600 font-medium transition shrink-0">
-            🎙️ "DAP beej dikhao"
+          <button onclick="simulateVoiceQuery('DAP beej dikhao')" class="px-2.5 py-1 bg-slate-100 hover:bg-emerald-50 hover:text-emerald-700 hover:border-emerald-200 border border-slate-200 rounded-lg text-slate-600 font-medium transition shrink-0">
+            <i class="fa-solid fa-microphone text-slate-500 mr-1"></i>"DAP beej dikhao"
           </button>
-          <button onclick="simulateVoiceQuery('Urea khad chahiye')" class="px-2.5 py-1 bg-slate-100 hover:bg-emerald-50 hover:text-emerald-700 hover:border-emerald-200 border border-slate-200 rounded-full text-slate-600 font-medium transition shrink-0">
-            🎙️ "Urea khad chahiye"
+          <button onclick="simulateVoiceQuery('Urea khad chahiye')" class="px-2.5 py-1 bg-slate-100 hover:bg-emerald-50 hover:text-emerald-700 hover:border-emerald-200 border border-slate-200 rounded-lg text-slate-600 font-medium transition shrink-0">
+            <i class="fa-solid fa-microphone text-slate-500 mr-1"></i>"Urea khad chahiye"
           </button>
-          <button onclick="simulateVoiceQuery('Mustard seeds')" class="px-2.5 py-1 bg-slate-100 hover:bg-emerald-50 hover:text-emerald-700 hover:border-emerald-200 border border-slate-200 rounded-full text-slate-600 font-medium transition shrink-0">
-            🎙️ "Mustard seeds"
+          <button onclick="simulateVoiceQuery('Mustard seeds')" class="px-2.5 py-1 bg-slate-100 hover:bg-emerald-50 hover:text-emerald-700 hover:border-emerald-200 border border-slate-200 rounded-lg text-slate-600 font-medium transition shrink-0">
+            <i class="fa-solid fa-microphone text-slate-500 mr-1"></i>"Mustard seeds"
           </button>
-          <button onclick="simulateVoiceQuery('Zinc sulfate')" class="px-2.5 py-1 bg-slate-100 hover:bg-emerald-50 hover:text-emerald-700 hover:border-emerald-200 border border-slate-200 rounded-full text-slate-600 font-medium transition shrink-0">
-            🎙️ "Zinc sulfate"
+          <button onclick="simulateVoiceQuery('Zinc sulfate')" class="px-2.5 py-1 bg-slate-100 hover:bg-emerald-50 hover:text-emerald-700 hover:border-emerald-200 border border-slate-200 rounded-lg text-slate-600 font-medium transition shrink-0">
+            <i class="fa-solid fa-microphone text-slate-500 mr-1"></i>"Zinc sulfate"
           </button>
-          <button onclick="simulateVoiceQuery('Bio fertilizer')" class="px-2.5 py-1 bg-slate-100 hover:bg-emerald-50 hover:text-emerald-700 hover:border-emerald-200 border border-slate-200 rounded-full text-slate-600 font-medium transition shrink-0">
-            🎙️ "Bio fertilizer"
+          <button onclick="simulateVoiceQuery('Bio fertilizer')" class="px-2.5 py-1 bg-slate-100 hover:bg-emerald-50 hover:text-emerald-700 hover:border-emerald-200 border border-slate-200 rounded-lg text-slate-600 font-medium transition shrink-0">
+            <i class="fa-solid fa-microphone text-slate-500 mr-1"></i>"Bio fertilizer"
           </button>
         </div>
 
@@ -618,7 +626,7 @@
           <i class="fa-solid fa-map-location-dot text-blue-500 mr-1.5"></i> खाद-बीज दुकानें व नेविगेशन (Stores)
         </button>
         <button id="tabBtn-calcs" onclick="showTab('calcsTab')" class="tab-btn px-4 py-2 border-b-2 border-transparent text-slate-600 hover:text-emerald-600 shrink-0">
-          <i class="fa-solid fa-calculator text-indigo-500 mr-1.5"></i> कृषि कैलकुलेटर एवं सॉइल कार्ड (Calculators)
+          <i class="fa-solid fa-calculator text-slate-700 mr-1.5"></i> कृषि कैलकुलेटर एवं सॉइल कार्ड (Calculators)
         </button>
         <button id="tabBtn-doctor" onclick="showTab('doctorTab')" class="tab-btn px-4 py-2 border-b-2 border-transparent text-slate-600 hover:text-emerald-600 shrink-0">
           <i class="fa-solid fa-stethoscope text-emerald-600 mr-1.5"></i> फसल सुरक्षा क्लिनिक (Plant Diagnostics)
@@ -647,20 +655,20 @@
         <div class="bg-gradient-to-r from-emerald-50 via-teal-50 to-white rounded-2xl border-2 border-emerald-500/30 p-4 sm:p-5 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div class="flex items-start sm:items-center space-x-3.5">
             <div class="w-12 h-12 rounded-2xl bg-emerald-700 text-white flex items-center justify-center text-xl shadow-md shrink-0">
-              🏪
+              
             </div>
             <div class="space-y-1">
               <div class="flex flex-wrap items-center gap-2">
                 <h4 class="text-sm sm:text-base font-extrabold text-slate-900">Pandey Traders (Sukhdev Pandey Khad Beej Bhandar)</h4>
-                <span class="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
+                <span class="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-md text-[11px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
                   <i class="fa-solid fa-circle-check text-emerald-600"></i>
                   <span>Verified Dealership</span>
                 </span>
-                <span class="inline-flex items-center space-x-1 px-2 py-0.5 rounded-full text-[11px] font-bold bg-amber-100 text-amber-900 border border-amber-300">
+                <span class="inline-flex items-center space-x-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-amber-100 text-amber-900 border border-amber-300">
                   <i class="fa-solid fa-star text-amber-500"></i>
-                  <span>4.9★</span>
+                  <span class="text-xs font-semibold text-emerald-700">Govt. Verified</span>
                 </span>
-                <span class="inline-flex items-center space-x-1 px-2 py-0.5 rounded-full text-[11px] font-bold bg-blue-100 text-blue-800 border border-blue-300">
+                <span class="inline-flex items-center space-x-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-blue-100 text-blue-800 border border-blue-300">
                   <i class="fa-solid fa-route text-blue-600"></i>
                   <span>1.8 km - सबसे पास</span>
                 </span>
@@ -676,9 +684,9 @@
           </div>
 
           <div class="flex flex-wrap items-center gap-2 shrink-0">
-            <button type="button" onclick="openStoreRouteModal(3)" class="px-3.5 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-xs rounded-xl shadow-xs transition flex items-center space-x-1.5" title="Get Driving Directions & Route">
+            <button type="button" onclick="openStoreRouteModal(3)" class="px-3.5 py-2 bg-emerald-700 hover:bg-emerald-800  text-white font-bold text-xs rounded-xl shadow-xs transition flex items-center space-x-1.5" title="Get Driving Directions & Route">
               <i class="fa-solid fa-diamond-turn-right text-amber-300"></i>
-              <span>📍 दुकान का रास्ता देखें</span>
+              <span><i class="fa-solid fa-route text-white mr-1"></i>दुकान का रास्ता देखें</span>
             </button>
             <a href="https://share.google/ZVQYOvEeeKrGoniik" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-xl shadow-xs transition flex items-center space-x-1.5">
               <i class="fa-solid fa-map-location-dot text-sm"></i>
@@ -710,11 +718,11 @@
 
             <!-- Quick Commodity Switcher Pills -->
             <div class="flex items-center space-x-1.5 overflow-x-auto no-scrollbar text-xs">
-              <button onclick="loadComparison('DAP')" class="comp-pill active px-3 py-1 rounded-full font-bold bg-emerald-600 text-white" data-query="DAP">DAP Fertilizer</button>
-              <button onclick="loadComparison('Urea')" class="comp-pill px-3 py-1 rounded-full font-medium bg-slate-100 text-slate-700 hover:bg-slate-200" data-query="Urea">Neem Urea</button>
-              <button onclick="loadComparison('Insecticide')" class="comp-pill px-3 py-1 rounded-full font-medium bg-slate-100 text-slate-700 hover:bg-slate-200" data-query="Insecticide">Insecticides India</button>
-              <button onclick="loadComparison('Mustard')" class="comp-pill px-3 py-1 rounded-full font-medium bg-slate-100 text-slate-700 hover:bg-slate-200" data-query="Mustard">Mustard Seeds</button>
-              <button onclick="loadComparison('Zinc')" class="comp-pill px-3 py-1 rounded-full font-medium bg-slate-100 text-slate-700 hover:bg-slate-200" data-query="Zinc">Zinc Sulfate</button>
+              <button onclick="loadComparison('DAP')" class="comp-pill active px-3 py-1 rounded-lg font-bold bg-emerald-600 text-white" data-query="DAP">DAP Fertilizer</button>
+              <button onclick="loadComparison('Urea')" class="comp-pill px-3 py-1 rounded-lg font-medium bg-slate-100 text-slate-700 hover:bg-slate-200" data-query="Urea">Neem Urea</button>
+              <button onclick="loadComparison('Insecticide')" class="comp-pill px-3 py-1 rounded-lg font-medium bg-slate-100 text-slate-700 hover:bg-slate-200" data-query="Insecticide">Insecticides India</button>
+              <button onclick="loadComparison('Mustard')" class="comp-pill px-3 py-1 rounded-lg font-medium bg-slate-100 text-slate-700 hover:bg-slate-200" data-query="Mustard">Mustard Seeds</button>
+              <button onclick="loadComparison('Zinc')" class="comp-pill px-3 py-1 rounded-lg font-medium bg-slate-100 text-slate-700 hover:bg-slate-200" data-query="Zinc">Zinc Sulfate</button>
             </div>
           </div>
 
@@ -745,7 +753,7 @@
             <span class="font-bold text-slate-700"><i class="fa-solid fa-shop text-emerald-600 mr-1"></i> Filter Shop:</span>
             <select id="vendorFilterSelect" onchange="filterProducts()" class="bg-slate-50 border border-slate-300 rounded-lg px-2.5 py-1.5 font-medium text-slate-700 focus:outline-none focus:border-emerald-500">
               <option value="ALL">All 6 Verified Retailers (15 km Hub)</option>
-              <option value="2" selected>Pandey Traders (1.8 km - Itia Thok) [★ 4.9]</option>
+              <option value="2" selected>Pandey Traders (1.8 km - Itia Thok) [DAO Verified: 24-076000]</option>
               <option value="4">Awadh Agri Store (3.8 km - Balrampur Rd)</option>
               <option value="5">Kisan Vikas Kendra (4.5 km - Highway)</option>
               <option value="6">Kisan Sewa Kendra (6.2 km - Mankapur)</option>
@@ -756,14 +764,14 @@
 
           <!-- Category Pills -->
           <div class="flex items-center space-x-1.5 overflow-x-auto no-scrollbar">
-            <button onclick="setCategoryFilter('ALL')" class="cat-pill active px-3 py-1 bg-emerald-600 text-white rounded-full font-semibold transition" data-cat="ALL">All Items</button>
-            <button onclick="setCategoryFilter('Crop Medicines')" class="cat-pill px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-full font-medium transition" data-cat="Crop Medicines">
+            <button onclick="setCategoryFilter('ALL')" class="cat-pill active px-3 py-1 bg-emerald-600 text-white rounded-lg font-semibold transition" data-cat="ALL">All Items</button>
+            <button onclick="setCategoryFilter('Crop Medicines')" class="cat-pill px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg font-medium transition" data-cat="Crop Medicines">
               <i class="fa-solid fa-spray-can-sparkles mr-1 text-emerald-600"></i> कीटनाशक (Insecticides India)
             </button>
-            <button onclick="setCategoryFilter('Fertilizers')" class="cat-pill px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-full font-medium transition" data-cat="Fertilizers">Fertilizers</button>
-            <button onclick="setCategoryFilter('Hybrid Seeds')" class="cat-pill px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-full font-medium transition" data-cat="Hybrid Seeds">Seeds</button>
-            <button onclick="setCategoryFilter('Micro-Nutrients')" class="cat-pill px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-full font-medium transition" data-cat="Micro-Nutrients">Micro-Nutrients</button>
-            <button onclick="setCategoryFilter('Bio-Fertilizers')" class="cat-pill px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-full font-medium transition" data-cat="Bio-Fertilizers">Bio-Fertilizers</button>
+            <button onclick="setCategoryFilter('Fertilizers')" class="cat-pill px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg font-medium transition" data-cat="Fertilizers">Fertilizers</button>
+            <button onclick="setCategoryFilter('Hybrid Seeds')" class="cat-pill px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg font-medium transition" data-cat="Hybrid Seeds">Seeds</button>
+            <button onclick="setCategoryFilter('Micro-Nutrients')" class="cat-pill px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg font-medium transition" data-cat="Micro-Nutrients">Micro-Nutrients</button>
+            <button onclick="setCategoryFilter('Bio-Fertilizers')" class="cat-pill px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg font-medium transition" data-cat="Bio-Fertilizers">Bio-Fertilizers</button>
           </div>
         </div>
 
@@ -775,7 +783,7 @@
                 <span class="px-2 py-0.5 rounded text-[10px] font-black bg-amber-500 text-slate-950">5% COMBO SAVINGS</span>
                 <span class="text-xs text-emerald-300 font-semibold">रबी सीजन संपूर्ण सुरक्षा किट्स (KVK Gonda संस्तुत)</span>
               </div>
-              <h4 class="text-base sm:text-lg font-extrabold mt-0.5">🌾 विशेष रबी फसल सुरक्षा एवं पोषण किट्स</h4>
+              <h4 class="text-base sm:text-lg font-extrabold mt-0.5">विशेष रबी फसल सुरक्षा एवं पोषण किट्स</h4>
             </div>
             <div class="text-[11px] text-slate-300">
               पाण्डेय ट्रेडर्स द्वारा सीधे खेत तक डिलीवरी
@@ -787,7 +795,7 @@
             <div class="bg-slate-900/80 border border-emerald-700/50 rounded-xl p-4 flex flex-col justify-between space-y-3">
               <div>
                 <div class="flex items-start justify-between gap-2">
-                  <h5 class="font-extrabold text-sm text-emerald-300">🌾 गेहूं रबी संपूर्ण सुरक्षा किट (Wheat Rabi Kit)</h5>
+                  <h5 class="font-extrabold text-sm text-emerald-300">गेहूं रबी संपूर्ण सुरक्षा किट (Wheat Rabi Kit)</h5>
                   <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">CRI & कल्ले अवस्था</span>
                 </div>
                 <p class="text-[11px] text-slate-300 mt-1">शामिल: नीम यूरिया (45kg), DAP (50kg), जिंक सल्फेट (5kg), एवं Lethal क्लोरपायरीफॉस (500ml)।</p>
@@ -807,7 +815,7 @@
             <div class="bg-slate-900/80 border border-amber-700/50 rounded-xl p-4 flex flex-col justify-between space-y-3">
               <div>
                 <div class="flex items-start justify-between gap-2">
-                  <h5 class="font-extrabold text-sm text-amber-300">🌼 सरसों चेपा व फली रक्षक किट (Mustard Shield)</h5>
+                  <h5 class="font-extrabold text-sm text-amber-300">सरसों चेपा व फली रक्षक किट (Mustard Shield)</h5>
                   <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">माहू नियंत्रण</span>
                 </div>
                 <p class="text-[11px] text-slate-300 mt-1">शामिल: Victor इमिडाक्लोप्रिड (250ml), Pulsor थायफ्लूजामाइड (150ml), एवं सल्फर 90% WDG (3kg)।</p>
@@ -867,7 +875,7 @@
               पौधे की पत्ती, तने या रोगग्रस्त बीज की फोटो खींचें अथवा नीचे दिए गए सामान्य रोगों में से चुनें। एआई तुरंत रोग की पहचान कर सटीक दवा और नजदीकी दुकान का पता बताएगा।
             </p>
           </div>
-          <div class="absolute right-4 bottom-0 opacity-15 text-8xl pointer-events-none">🩺</div>
+          <div class="absolute right-4 bottom-0 opacity-5 text-slate-400 pointer-events-none"><i class="fa-solid fa-stethoscope text-8xl"></i></div>
         </div>
 
         <!-- Two Column Layout: Photo Upload Scanner & Quick Sample Selectors -->
@@ -884,10 +892,10 @@
             <div class="relative border-2 border-dashed border-slate-300 hover:border-emerald-500 rounded-2xl p-6 text-center bg-slate-50 hover:bg-emerald-50/30 transition cursor-pointer overflow-hidden min-h-[220px] flex flex-col items-center justify-center" onclick="document.getElementById('cropPhotoInput').click()">
               
               <!-- Image Preview (hidden initially) -->
-              <img id="cropPhotoPreview" src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=500&q=80" alt="Preview" class="absolute inset-0 w-full h-full object-cover">
+              <img id="cropPhotoPreview" src="/static/img/clinic_yellow_rust.svg" alt="Preview" class="absolute inset-0 w-full h-full object-cover">
               
               <!-- Scanning Laser Beam Overlay -->
-              <div id="scanLaserBeam" class="absolute inset-x-0 h-1 bg-gradient-to-r from-emerald-400 via-green-300 to-emerald-500 shadow-lg shadow-emerald-400 scan-beam pointer-events-none"></div>
+              <div id="scanLaserBeam" class="absolute inset-x-0 top-1/2 h-0.5 bg-emerald-500/30 pointer-events-none"></div>
 
               <!-- Upload prompt text overlay -->
               <div class="relative z-10 bg-slate-900/80 backdrop-blur-xs text-white p-3 rounded-xl max-w-xs text-center space-y-1 mt-auto mb-2">
@@ -904,7 +912,7 @@
               <span class="text-xs font-bold text-slate-700">Verified ICAR Field Diagnoses in Gonda (गोंडा में क्षेत्रीय फसल रोग):</span>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
                 <button onclick="runCropDoctorPreset('yellow_rust')" class="preset-btn active p-2.5 rounded-xl border text-left font-semibold transition bg-emerald-50 border-emerald-300 text-emerald-900 flex items-center space-x-2" data-id="yellow_rust">
-                  <span>🌾</span>
+                  <i class="fa-solid fa-wheat-awn text-emerald-600"></i>
                   <div>
                     <div class="leading-tight">Wheat Yellow Rust</div>
                     <div class="text-[10px] font-normal text-slate-500 hindi-text">गेहूं का पीला रतुआ</div>
@@ -912,7 +920,7 @@
                 </button>
 
                 <button onclick="runCropDoctorPreset('mustard_aphid')" class="preset-btn p-2.5 rounded-xl border text-left font-semibold transition bg-white border-slate-200 text-slate-700 hover:bg-slate-50 flex items-center space-x-2" data-id="mustard_aphid">
-                  <span>🌿</span>
+                  <i class="fa-solid fa-leaf text-emerald-600"></i>
                   <div>
                     <div class="leading-tight">Mustard Aphid (Mahu)</div>
                     <div class="text-[10px] font-normal text-slate-500 hindi-text">सरसों का माहू कीट</div>
@@ -920,7 +928,7 @@
                 </button>
 
                 <button onclick="runCropDoctorPreset('zinc_deficiency')" class="preset-btn p-2.5 rounded-xl border text-left font-semibold transition bg-white border-slate-200 text-slate-700 hover:bg-slate-50 flex items-center space-x-2" data-id="zinc_deficiency">
-                  <span>🍂</span>
+                  <i class="fa-solid fa-tree text-amber-600"></i>
                   <div>
                     <div class="leading-tight">Khaira / Zinc Deficiency</div>
                     <div class="text-[10px] font-normal text-slate-500 hindi-text">खैरा रोग (जिंक की कमी)</div>
@@ -928,7 +936,7 @@
                 </button>
 
                 <button onclick="runCropDoctorPreset('nitrogen_chlorosis')" class="preset-btn p-2.5 rounded-xl border text-left font-semibold transition bg-white border-slate-200 text-slate-700 hover:bg-slate-50 flex items-center space-x-2" data-id="nitrogen_chlorosis">
-                  <span>🍃</span>
+                  <i class="fa-solid fa-leaf text-emerald-500"></i>
                   <div>
                     <div class="leading-tight">Nitrogen Chlorosis</div>
                     <div class="text-[10px] font-normal text-slate-500 hindi-text">यूरिया की कमी (पीली पत्तियां)</div>
@@ -1041,7 +1049,7 @@
               <span class="px-2 py-0.5 rounded-full bg-amber-200 text-amber-900 text-[10px] font-bold">1 Coin = ₹1</span>
             </div>
             <div class="text-3xl font-extrabold text-amber-600 mt-1 flex items-center space-x-1">
-              <span>🪙</span>
+              <span><i class="fa-solid fa-coins text-amber-500"></i></span>
               <span id="farmerCoinsCard">150</span>
             </div>
             <div class="text-xs text-amber-800 font-medium mt-1">Earn 1 coin per ₹10 on prompt debt repayment!</div>
@@ -1131,10 +1139,10 @@
 
       <!-- TAB 6: VERIFIED STORES DIRECTORY & LIVE NAVIGATION (MODULE 2) -->
       <div id="tab-storesTab" class="hidden space-y-6">
-        <div class="bg-gradient-to-r from-blue-900 via-indigo-950 to-slate-900 rounded-2xl p-5 sm:p-6 text-white border border-blue-800 shadow-md flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div class="bg-slate-900 rounded-2xl p-5 sm:p-6 text-white border border-blue-800 shadow-md flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div class="space-y-1">
             <div class="flex items-center space-x-2">
-              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-black bg-blue-500 text-white">GIS Navigation</span>
+              <span class="px-2.5 py-0.5 rounded-md text-[10px] font-black bg-blue-500 text-white">GIS Navigation</span>
               <span class="text-xs text-sky-200">गोण्डा जिला कृषि नेटवर्क</span>
             </div>
             <h3 class="text-lg sm:text-xl font-black text-white">प्रमाणित खाद-बीज विक्रेता एवं लाइव जीपीएस नेविगेशन</h3>
@@ -1159,17 +1167,17 @@
       <div id="tab-calcsTab" class="hidden space-y-6">
         
         <!-- Calculator Hub Header -->
-        <div class="bg-gradient-to-r from-indigo-900 via-slate-900 to-emerald-950 rounded-2xl p-5 sm:p-6 text-white border border-indigo-800 shadow-md flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div class="bg-slate-900 rounded-2xl p-5 sm:p-6 text-white border border-slate-700 shadow-md flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div class="space-y-1">
             <div class="flex items-center space-x-2">
-              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-black bg-indigo-500 text-white">ICAR & KVK Calibrated</span>
-              <span class="text-xs text-indigo-200">वैज्ञानिक कृषि संस्तुति प्रणाली</span>
+              <span class="px-2.5 py-0.5 rounded-md text-[10px] font-black bg-slate-700 text-white">ICAR & KVK Calibrated</span>
+              <span class="text-xs text-slate-200">वैज्ञानिक कृषि संस्तुति प्रणाली</span>
             </div>
             <h3 class="text-lg sm:text-xl font-extrabold tracking-tight">स्मार्ट कृषि कैलकुलेटर एवं मृदा स्वास्थ्य परामर्श हब</h3>
             <p class="text-xs text-slate-300 max-w-2xl">एकड़ अनुसार खाद की सही मात्रा, सॉइल हेल्थ कार्ड विश्लेषण, बीज दर निर्धारण एवं PM-किसान किस्त ट्रैकर।</p>
           </div>
           <div class="flex items-center space-x-2">
-            <button onclick="speakSummary('कृषि कैलकुलेटर हब में आपका स्वागत है। यहां आप अपनी फसल के लिए यूरिया, डीएपी, बीज दर और मृदा परीक्षण की सही मात्रा जान सकते हैं।')" class="px-3 py-1.5 bg-indigo-700/80 hover:bg-indigo-600 text-white font-bold text-xs rounded-xl transition flex items-center space-x-1.5">
+            <button onclick="speakSummary('कृषि कैलकुलेटर हब में आपका स्वागत है। यहां आप अपनी फसल के लिए यूरिया, डीएपी, बीज दर और मृदा परीक्षण की सही मात्रा जान सकते हैं।')" class="px-3 py-1.5 bg-slate-900/80 hover:bg-slate-800 text-white font-bold text-xs rounded-xl transition flex items-center space-x-1.5">
               <i class="fa-solid fa-volume-high"></i>
               <span>निर्देश सुनें</span>
             </button>
@@ -1213,11 +1221,11 @@
               <div>
                 <label class="block text-xs font-bold text-slate-700 mb-1">फसल चुनें (Select Crop)</label>
                 <select id="fertCropSelect" onchange="runFertilizerCalculation()" class="w-full px-3 py-2 border border-slate-300 rounded-xl text-xs font-semibold">
-                  <option value="Wheat">🌾 गेहूं (Wheat)</option>
-                  <option value="Mustard">🌼 सरसों (Mustard)</option>
-                  <option value="Rice">🌾 धान (Rice)</option>
-                  <option value="Sugarcane">🎋 गन्ना (Sugarcane)</option>
-                  <option value="Potato">🥔 आलू (Potato)</option>
+                  <option value="Wheat">गेहूं (Wheat)</option>
+                  <option value="Mustard">सरसों (Mustard)</option>
+                  <option value="Rice">धान (Rice)</option>
+                  <option value="Sugarcane">गन्ना (Sugarcane)</option>
+                  <option value="Potato">आलू (Potato)</option>
                 </select>
               </div>
               <div>
@@ -1249,9 +1257,9 @@
                 <div id="fertMopVal" class="text-2xl font-black text-blue-700 mt-0.5">1.8 बोरी</div>
                 <div class="text-[10px] text-slate-500">50kg बैग (@ ₹1,700)</div>
               </div>
-              <div class="bg-purple-50/80 border border-purple-200 rounded-xl p-3 text-center">
-                <span class="text-[10px] font-bold text-purple-800 uppercase">जिंक सल्फेट 33%</span>
-                <div id="fertZincVal" class="text-2xl font-black text-purple-700 mt-0.5">12.5 किग्रा</div>
+              <div class="bg-amber-50/80 border border-amber-200 rounded-xl p-3 text-center">
+                <span class="text-[10px] font-bold text-amber-900 uppercase">जिंक सल्फेट 33%</span>
+                <div id="fertZincVal" class="text-2xl font-black text-amber-800 mt-0.5">12.5 किग्रा</div>
                 <div class="text-[10px] text-slate-500">(@ ₹70/kg)</div>
               </div>
             </div>
@@ -1372,11 +1380,11 @@
               <div>
                 <label class="block text-xs font-bold text-slate-700 mb-1">फसल (Crop)</label>
                 <select id="seedCropSelect" onchange="runSeedRateCalculation()" class="w-full px-3 py-2 border border-slate-300 rounded-xl text-xs font-semibold">
-                  <option value="Wheat">🌾 गेहूं (Wheat)</option>
-                  <option value="Mustard">🌼 सरसों (Mustard)</option>
-                  <option value="Rice">🌾 धान (Rice)</option>
-                  <option value="Gram">🫘 चना (Gram)</option>
-                  <option value="Potato">🥔 आलू (Potato)</option>
+                  <option value="Wheat">गेहूं (Wheat)</option>
+                  <option value="Mustard">सरसों (Mustard)</option>
+                  <option value="Rice">धान (Rice)</option>
+                  <option value="Gram">चना (Gram)</option>
+                  <option value="Potato">आलू (Potato)</option>
                 </select>
               </div>
               <div>
@@ -1405,7 +1413,7 @@
                 </div>
               </div>
               <div class="bg-white/80 p-3 rounded-lg border border-green-200">
-                <span class="font-bold text-slate-900 block mb-1">🛡️ अनिवार्य बीज शोधन (Fungicide Seed Treatment):</span>
+                <span class="font-bold text-slate-900 block mb-1"><i class="fa-solid fa-shield-halved text-emerald-600 mr-1"></i>अनिवार्य बीज शोधन (Fungicide Seed Treatment):</span>
                 <p id="seedTreatmentText" class="text-slate-700">Carbendazim 50% WP (2.5 ग्राम प्रति किग्रा बीज) अथवा Thiram (3 ग्राम) से बुवाई पूर्व बीज शोधन अनिवार्य करें ताकि उकठा व कंडुआ रोग न लगे।</p>
               </div>
             </div>
@@ -1524,18 +1532,18 @@
 
         <!-- HEADER BANNER -->
         <div class="bg-gradient-to-r from-slate-900 via-amber-950 to-emerald-950 text-white rounded-3xl p-6 sm:p-8 shadow-xl border border-amber-500/30 relative overflow-hidden">
-          <div class="absolute -right-8 -bottom-8 opacity-10 text-9xl pointer-events-none select-none">🚜</div>
+          <div class="absolute -right-8 -bottom-8 opacity-5 text-slate-400 pointer-events-none select-none"><i class="fa-solid fa-tractor text-9xl"></i></div>
           <div class="relative z-10 max-w-4xl space-y-3">
             <div class="flex flex-wrap items-center gap-2">
-              <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40 flex items-center space-x-1.5">
+              <span class="px-3 py-1 rounded-md text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40 flex items-center space-x-1.5">
                 <i class="fa-solid fa-tractor text-amber-400"></i>
                 <span>Custom Hiring Center • Itia Thok Hub</span>
               </span>
-              <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 flex items-center space-x-1.5">
+              <span class="px-3 py-1 rounded-md text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 flex items-center space-x-1.5">
                 <i class="fa-solid fa-shield-halved text-emerald-400"></i>
                 <span>Govt Subsidized Rental Rates</span>
               </span>
-              <span class="px-3 py-1 rounded-full text-xs font-bold bg-blue-500/20 text-blue-300 border border-blue-500/40 flex items-center space-x-1.5">
+              <span class="px-3 py-1 rounded-md text-xs font-bold bg-blue-500/20 text-blue-300 border border-blue-500/40 flex items-center space-x-1.5">
                 <i class="fa-solid fa-calendar-days text-blue-400"></i>
                 <span>ICAR Crop Sowing Calendar</span>
               </span>
@@ -1560,7 +1568,7 @@
             </div>
             <div class="flex items-center space-x-2">
               <span class="px-2.5 py-1 rounded-lg bg-emerald-100 text-emerald-800 text-xs font-bold">
-                🟢 5 मशीनें अभी उपलब्ध
+                <span class="inline-block w-2 h-2 rounded-sm bg-emerald-500 mr-1"></span>5 मशीनें अभी उपलब्ध
               </span>
             </div>
           </div>
@@ -1571,9 +1579,9 @@
             <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-xs hover:shadow-md transition space-y-3 flex flex-col justify-between">
               <div class="space-y-2">
                 <div class="flex items-center justify-between">
-                  <span class="text-2xl">🚜</span>
-                  <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
-                    🟢 उपलब्ध (Ready)
+                  <i class="fa-solid fa-tractor text-2xl text-slate-700"></i>
+                  <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
+                    <span class="inline-block w-2 h-2 rounded-sm bg-emerald-500 mr-1"></span>उपलब्ध (Ready)
                   </span>
                 </div>
                 <h4 class="font-bold text-slate-900 text-sm">महिंद्रा 575 DI (45 HP) + रोटावेटर</h4>
@@ -1581,7 +1589,7 @@
                 <div class="pt-2 border-t border-slate-100 space-y-1 text-xs">
                   <div class="flex justify-between"><span class="text-slate-400">किराया दर:</span> <strong class="text-slate-900 font-extrabold">₹750 / घंटा</strong></div>
                   <div class="flex justify-between"><span class="text-slate-400">ऑपरेटर:</span> <span class="text-slate-700 font-medium">दिनेश मौर्य (इटियाथोक)</span></div>
-                  <div class="flex justify-between"><span class="text-slate-400">सत्यापन:</span> <span class="text-emerald-700 font-bold">✓ KVK Certified</span></div>
+                  <div class="flex justify-between"><span class="text-slate-400">सत्यापन:</span> <span class="text-emerald-700 font-bold"> KVK Certified</span></div>
                 </div>
               </div>
               <button onclick="openMachineryModal('महिंद्रा 575 DI ट्रैक्टर + रोटावेटर', 750, 'दिनेश मौर्य', '+91 94508 21990')" class="w-full py-2 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs rounded-xl transition shadow-xs flex items-center justify-center space-x-1.5">
@@ -1594,9 +1602,9 @@
             <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-xs hover:shadow-md transition space-y-3 flex flex-col justify-between">
               <div class="space-y-2">
                 <div class="flex items-center justify-between">
-                  <span class="text-2xl">🌱</span>
-                  <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
-                    🟢 उपलब्ध (Ready)
+                  <i class="fa-solid fa-seedling text-2xl text-emerald-600"></i>
+                  <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
+                    <span class="inline-block w-2 h-2 rounded-sm bg-emerald-500 mr-1"></span>उपलब्ध (Ready)
                   </span>
                 </div>
                 <h4 class="font-bold text-slate-900 text-sm">जीरो-टिल मल्टी-क्रॉप सीड ड्रिल</h4>
@@ -1604,7 +1612,7 @@
                 <div class="pt-2 border-t border-slate-100 space-y-1 text-xs">
                   <div class="flex justify-between"><span class="text-slate-400">किराया दर:</span> <strong class="text-slate-900 font-extrabold">₹500 / घंटा</strong></div>
                   <div class="flex justify-between"><span class="text-slate-400">ऑपरेटर:</span> <span class="text-slate-700 font-medium">राम मूरत वर्मा (धनेपुर)</span></div>
-                  <div class="flex justify-between"><span class="text-slate-400">सत्यापन:</span> <span class="text-emerald-700 font-bold">✓ FPO Linked</span></div>
+                  <div class="flex justify-between"><span class="text-slate-400">सत्यापन:</span> <span class="text-emerald-700 font-bold"> FPO Linked</span></div>
                 </div>
               </div>
               <button onclick="openMachineryModal('जीरो-टिल मल्टी-क्रॉप सीड ड्रिल', 500, 'राम मूरत वर्मा', '+91 94150 54321')" class="w-full py-2 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs rounded-xl transition shadow-xs flex items-center justify-center space-x-1.5">
@@ -1617,9 +1625,9 @@
             <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-xs hover:shadow-md transition space-y-3 flex flex-col justify-between">
               <div class="space-y-2">
                 <div class="flex items-center justify-between">
-                  <span class="text-2xl">🌾</span>
-                  <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-800 border border-amber-300">
-                    🟡 फील्ड में (1 घंटे में उपलब्ध)
+                  <i class="fa-solid fa-wheat-awn text-2xl text-amber-600"></i>
+                  <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-amber-100 text-amber-800 border border-amber-300">
+                    <span class="inline-block w-2 h-2 rounded-sm bg-amber-500 mr-1"></span>फील्ड में (1 घंटे में उपलब्ध)
                   </span>
                 </div>
                 <h4 class="font-bold text-slate-900 text-sm">कंबाइन हार्वेस्टर व स्ट्रॉ रीपर</h4>
@@ -1627,7 +1635,7 @@
                 <div class="pt-2 border-t border-slate-100 space-y-1 text-xs">
                   <div class="flex justify-between"><span class="text-slate-400">किराया दर:</span> <strong class="text-slate-900 font-extrabold">₹1,300 / एकड़</strong></div>
                   <div class="flex justify-between"><span class="text-slate-400">ऑपरेटर:</span> <span class="text-slate-700 font-medium">अवध एग्री सर्विसेज</span></div>
-                  <div class="flex justify-between"><span class="text-slate-400">सत्यापन:</span> <span class="text-emerald-700 font-bold">✓ Tracked GPS</span></div>
+                  <div class="flex justify-between"><span class="text-slate-400">सत्यापन:</span> <span class="text-emerald-700 font-bold"> Tracked GPS</span></div>
                 </div>
               </div>
               <button onclick="openMachineryModal('कंबाइन हार्वेस्टर व स्ट्रॉ रीपर', 1300, 'अवध एग्री सर्विसेज', '+91 94150 67890')" class="w-full py-2 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs rounded-xl transition shadow-xs flex items-center justify-center space-x-1.5">
@@ -1640,9 +1648,9 @@
             <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-xs hover:shadow-md transition space-y-3 flex flex-col justify-between">
               <div class="space-y-2">
                 <div class="flex items-center justify-between">
-                  <span class="text-2xl">📐</span>
-                  <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
-                    🟢 उपलब्ध (Ready)
+                  <i class="fa-solid fa-ruler-combined text-2xl text-slate-600"></i>
+                  <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
+                    <span class="inline-block w-2 h-2 rounded-sm bg-emerald-500 mr-1"></span>उपलब्ध (Ready)
                   </span>
                 </div>
                 <h4 class="font-bold text-slate-900 text-sm">लेजर लैंड लेवलर (समतलीकरण)</h4>
@@ -1650,7 +1658,7 @@
                 <div class="pt-2 border-t border-slate-100 space-y-1 text-xs">
                   <div class="flex justify-between"><span class="text-slate-400">किराया दर:</span> <strong class="text-slate-900 font-extrabold">₹800 / घंटा</strong></div>
                   <div class="flex justify-between"><span class="text-slate-400">ऑपरेटर:</span> <span class="text-slate-700 font-medium">किसान सेवा केंद्र (मनकापुर)</span></div>
-                  <div class="flex justify-between"><span class="text-slate-400">सत्यापन:</span> <span class="text-emerald-700 font-bold">✓ KVK Approved</span></div>
+                  <div class="flex justify-between"><span class="text-slate-400">सत्यापन:</span> <span class="text-emerald-700 font-bold"> KVK Approved</span></div>
                 </div>
               </div>
               <button onclick="openMachineryModal('लेजर लैंड लेवलर (समतलीकरण)', 800, 'किसान सेवा केंद्र', '+91 94150 77112')" class="w-full py-2 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs rounded-xl transition shadow-xs flex items-center justify-center space-x-1.5">
@@ -1663,9 +1671,9 @@
             <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-xs hover:shadow-md transition space-y-3 flex flex-col justify-between">
               <div class="space-y-2">
                 <div class="flex items-center justify-between">
-                  <span class="text-2xl">🔋</span>
-                  <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
-                    🟢 5 यूनिट उपलब्ध
+                  <i class="fa-solid fa-battery-full text-2xl text-emerald-600"></i>
+                  <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
+                    <span class="inline-block w-2 h-2 rounded-sm bg-emerald-500 mr-1"></span>5 यूनिट उपलब्ध
                   </span>
                 </div>
                 <h4 class="font-bold text-slate-900 text-sm">बैटरी नैपसैक स्प्रेयर पंप (16L)</h4>
@@ -1673,7 +1681,7 @@
                 <div class="pt-2 border-t border-slate-100 space-y-1 text-xs">
                   <div class="flex justify-between"><span class="text-slate-400">किराया दर:</span> <strong class="text-slate-900 font-extrabold">₹150 / दिन</strong></div>
                   <div class="flex justify-between"><span class="text-slate-400">पिकअप:</span> <span class="text-slate-700 font-medium">पाण्डेय ट्रेडर्स काउंटर</span></div>
-                  <div class="flex justify-between"><span class="text-slate-400">सत्यापन:</span> <span class="text-emerald-700 font-bold">✓ Zero Deposit</span></div>
+                  <div class="flex justify-between"><span class="text-slate-400">सत्यापन:</span> <span class="text-emerald-700 font-bold"> Zero Deposit</span></div>
                 </div>
               </div>
               <button onclick="openMachineryModal('बैटरी नैपसैक स्प्रेयर पंप (16L)', 150, 'पाण्डेय ट्रेडर्स काउंटर', '+91 7703079301')" class="w-full py-2 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs rounded-xl transition shadow-xs flex items-center justify-center space-x-1.5">
@@ -1686,9 +1694,9 @@
             <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-xs hover:shadow-md transition space-y-3 flex flex-col justify-between">
               <div class="space-y-2">
                 <div class="flex items-center justify-between">
-                  <span class="text-2xl">☀️</span>
-                  <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
-                    🟢 उपलब्ध (Ready)
+                  <i class="fa-solid fa-sun text-2xl text-amber-500"></i>
+                  <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
+                    <span class="inline-block w-2 h-2 rounded-sm bg-emerald-500 mr-1"></span>उपलब्ध (Ready)
                   </span>
                 </div>
                 <h4 class="font-bold text-slate-900 text-sm">सोलर पोर्टेबल वाटर पंप (5 HP)</h4>
@@ -1696,7 +1704,7 @@
                 <div class="pt-2 border-t border-slate-100 space-y-1 text-xs">
                   <div class="flex justify-between"><span class="text-slate-400">किराया दर:</span> <strong class="text-slate-900 font-extrabold">₹100 / घंटा</strong></div>
                   <div class="flex justify-between"><span class="text-slate-400">ऑपरेटर:</span> <span class="text-slate-700 font-medium">सुखदेव पाण्डेय (इटियाथोक)</span></div>
-                  <div class="flex justify-between"><span class="text-slate-400">सत्यापन:</span> <span class="text-emerald-700 font-bold">✓ MNRE Certified</span></div>
+                  <div class="flex justify-between"><span class="text-slate-400">सत्यापन:</span> <span class="text-emerald-700 font-bold"> MNRE Certified</span></div>
                 </div>
               </div>
               <button onclick="openMachineryModal('सोलर पोर्टेबल वाटर पंप (5 HP)', 100, 'सुखदेव पाण्डेय', '+91 7703079301')" class="w-full py-2 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs rounded-xl transition shadow-xs flex items-center justify-center space-x-1.5">
@@ -1720,13 +1728,13 @@
             <!-- Season switcher buttons -->
             <div class="flex items-center space-x-2 bg-slate-100 p-1 rounded-xl">
               <button onclick="selectCropSeason('kharif')" id="seasonBtn-kharif" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-white text-emerald-800 shadow-xs transition">
-                🌾 खरीफ (Kharif)
+                खरीफ (Kharif)
               </button>
               <button onclick="selectCropSeason('rabi')" id="seasonBtn-rabi" class="px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 transition">
-                🌾 रबी (Rabi)
+                रबी (Rabi)
               </button>
               <button onclick="selectCropSeason('zaid')" id="seasonBtn-zaid" class="px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 transition">
-                🍉 जायद (Zaid)
+                जायद (Zaid)
               </button>
             </div>
           </div>
@@ -1738,15 +1746,15 @@
         </div>
 
         <!-- 3. PMFBY CROP INSURANCE PREMIUM CALCULATOR -->
-        <div class="bg-gradient-to-br from-indigo-950 via-slate-900 to-slate-950 text-white rounded-3xl p-6 sm:p-8 shadow-xl border border-indigo-500/30 space-y-6">
-          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-indigo-800/60 pb-5">
+        <div class="bg-slate-900 text-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-700 space-y-6">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800 pb-5">
             <div class="space-y-1">
-              <div class="inline-flex items-center space-x-2 px-2.5 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 text-[10px] font-bold border border-indigo-400/30">
+              <div class="inline-flex items-center space-x-2 px-2.5 py-0.5 rounded-full bg-slate-700/20 text-slate-300 text-[10px] font-bold border border-slate-700">
                 <i class="fa-solid fa-shield-heart"></i>
                 <span>PM Fasal Bima Yojana (PMFBY)</span>
               </div>
               <h3 class="text-xl sm:text-2xl font-black text-white">प्रधानमंत्री फसल बीमा प्रीमियम गणक (Insurance Calculator)</h3>
-              <p class="text-xs text-indigo-200">ओलावृष्टि, सूखा, अत्यधिक वर्षा अथवा बाढ़ से फसल नुकसान पर शत-प्रतिशत वित्तीय सुरक्षा।</p>
+              <p class="text-xs text-slate-200">ओलावृष्टि, सूखा, अत्यधिक वर्षा अथवा बाढ़ से फसल नुकसान पर शत-प्रतिशत वित्तीय सुरक्षा।</p>
             </div>
             <div class="text-right shrink-0">
               <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 text-xs font-bold font-mono">
@@ -1761,17 +1769,17 @@
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div class="space-y-1.5">
                   <label class="font-bold text-slate-300">फसल का चयन करें (Crop):</label>
-                  <select id="pmfbyCropSelect" onchange="calcPmfby()" class="w-full px-3 py-2.5 bg-slate-800 border border-slate-700 rounded-xl text-white font-semibold focus:outline-none focus:border-indigo-400">
-                    <option value="wheat">🌾 गेहूं (Wheat - रबी: 1.5% अंश)</option>
-                    <option value="paddy">🌾 धान (Paddy - खरीफ: 2.0% अंश)</option>
-                    <option value="mustard">🌼 सरसों (Mustard - रबी: 1.5% अंश)</option>
-                    <option value="sugarcane">🎋 गन्ना (Commercial: 5.0% अंश)</option>
+                  <select id="pmfbyCropSelect" onchange="calcPmfby()" class="w-full px-3 py-2.5 bg-slate-800 border border-slate-700 rounded-xl text-white font-semibold focus:outline-none focus:border-emerald-500">
+                    <option value="wheat"> गेहूं (Wheat - रबी: 1.5% अंश)</option>
+                    <option value="paddy"> धान (Paddy - खरीफ: 2.0% अंश)</option>
+                    <option value="mustard"> सरसों (Mustard - रबी: 1.5% अंश)</option>
+                    <option value="sugarcane"> गन्ना (Commercial: 5.0% अंश)</option>
                   </select>
                 </div>
 
                 <div class="space-y-1.5">
                   <label class="font-bold text-slate-300">खेत का क्षेत्रफल (एकड़ में):</label>
-                  <input type="number" id="pmfbyAcresInput" value="2.5" min="0.5" max="50" step="0.5" oninput="calcPmfby()" class="w-full px-3 py-2.5 bg-slate-800 border border-slate-700 rounded-xl text-white font-bold text-sm focus:outline-none focus:border-indigo-400">
+                  <input type="number" id="pmfbyAcresInput" value="2.5" min="0.5" max="50" step="0.5" oninput="calcPmfby()" class="w-full px-3 py-2.5 bg-slate-800 border border-slate-700 rounded-xl text-white font-bold text-sm focus:outline-none focus:border-emerald-500">
                 </div>
               </div>
 
@@ -1788,8 +1796,8 @@
             </div>
 
             <!-- Output Display Card -->
-            <div class="md:col-span-5 bg-gradient-to-br from-indigo-900/60 to-slate-900 border-2 border-indigo-500/40 rounded-2xl p-5 text-center space-y-3 shadow-lg">
-              <div class="text-xs font-bold uppercase tracking-wider text-indigo-300">किसान द्वारा देय कुल प्रीमियम (Your Share)</div>
+            <div class="md:col-span-5 bg-slate-800 border-2 border-slate-700 rounded-2xl p-5 text-center space-y-3 shadow-lg">
+              <div class="text-xs font-bold uppercase tracking-wider text-slate-300">किसान द्वारा देय कुल प्रीमियम (Your Share)</div>
               <div id="pmfbyFarmerPremium" class="text-3xl sm:text-4xl font-black text-amber-400">₹1,312.50</div>
               <div class="text-[11px] text-slate-300">
                 कुल बीमा सुरक्षा: <strong id="pmfbyTotalSum" class="text-white font-mono">₹87,500.00</strong>
@@ -1811,8 +1819,8 @@
               <span class="text-xs font-bold text-rose-600 uppercase tracking-wider">24x7 Emergency Support</span>
               <h3 class="text-lg font-black text-slate-900">सरकारी कृषि सहायता एवं आपातकालीन हेल्पलाइन</h3>
             </div>
-            <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-rose-100 text-rose-800">
-              🔴 Live Direct Dial
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-bold bg-rose-100 text-rose-800">
+               Live Direct Dial
             </span>
           </div>
 
@@ -1845,13 +1853,13 @@
               <div class="text-[10px] text-blue-700 font-semibold">सब्सिडी, बीज मिनीकिट व योजनाएं</div>
             </a>
 
-            <a href="tel:05262230412" class="p-3.5 rounded-2xl border border-slate-200 bg-slate-50 hover:bg-purple-50 hover:border-purple-300 transition group space-y-1 block">
-              <div class="font-extrabold text-slate-900 group-hover:text-purple-700 flex items-center space-x-1.5">
-                <i class="fa-solid fa-microscope text-purple-600"></i>
+            <a href="tel:05262230412" class="p-3.5 rounded-2xl border border-slate-200 bg-slate-50 hover:bg-amber-50 hover:border-amber-300 transition group space-y-1 block">
+              <div class="font-extrabold text-slate-900 group-hover:text-amber-800 flex items-center space-x-1.5">
+                <i class="fa-solid fa-microscope text-amber-700"></i>
                 <span>KVK गोंडा वैज्ञानिक केंद्र</span>
               </div>
               <div class="text-[11px] text-slate-500 font-mono">05262-230412 (वैज्ञानिक सलाह)</div>
-              <div class="text-[10px] text-purple-700 font-semibold">मृदा परीक्षण व कीट व्याधि निदान</div>
+              <div class="text-[10px] text-amber-800 font-semibold">मृदा परीक्षण व कीट व्याधि निदान</div>
             </a>
 
           </div>
@@ -1864,18 +1872,18 @@
         
         <!-- 1. HERO BANNER: ACADEMIC & MISSION OVERVIEW -->
         <div class="bg-gradient-to-br from-slate-950 via-emerald-950 to-slate-900 text-white rounded-3xl p-6 sm:p-10 shadow-2xl border border-emerald-500/30 relative overflow-hidden">
-          <div class="absolute -right-10 -bottom-10 opacity-10 text-9xl pointer-events-none select-none">🌾</div>
+          <div class="absolute -right-10 -bottom-10 opacity-10 text-9xl pointer-events-none select-none"></div>
           <div class="relative z-10 max-w-4xl space-y-4">
             <div class="flex flex-wrap items-center gap-2">
-              <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 flex items-center space-x-1.5">
+              <span class="px-3 py-1 rounded-md text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 flex items-center space-x-1.5">
                 <i class="fa-solid fa-seedling text-emerald-400"></i>
                 <span>District Gonda Agritech Deployment</span>
               </span>
-              <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40 flex items-center space-x-1.5 cursor-pointer hover:bg-amber-500/30 transition" onclick="openSeedTraceModal('24-076000')">
+              <span class="px-3 py-1 rounded-md text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40 flex items-center space-x-1.5 cursor-pointer hover:bg-amber-500/30 transition" onclick="openSeedTraceModal('24-076000')">
                 <i class="fa-solid fa-shield-check text-amber-400"></i>
                 <span>Govt SeedTrace Certified: 24-076000</span>
               </span>
-              <span class="px-3 py-1 rounded-full text-xs font-bold bg-blue-500/20 text-blue-300 border border-blue-500/40 flex items-center space-x-1.5">
+              <span class="px-3 py-1 rounded-md text-xs font-bold bg-blue-500/20 text-blue-300 border border-blue-500/40 flex items-center space-x-1.5">
                 <i class="fa-solid fa-shop text-blue-400"></i>
                 <span>Anchor Pilot Retailer: Pandey Traders (Itia Thok, Gonda)</span>
               </span>
@@ -1901,7 +1909,7 @@
                 <span>Central Escrow with 4-Digit OTP</span>
               </span>
               <span class="px-3 py-1 rounded-lg bg-white/10 text-xs font-medium text-slate-300 border border-white/10 flex items-center space-x-1">
-                <i class="fa-solid fa-building-columns text-purple-400"></i>
+                <i class="fa-solid fa-building-columns text-amber-400"></i>
                 <span>DAO Gonda & SeedTrace Compliance</span>
               </span>
             </div>
@@ -1910,16 +1918,16 @@
 
         <!-- 2. FLAGSHIP ANCHOR RETAILER: PANDEY TRADERS (CENTRAL FOCUS) -->
         <div class="bg-gradient-to-br from-amber-950/80 via-slate-900 to-emerald-950 text-white rounded-3xl p-6 sm:p-8 shadow-xl border-2 border-amber-500/50 relative overflow-hidden">
-          <div class="absolute -right-8 -bottom-8 opacity-10 text-8xl pointer-events-none select-none">🏪</div>
+          <div class="absolute -right-8 -bottom-8 opacity-10 text-8xl pointer-events-none select-none"></div>
           
           <div class="relative z-10 space-y-6">
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-amber-500/30 pb-5">
               <div class="space-y-1">
                 <div class="flex items-center space-x-2">
-                  <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-amber-500 text-slate-950 uppercase tracking-wide">
+                  <span class="px-2.5 py-0.5 rounded-md text-[11px] font-bold bg-amber-500 text-slate-950 uppercase tracking-wide">
                     Flagship Pilot Anchor Partner
                   </span>
-                  <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
+                  <span class="px-2.5 py-0.5 rounded-md text-[11px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
                     <i class="fa-solid fa-circle-check text-emerald-400 mr-1"></i> 100% Digitized Hub
                   </span>
                 </div>
@@ -1956,7 +1964,7 @@
                   Located at the heart of Itia Thok rural block in Gonda, Pandey Traders serves over 35 agrarian villages. During peak sowing seasons (Kharif paddy and Rabi wheat), farmers historically endured long waiting queues, black-market markups, and handwritten paper "Bahi-Khata" ledger disputes.
                 </p>
                 <p>
-                  Operating from the main agricultural market of Itia Thok, **Pandey Traders** serves over 35 surrounding farming villages. Pandey Traders partnered with Jaymani Krishi Sewa to digitize 100% of their daily counter operations—giving local farmers live visibility of subsidized fertilizer stock and certified seeds with zero ledger disputes. Every bag of government-subsidized Neem Coated Urea (₹266.50/45kg) and IFFCO DAP (₹1,350/50kg) is synchronized in real-time, backed by official Government SeedTrace certification and tamper-proof digital ledger records.
+                  Operating from the main agricultural market of Itia Thok, **Pandey Traders** serves over 35 surrounding farming villages. Pandey Traders partnered with Jaymani Krishi Sewa to digitize 100% of their daily counter operations - giving local farmers live visibility of subsidized fertilizer stock and certified seeds with zero ledger disputes. Every bag of government-subsidized Neem Coated Urea (₹266.50/45kg) and IFFCO DAP (₹1,350/50kg) is synchronized in real-time, backed by official Government SeedTrace certification and tamper-proof digital ledger records.
                 </p>
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
                   <div class="bg-black/30 border border-white/10 rounded-xl p-3">
@@ -1976,7 +1984,7 @@
                   </div>
                   <div class="bg-black/30 border border-white/10 rounded-xl p-3">
                     <div class="text-[10px] text-slate-400 font-bold uppercase">License Validity</div>
-                    <div class="text-base font-black text-purple-400 mt-0.5">2072</div>
+                    <div class="text-base font-black text-amber-400 mt-0.5">2072</div>
                     <div class="text-[10px] text-slate-400">DAO Lifetime record</div>
                   </div>
                 </div>
@@ -2037,7 +2045,7 @@
             <!-- Module 1 -->
             <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-xs hover:shadow-md transition space-y-3">
               <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-2xl font-bold">
-                📍
+                
               </div>
               <h3 class="font-extrabold text-slate-900 text-base">1. Hyper-Local Geospatial Discovery</h3>
               <p class="text-xs text-slate-600 leading-relaxed">
@@ -2051,7 +2059,7 @@
             <!-- Module 2 -->
             <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-xs hover:shadow-md transition space-y-3">
               <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-2xl font-bold">
-                📖
+                
               </div>
               <h3 class="font-extrabold text-slate-900 text-base">2. Synchronized Digital Bahi-Khata</h3>
               <p class="text-xs text-slate-600 leading-relaxed">
@@ -2065,7 +2073,7 @@
             <!-- Module 3 -->
             <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-xs hover:shadow-md transition space-y-3">
               <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center text-2xl font-bold">
-                🔒
+                
               </div>
               <h3 class="font-extrabold text-slate-900 text-base">3. Central Escrow & OTP Handshake</h3>
               <p class="text-xs text-slate-600 leading-relaxed">
@@ -2078,8 +2086,8 @@
 
             <!-- Module 4 -->
             <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-xs hover:shadow-md transition space-y-3">
-              <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center text-2xl font-bold">
-                🩺
+              <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center text-2xl font-bold">
+                
               </div>
               <h3 class="font-extrabold text-slate-900 text-base">4. ICAR Agronomic Advisory & Crop Health Diagnostics</h3>
               <p class="text-xs text-slate-600 leading-relaxed">
@@ -2093,7 +2101,7 @@
             <!-- Module 5 -->
             <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-xs hover:shadow-md transition space-y-3">
               <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center text-2xl font-bold">
-                🏛️
+                
               </div>
               <h3 class="font-extrabold text-slate-900 text-base">5. Govt SeedTrace & DAO Oversight</h3>
               <p class="text-xs text-slate-600 leading-relaxed">
@@ -2107,7 +2115,7 @@
             <!-- Module 6 -->
             <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-xs hover:shadow-md transition space-y-3">
               <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-700 flex items-center justify-center text-2xl font-bold">
-                ⚡
+                
               </div>
               <h3 class="font-extrabold text-slate-900 text-base">6. High-Affordance Bilingual UI/UX</h3>
               <p class="text-xs text-slate-600 leading-relaxed">
@@ -2234,7 +2242,7 @@
           <!-- Flowchart Banner -->
           <div class="bg-slate-950/80 border border-slate-800 rounded-2xl p-4 text-xs font-mono text-slate-300 flex flex-wrap items-center justify-between gap-3">
             <div class="flex items-center space-x-2">
-              <span class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span class="w-3 h-3 rounded-full bg-emerald-500 "></span>
               <strong class="text-white">Data Pipeline Flow:</strong>
             </div>
             <div class="flex flex-wrap items-center gap-2 text-[11px]">
@@ -2244,7 +2252,7 @@
               <span class="text-slate-500">&rarr;</span>
               <span class="px-2.5 py-1 bg-slate-800 rounded-lg text-amber-300 border border-slate-700">ACID DB (SELECT FOR UPDATE)</span>
               <span class="text-slate-500">&rarr;</span>
-              <span class="px-2.5 py-1 bg-slate-800 rounded-lg text-purple-300 border border-slate-700">Escrow Hold / Bahi-Khata</span>
+              <span class="px-2.5 py-1 bg-slate-800 rounded-lg text-amber-300 border border-slate-700">Escrow Hold / Bahi-Khata</span>
               <span class="text-slate-500">&rarr;</span>
               <span class="px-2.5 py-1 bg-slate-800 rounded-lg text-emerald-300 border border-slate-700">OTP Release & Fulfillment</span>
             </div>
@@ -2400,8 +2408,8 @@
         <!-- 7. CONTACT & PILOT PHYSICAL LOCATION (PANDEY TRADERS HUB) -->
         <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
           <div class="space-y-2">
-            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800">Physical Deployment Hub</span>
-            <h3 class="text-lg sm:text-xl font-black text-slate-900">Pandey Traders — Main Market, Itia Thok</h3>
+            <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-emerald-100 text-emerald-800">Physical Deployment Hub</span>
+            <h3 class="text-lg sm:text-xl font-black text-slate-900">Pandey Traders: Main Market, Itia Thok</h3>
             <p class="text-xs text-slate-600">
               Tehsil Sadar, District Gonda, Uttar Pradesh - 271202 • 
               Helpline Phone: <strong class="text-slate-900">+91 7703079301</strong> / <strong class="text-slate-900">+91 94150 54321</strong>
@@ -2423,7 +2431,164 @@
           </div>
         </div>
 
-      </div></section>
+      
+      <!-- ===================================================================== -->
+      <!-- PRIVACY POLICY PAGE (DPDP ACT 2023 COMPLIANT)                         -->
+      <!-- ===================================================================== -->
+      <div id="tab-privacyTab" class="hidden space-y-8 animate-fadeIn">
+        <div class="bg-slate-900 text-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-800">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800 pb-5">
+            <div>
+              <div class="inline-flex items-center space-x-2 px-2.5 py-0.5 rounded-md bg-emerald-500/20 text-emerald-400 text-xs font-mono font-bold">
+                <i class="fa-solid fa-shield-halved mr-1"></i>DPDP Act 2023 Compliant Notice
+              </div>
+              <h2 class="text-xl sm:text-3xl font-black text-white mt-2">Privacy Policy &amp; Data Protection Charter</h2>
+              <p class="text-xs text-slate-400 mt-1">Effective Date: November 2026 • Domain: https://jaymani.in • Platform: Jaymani Krishi Sewa</p>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="px-3 py-1 rounded-md bg-slate-800 text-slate-300 border border-slate-700 text-xs font-mono">
+                Jurisdiction: District Gonda, UP
+              </span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 text-xs text-slate-300 leading-relaxed">
+            <div class="p-5 rounded-2xl bg-slate-800/60 border border-slate-700/80 space-y-2">
+              <h3 class="font-bold text-sm text-emerald-400 flex items-center space-x-2">
+                <i class="fa-solid fa-user-shield"></i>
+                <span>1. Data Fiduciary &amp; Purpose Specification</span>
+              </h3>
+              <p>
+                Under India's Digital Personal Data Protection Act, 2023 (DPDP Act 2023), <strong>Jaymani Krishi Sewa</strong> operates as the Data Fiduciary in direct technical partnership with authorized anchor retailer <strong>Pandey Traders</strong> (Main Market, Itia Thok, District Gonda, UP - 271202).
+              </p>
+              <p>
+                We collect personal identifiers solely for specified, lawful agricultural service delivery: Farmer Full Name, Mobile Number (for 4-digit Delivery OTP and SMS notifications), Village Geolocation / Landmark (for doorstep seed and fertilizer transit), and Khasra/Khatauni land acreage (to calibrate ICAR-recommended fertilizer allotments under Govt Fertilizer Control Order norms).
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-slate-800/60 border border-slate-700/80 space-y-2">
+              <h3 class="font-bold text-sm text-emerald-400 flex items-center space-x-2">
+                <i class="fa-solid fa-database"></i>
+                <span>2. Sovereign Indian Data Localization</span>
+              </h3>
+              <p>
+                In strict compliance with Reserve Bank of India (RBI) payment directives and Ministry of Electronics and Information Technology (MeitY) guidelines, 100% of transaction logs, Bahi-Khata ledgers, and KYC records are persisted exclusively on encrypted cloud database instances located within the territorial borders of the Republic of India.
+              </p>
+              <p>
+                We do not sell, rent, monetize, or transfer farmer behavioral data, crop yields, or credit ledger histories to any third-party marketing brokers or advertising exchanges.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-slate-800/60 border border-slate-700/80 space-y-2">
+              <h3 class="font-bold text-sm text-emerald-400 flex items-center space-x-2">
+                <i class="fa-solid fa-lock"></i>
+                <span>3. Tamper-Proof Audit Logging &amp; Security</span>
+              </h3>
+              <p>
+                All ledger debits, repayments, subsidy issuances, and order status transitions are sealed cryptographically with SHA-256 hash chains. Every credit transaction requires physical mutual assent or dynamic SMS verification.
+              </p>
+              <p>
+                Passwords are never stored in plaintext and are protected with salted PBKDF2/SHA-256 cryptographic hashing. Network traffic is enforced over TLS 1.3 encryption across the canonical domain <span class="font-mono text-emerald-400">jaymani.in</span>.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-slate-800/60 border border-slate-700/80 space-y-2">
+              <h3 class="font-bold text-sm text-emerald-400 flex items-center space-x-2">
+                <i class="fa-solid fa-scale-unbalanced-flip"></i>
+                <span>4. Farmer Data Rights &amp; Grievance Redressal</span>
+              </h3>
+              <p>
+                Every farmer retains the statutory right to inspect their complete credit ledger history, request correction of erroneous ledger entries, and export their printable Bahi-Khata passbook.
+              </p>
+              <p>
+                <strong>Statutory Grievance Redressal Officer:</strong><br>
+                Sukhdev Prasad Pandey (Proprietor, Pandey Traders)<br>
+                Main Market, Itia Thok, District Gonda, Uttar Pradesh - 271202<br>
+                Direct Phone: <span class="font-mono text-emerald-300">+91 7703079301</span> • Email: <span class="font-mono text-emerald-300">compliance@jaymani.in</span><br>
+                Statutory Redressal Response Window: Within 72 Hours.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===================================================================== -->
+      <!-- TERMS & CONDITIONS PAGE (FCO 1985 & SEED ACT 1966 COMPLIANT)           -->
+      <!-- ===================================================================== -->
+      <div id="tab-termsTab" class="hidden space-y-8 animate-fadeIn">
+        <div class="bg-slate-900 text-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-800">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800 pb-5">
+            <div>
+              <div class="inline-flex items-center space-x-2 px-2.5 py-0.5 rounded-md bg-amber-500/20 text-amber-400 text-xs font-mono font-bold">
+                <i class="fa-solid fa-scale-balanced mr-1"></i>Statutory Commercial Terms
+              </div>
+              <h2 class="text-xl sm:text-3xl font-black text-white mt-2">Terms &amp; Conditions of Agricultural Commerce</h2>
+              <p class="text-xs text-slate-400 mt-1">Applicable to all Orders, Credit Ledgers, and Retail Procurement on https://jaymani.in</p>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="px-3 py-1 rounded-md bg-slate-800 text-slate-300 border border-slate-700 text-xs font-mono">
+                Reg: DAO SEED/147/GDN/123
+              </span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 text-xs text-slate-300 leading-relaxed">
+            <div class="p-5 rounded-2xl bg-slate-800/60 border border-slate-700/80 space-y-2">
+              <h3 class="font-bold text-sm text-amber-400 flex items-center space-x-2">
+                <i class="fa-solid fa-stamp"></i>
+                <span>1. Authorized Retail Licensure &amp; MRP Adherence</span>
+              </h3>
+              <p>
+                All agricultural inputs listed on Jaymani Krishi Sewa are supplied by state-authorized agricultural retailers operating under verified licenses issued by the District Agriculture Officer (DAO), Gonda.
+              </p>
+              <p>
+                Anchor retailer Pandey Traders holds valid UP DAO Retail Seed License <strong>DAO SEED/147/GDN/123</strong> and National SeedTrace Registration <strong>24-076000</strong>. Subsidized fertilizers (Neem Coated Urea at ₹266.50/45kg and IFFCO DAP at ₹1,350/50kg) are sold strictly at statutory Maximum Retail Price (MRP) without any illegal premiums, packing surcharges, or forced bundling.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-slate-800/60 border border-slate-700/80 space-y-2">
+              <h3 class="font-bold text-sm text-amber-400 flex items-center space-x-2">
+                <i class="fa-solid fa-wheat-awn"></i>
+                <span>2. Quality Standards: Seeds Act 1966 &amp; FCO 1985</span>
+              </h3>
+              <p>
+                Seeds procured through the platform comply with purity, moisture, and germination benchmarks defined under <strong>The Seeds Act, 1966</strong> and <strong>The Seeds Rules, 1968</strong>.
+              </p>
+              <p>
+                Fertilizers comply with the chemical composition standards of <strong>The Fertilizer (Inorganic, Organic or Mixed) (Control) Order, 1985 (FCO 1985)</strong> promulgated under the Essential Commodities Act, 1955. Crop chemicals are registered under <strong>The Insecticides Act, 1968</strong> with verified batch manufacturing labels and expiry dates.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-slate-800/60 border border-slate-700/80 space-y-2">
+              <h3 class="font-bold text-sm text-amber-400 flex items-center space-x-2">
+                <i class="fa-solid fa-book-bookmark"></i>
+                <span>3. Bahi-Khata Credit Facility Terms</span>
+              </h3>
+              <p>
+                The digital Bahi-Khata credit ledger represents an interest-free seasonal revolving trade credit extended by local retailers to verified farming households based on village social trust and repayment discipline.
+              </p>
+              <p>
+                The default credit ceiling is set dynamically (up to ₹10,000 for standard accounts). Credit balances must be settled upon harvest realization or within 90 days. Timely repayments earn Kisan Incentive Coins (1 Coin = ₹1 cash discount on subsequent seed/fertilizer orders).
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-slate-800/60 border border-slate-700/80 space-y-2">
+              <h3 class="font-bold text-sm text-amber-400 flex items-center space-x-2">
+                <i class="fa-solid fa-truck-ramp-box"></i>
+                <span>4. Delivery Acceptance, OTP &amp; Jurisdiction</span>
+              </h3>
+              <p>
+                Doorstep delivery orders require physical verification of bag seal integrity and batch stamp prior to sharing the 4-digit Delivery OTP. Transfer of OTP to the delivery associate constitutes conclusive legal confirmation of delivery in good order.
+              </p>
+              <p>
+                <strong>Legal Jurisdiction:</strong> Any unresolved commercial disputes or regulatory grievances arising from platform transactions shall be subject exclusively to the civil and consumer courts having territorial jurisdiction in <strong>District Gonda, Uttar Pradesh, India</strong>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div></section>
 
     <!-- ===================================================================== -->
     <!-- 2. LOCAL VENDOR VIEW (PANDEY TRADERS / AWADH AGRI)                    -->
@@ -2435,8 +2600,8 @@
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <div class="flex items-center space-x-2 text-emerald-400 text-xs font-semibold tracking-wide uppercase">
-              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-              <span id="vendorShopLicense" class="cursor-pointer hover:underline" onclick="openSeedTraceModal('24-076000')">🛡️ Govt SeedTrace Portal Certified • Dealer ID: 24-076000 • Lic: DAO SEED/147/GDN/123 (Valid: 02-01-2072)</span>
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 "></span>
+              <span id="vendorShopLicense" class="cursor-pointer hover:underline" onclick="openSeedTraceModal('24-076000')"><i class="fa-solid fa-shield-halved text-emerald-400 mr-1"></i>Govt SeedTrace Portal Certified • Dealer ID: 24-076000 • Lic: DAO SEED/147/GDN/123 (Valid: 02-01-2072)</span>
             </div>
             <h1 class="text-xl sm:text-2xl font-extrabold mt-1 text-white">
               <span id="vendorShopName">Pandey Traders</span> <span class="text-emerald-400 text-base font-normal">(खाद एवं बीज भंडार)</span>
@@ -2464,13 +2629,13 @@
         <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
           <div class="text-[11px] font-bold uppercase text-slate-400">Escrow Locked Funds</div>
           <div id="vendorEscrowLocked" class="text-2xl font-extrabold text-blue-600 mt-1">₹1,340.00</div>
-          <div class="text-[11px] text-blue-700 font-semibold mt-1">🔒 In Platform Escrow</div>
+          <div class="text-[11px] text-blue-700 font-semibold mt-1"> In Platform Escrow</div>
         </div>
 
         <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
           <div class="text-[11px] font-bold uppercase text-slate-400">Settled Escrow Wallet</div>
           <div id="vendorEscrowSettled" class="text-2xl font-extrabold text-emerald-600 mt-1">₹2,850.00</div>
-          <div class="text-[11px] text-emerald-700 font-semibold mt-1">✓ Released & Verified</div>
+          <div class="text-[11px] text-emerald-700 font-semibold mt-1"> Released & Verified</div>
         </div>
 
         <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
@@ -2482,7 +2647,7 @@
         <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
           <div class="text-[11px] font-bold uppercase text-slate-400">Low Stock Warnings</div>
           <div id="vendorLowStockCount" class="text-2xl font-extrabold text-amber-600 mt-1">1 Item</div>
-          <div class="text-[11px] text-amber-700 font-semibold mt-1">⚠️ Zinc Sulfate &lt; 15 bags</div>
+          <div class="text-[11px] text-amber-700 font-semibold mt-1"> Zinc Sulfate &lt; 15 bags</div>
         </div>
       </div>
 
@@ -2614,7 +2779,7 @@
     <!-- ===================================================================== -->
     <section id="view-official" class="hidden space-y-6">
       
-      <div class="bg-gradient-to-r from-blue-900 to-indigo-900 text-white rounded-2xl p-5 sm:p-6 shadow-md border border-blue-800">
+      <div class="bg-slate-900 text-white rounded-2xl p-5 sm:p-6 shadow-md border border-blue-800">
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <div class="flex items-center space-x-2 text-blue-300 text-xs font-semibold tracking-wide uppercase">
@@ -2838,6 +3003,122 @@
 
   </main>
 
+  <!-- ======================================================================= -->
+  <!-- ENTERPRISE FOOTER & REGULATORY IDENTITY                                -->
+  <!-- ======================================================================= -->
+  <footer class="bg-slate-950 text-slate-400 border-t border-slate-800 mt-12 py-10 px-4 sm:px-6 lg:px-8 text-xs">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+      <!-- Col 1: Platform Identity & Domain -->
+      <div class="space-y-3">
+        <div class="flex items-center space-x-2 text-white">
+          <div class="w-8 h-8 rounded-lg bg-emerald-700 text-white flex items-center justify-center font-bold">
+            <i class="fa-solid fa-seedling"></i>
+          </div>
+          <span class="font-black text-sm tracking-tight">JAYMANI KRISHI SEWA</span>
+        </div>
+        <p class="text-slate-400 leading-relaxed">
+          District Gonda's verified agricultural input marketplace, synchronizing licensed rural retailers with farming households through transparent pricing and digital Bahi-Khata ledgers.
+        </p>
+        <div class="pt-1">
+          <div class="text-[11px] font-semibold text-slate-300">Verified Custom Domain:</div>
+          <a href="https://jaymani.in" class="text-emerald-400 hover:text-emerald-300 font-mono font-bold flex items-center space-x-1.5 mt-0.5">
+            <i class="fa-solid fa-globe text-xs"></i>
+            <span>https://jaymani.in</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2: Regulatory Compliance -->
+      <div class="space-y-2">
+        <div class="font-bold text-white text-sm uppercase tracking-wider">Statutory Licenses</div>
+        <ul class="space-y-1.5 text-slate-400">
+          <li class="flex items-start space-x-1.5">
+            <i class="fa-solid fa-certificate text-emerald-500 mt-0.5"></i>
+            <span>DAO Seed License: <strong class="text-slate-200">DAO SEED/147/GDN/123</strong></span>
+          </li>
+          <li class="flex items-start space-x-1.5">
+            <i class="fa-solid fa-shield-halved text-emerald-500 mt-0.5"></i>
+            <span>Govt SeedTrace Dealer ID: <strong class="text-slate-200">24-076000</strong></span>
+          </li>
+          <li class="flex items-start space-x-1.5">
+            <i class="fa-solid fa-scale-balanced text-emerald-500 mt-0.5"></i>
+            <span>Standards: Fertilizer Control Order 1985 &amp; Seed Act 1966</span>
+          </li>
+          <li class="flex items-start space-x-1.5">
+            <i class="fa-solid fa-money-bill-transfer text-emerald-500 mt-0.5"></i>
+            <span>Central Escrow VPA: <strong class="text-slate-200 font-mono">9142223202@IBL</strong></span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Anchor Retail Hub -->
+      <div class="space-y-2">
+        <div class="font-bold text-white text-sm uppercase tracking-wider">Anchor Dealership Hub</div>
+        <p class="text-slate-300 font-bold">Pandey Traders (पाण्डेय ट्रेडर्स)</p>
+        <p class="text-slate-400">
+          Main Market Road, Itia Thok, District Gonda, Uttar Pradesh - 271202<br>
+          Proprietor: Sukhdev Prasad Pandey<br>
+          Direct Helpline: <span class="font-mono text-emerald-400 font-bold">+91 7703079301</span>
+        </p>
+        <div class="text-[11px] text-slate-400 pt-1">
+          Kisan 24x7 Toll-Free: <span class="font-mono text-amber-400 font-bold">1800-180-1551</span>
+        </div>
+      </div>
+
+      <!-- Col 4: Quick Legal & Institutional Links -->
+      <div class="space-y-2">
+        <div class="font-bold text-white text-sm uppercase tracking-wider">Legal &amp; Institutional</div>
+        <ul class="space-y-1.5">
+          <li>
+            <button onclick="navGoTo('privacy')" class="text-slate-400 hover:text-emerald-400 transition flex items-center space-x-1.5">
+              <i class="fa-solid fa-arrow-right text-[10px] text-emerald-500"></i>
+              <span>Privacy Policy (DPDP Act 2023)</span>
+            </button>
+          </li>
+          <li>
+            <button onclick="navGoTo('terms')" class="text-slate-400 hover:text-emerald-400 transition flex items-center space-x-1.5">
+              <i class="fa-solid fa-arrow-right text-[10px] text-emerald-500"></i>
+              <span>Terms &amp; Conditions (FCO 1985)</span>
+            </button>
+          </li>
+          <li>
+            <button onclick="navGoTo('about')" class="text-slate-400 hover:text-emerald-400 transition flex items-center space-x-1.5">
+              <i class="fa-solid fa-arrow-right text-[10px] text-emerald-500"></i>
+              <span>Institutional Research &amp; Architecture</span>
+            </button>
+          </li>
+          <li>
+            <button onclick="showTab('schemesTab')" class="text-slate-400 hover:text-emerald-400 transition flex items-center space-x-1.5">
+              <i class="fa-solid fa-arrow-right text-[10px] text-emerald-500"></i>
+              <span>PM-Kisan DBT &amp; Subsidies</span>
+            </button>
+          </li>
+        </ul>
+        <div class="pt-2 text-[11px] text-slate-400">
+          Department of Computer Science &amp; Engineering<br>
+          Sharda University • Course CSCR2600 (PBL-1)
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Copyright Bar -->
+    <div class="max-w-7xl mx-auto mt-8 pt-6 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-400">
+      <div>
+        &copy; 2026-2027 JAYMANI KRISHI SEWA. All Rights Reserved. Operational in District Gonda, Uttar Pradesh.
+      </div>
+      <div class="flex items-center space-x-4">
+        <a href="#privacy" onclick="navGoTo('privacy')" class="hover:text-emerald-400 transition">Privacy</a>
+        <span>•</span>
+        <a href="#terms" onclick="navGoTo('terms')" class="hover:text-emerald-400 transition">Terms</a>
+        <span>•</span>
+        <a href="#about" onclick="navGoTo('about')" class="hover:text-emerald-400 transition">Academic Architecture</a>
+        <span>•</span>
+        <span class="text-emerald-400 font-mono">jaymani.in</span>
+      </div>
+    </div>
+  </footer>
+
+
   <!-- ===================================================================== -->
   <!-- AUTHENTICATION MODAL (LOGIN & SIGNUP - EMAIL + PASSWORD ONLY)         -->
   <!-- ===================================================================== -->
@@ -2852,7 +3133,7 @@
       <!-- Modal Branding -->
       <div class="text-center space-y-1">
         <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-emerald-600 to-green-500 text-white flex items-center justify-center text-xl font-bold mx-auto shadow-md">
-          🌾
+          
         </div>
         <h3 class="text-xl font-extrabold text-slate-900">JAYMANI KRISHI SEWA</h3>
         <p class="text-xs text-slate-500">Secure Session-based Authentication (सत्र आधारित लॉगिन)</p>
@@ -2913,10 +3194,10 @@
         <div class="space-y-1 text-left">
           <label class="block text-xs font-bold text-slate-700">Select Role (भूमिका)</label>
           <select id="authRole" class="w-full px-3 py-2.5 border border-slate-300 rounded-xl text-xs font-semibold text-slate-800 bg-white focus:outline-none focus:border-emerald-500">
-            <option value="farmer">🌾 Farmer (किसान)</option>
-            <option value="vendor">🏪 Vendor (खाद/बीज विक्रेता)</option>
-            <option value="official">🏛️ Govt Official (DAO Gonda)</option>
-            <option value="admin">🛡️ Platform Administrator</option>
+            <option value="farmer"> Farmer (किसान)</option>
+            <option value="vendor"> Vendor (खाद/बीज विक्रेता)</option>
+            <option value="official"> Govt Official (DAO Gonda)</option>
+            <option value="admin"> Platform Administrator</option>
           </select>
         </div>
 
@@ -2931,7 +3212,7 @@
       <!-- QUICK SWITCH ACCESS PORTALS -->
       <div class="pt-3 border-t border-slate-100 text-left space-y-2">
         <div class="flex items-center justify-between text-xs font-bold text-slate-700">
-          <span>⚡ Quick Access Profiles (त्वरित भूमिका चयन):</span>
+          <span> Quick Access Profiles (त्वरित भूमिका चयन):</span>
           <span class="text-[10px] text-emerald-600 font-semibold">Verified Live System</span>
         </div>
 
@@ -2940,7 +3221,7 @@
           <!-- 1. Farmer Amit Kumar -->
           <button type="button" onclick="autoFillCredentials('amit.farmer@gmail.com', 'Amit@123', 'farmer')" class="p-2.5 rounded-xl border border-emerald-300 bg-emerald-50/80 hover:bg-emerald-100 text-emerald-950 font-semibold text-left transition flex items-center justify-between group shadow-xs">
             <div>
-              <div class="font-bold flex items-center space-x-1"><span>🌾</span><span>Amit Kumar (किसान)</span></div>
+              <div class="font-bold flex items-center space-x-1"><i class="fa-solid fa-wheat-awn text-emerald-600"></i><span>Amit Kumar (किसान)</span></div>
               <div class="text-[10px] text-emerald-700">amit.farmer@gmail.com</div>
               <div class="text-[9px] text-slate-500 font-mono">Pass: Amit@123</div>
             </div>
@@ -2950,7 +3231,7 @@
           <!-- 2. Vendor Pandey Traders -->
           <button type="button" onclick="autoFillCredentials('pandey.traders@gmail.com', 'Pandey@123', 'vendor')" class="p-2.5 rounded-xl border border-blue-300 bg-blue-50/80 hover:bg-blue-100 text-blue-950 font-semibold text-left transition flex items-center justify-between group shadow-xs">
             <div>
-              <div class="font-bold flex items-center space-x-1"><span>🏪</span><span>Pandey Traders (विक्रेता)</span></div>
+              <div class="font-bold flex items-center space-x-1"><span></span><span>Pandey Traders (विक्रेता)</span></div>
               <div class="text-[10px] text-blue-700">pandey.traders@gmail.com</div>
               <div class="text-[9px] text-slate-500 font-mono">Pass: Pandey@123</div>
             </div>
@@ -2960,7 +3241,7 @@
           <!-- 3. Platform Admin -->
           <button type="button" onclick="autoFillCredentials('admin.jaymani@up.gov.in', 'Admin@123', 'admin')" class="p-2.5 rounded-xl border border-slate-300 bg-slate-50/80 hover:bg-slate-100 text-slate-900 font-semibold text-left transition flex items-center justify-between group shadow-xs">
             <div>
-              <div class="font-bold flex items-center space-x-1"><span>🏛️</span><span>Platform Admin (प्रशासक)</span></div>
+              <div class="font-bold flex items-center space-x-1"><span></span><span>Platform Admin (प्रशासक)</span></div>
               <div class="text-[10px] text-slate-600">admin.jaymani@up.gov.in</div>
               <div class="text-[9px] text-slate-500 font-mono">Pass: Admin@123</div>
             </div>
@@ -2968,19 +3249,19 @@
           </button>
 
           <!-- 4. Super Admin / Developer -->
-          <button type="button" onclick="autoFillCredentials('dev.superadmin@jaymani.in', 'SuperDev@123', 'admin')" class="p-2.5 rounded-xl border border-purple-300 bg-purple-50/80 hover:bg-purple-100 text-purple-950 font-semibold text-left transition flex items-center justify-between group shadow-xs">
+          <button type="button" onclick="autoFillCredentials('dev.superadmin@jaymani.in', 'SuperDev@123', 'admin')" class="p-2.5 rounded-xl border border-amber-300 bg-amber-50/80 hover:bg-amber-100 text-slate-950 font-semibold text-left transition flex items-center justify-between group shadow-xs">
             <div>
-              <div class="font-bold flex items-center space-x-1"><span>💻</span><span>Super Admin (आर्किटेक्ट)</span></div>
-              <div class="text-[10px] text-purple-700">dev.superadmin@jaymani.in</div>
+              <div class="font-bold flex items-center space-x-1"><span></span><span>Super Admin (आर्किटेक्ट)</span></div>
+              <div class="text-[10px] text-amber-800">dev.superadmin@jaymani.in</div>
               <div class="text-[9px] text-slate-500 font-mono">Pass: SuperDev@123</div>
             </div>
-            <i class="fa-solid fa-arrow-right text-purple-600 group-hover:translate-x-0.5 transition"></i>
+            <i class="fa-solid fa-arrow-right text-amber-700 group-hover:translate-x-0.5 transition"></i>
           </button>
 
           <!-- 5. Additional Profiles: Ramesh Kumar & DAO Gonda -->
           <button type="button" onclick="autoFillCredentials('ramesh.farmer@jaymani.in', 'Ramesh@123', 'farmer')" class="p-2 rounded-xl border border-slate-200 bg-slate-50/60 hover:bg-slate-100 text-slate-700 font-medium text-left transition flex items-center justify-between">
             <div>
-              <div class="font-semibold text-xs flex items-center space-x-1"><span>🌾</span><span>Ramesh Kumar (किसान - धनेपुर, इटियाथोक)</span></div>
+              <div class="font-semibold text-xs flex items-center space-x-1"><i class="fa-solid fa-wheat-awn text-emerald-600"></i><span>Ramesh Kumar (किसान - धनेपुर, इटियाथोक)</span></div>
               <div class="text-[10px] text-slate-500">ramesh.farmer@jaymani.in</div>
             </div>
             <span class="text-[10px] text-emerald-700 font-mono font-bold">Ramesh@123</span>
@@ -2988,7 +3269,7 @@
 
           <button type="button" onclick="autoFillCredentials('dao.gonda@up.gov.in', 'DaoGonda@123', 'official')" class="p-2 rounded-xl border border-slate-200 bg-slate-50/60 hover:bg-slate-100 text-slate-700 font-medium text-left transition flex items-center justify-between">
             <div>
-              <div class="font-semibold text-xs flex items-center space-x-1"><span>🏛️</span><span>District Agri Officer (DAO Gonda)</span></div>
+              <div class="font-semibold text-xs flex items-center space-x-1"><span></span><span>District Agri Officer (DAO Gonda)</span></div>
               <div class="text-[10px] text-slate-500">dao.gonda@up.gov.in</div>
             </div>
             <span class="text-[10px] text-amber-700 font-mono font-bold">DaoGonda@123</span>
@@ -3008,7 +3289,7 @@
     <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[92vh] overflow-y-auto shadow-2xl border border-slate-200 flex flex-col my-6">
       
       <!-- Modal Header -->
-      <div class="p-4 sm:p-5 border-b border-slate-100 flex items-center justify-between bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white rounded-t-3xl">
+      <div class="p-4 sm:p-5 border-b border-slate-100 flex items-center justify-between bg-slate-900 text-white rounded-t-3xl">
         <div class="flex items-center space-x-2.5">
           <div class="w-10 h-10 rounded-xl bg-blue-500/20 border border-blue-400/40 text-blue-300 flex items-center justify-center text-lg">
             <i class="fa-solid fa-diamond-turn-right text-amber-300"></i>
@@ -3020,7 +3301,7 @@
             <p class="text-xs text-slate-300">Google Maps Live Route & Turn-by-Turn GPS Guidance</p>
           </div>
         </div>
-        <button type="button" onclick="closeStoreRouteModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition">
+        <button type="button" onclick="closeStoreRouteModal()" class="w-8 h-8 rounded-lg bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition">
           <i class="fa-solid fa-xmark text-sm"></i>
         </button>
       </div>
@@ -3032,11 +3313,11 @@
         <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div class="space-y-1">
             <div class="flex items-center space-x-2">
-              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-black bg-emerald-600 text-white">
+              <span class="px-2.5 py-0.5 rounded-md text-[10px] font-black bg-emerald-600 text-white">
                 प्रमाणित दुकान
               </span>
-              <span id="routeStoreRating" class="text-xs font-bold text-amber-600">★ 4.9</span>
-              <span id="routeStoreDistanceTag" class="text-xs font-bold text-blue-600">📍 1.8 km दूर</span>
+              <span id="routeStoreRating" class="text-xs font-bold text-emerald-600">DAO SEED/147/GDN/123</span>
+              <span id="routeStoreDistanceTag" class="text-xs font-bold text-blue-600"> 1.8 km दूर</span>
             </div>
             <h4 id="routeStoreName" class="font-extrabold text-slate-900 text-base">Pandey Traders (सुखदेव पाण्डेय खाद बीज भंडार)</h4>
             <p id="routeStoreAddress" class="text-xs text-slate-500 flex items-center space-x-1">
@@ -3068,7 +3349,7 @@
             <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
             <div>
               <span class="font-bold text-blue-900">किसान का वर्तमान स्थान (Origin):</span>
-              <span id="routeOriginStatus" class="text-blue-800 ml-1 font-mono">📍 इटियाथोक किसान केंद्र (27.2882° N, 82.0234° E)</span>
+              <span id="routeOriginStatus" class="text-blue-800 ml-1 font-mono">इटियाथोक किसान केंद्र (27.2882° N, 82.0234° E)</span>
             </div>
           </div>
           <button type="button" onclick="refreshUserGpsLocation()" class="self-start sm:self-center px-2.5 py-1 bg-white hover:bg-blue-100 text-blue-700 border border-blue-300 rounded-lg font-bold text-[11px] transition flex items-center space-x-1">
@@ -3079,22 +3360,22 @@
 
         <!-- 3 Travel Modes Estimated Times -->
         <div class="grid grid-cols-3 gap-2 sm:gap-3">
-          <div class="p-3 rounded-2xl bg-gradient-to-br from-indigo-50 to-blue-50 border border-indigo-100 text-center">
-            <div class="text-xl mb-1">🏍️</div>
+          <div class="p-3 rounded-2xl bg-slate-50 border border-slate-200 text-center">
+            <div class="text-xl mb-1"><i class="fa-solid fa-motorcycle text-slate-700"></i></div>
             <div class="text-[10px] font-bold uppercase text-slate-500">बाइक / मोटरसाइकिल</div>
-            <div id="routeBikeTime" class="text-base sm:text-lg font-black text-indigo-950 mt-0.5">5 मिनट</div>
+            <div id="routeBikeTime" class="text-base sm:text-lg font-black text-slate-950 mt-0.5">5 मिनट</div>
             <div class="text-[10px] text-slate-400">औसत गति: 25 km/h</div>
           </div>
 
           <div class="p-3 rounded-2xl bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-100 text-center">
-            <div class="text-xl mb-1">🚜</div>
+            <div class="text-xl mb-1"><i class="fa-solid fa-tractor text-slate-700"></i></div>
             <div class="text-[10px] font-bold uppercase text-slate-500">ट्रैक्टर / पिकअप</div>
             <div id="routeTractorTime" class="text-base sm:text-lg font-black text-amber-950 mt-0.5">10 मिनट</div>
             <div class="text-[10px] text-slate-400">औसत गति: 15 km/h</div>
           </div>
 
           <div class="p-3 rounded-2xl bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-100 text-center">
-            <div class="text-xl mb-1">🚶</div>
+            <div class="text-xl mb-1"><i class="fa-solid fa-person-walking text-slate-700"></i></div>
             <div class="text-[10px] font-bold uppercase text-slate-500">पैदल (Walking)</div>
             <div id="routeWalkTime" class="text-base sm:text-lg font-black text-emerald-950 mt-0.5">22 मिनट</div>
             <div class="text-[10px] text-slate-400">औसत गति: 4.5 km/h</div>
@@ -3126,23 +3407,23 @@
                 </linearGradient>
               </defs>
               <!-- Route Path Line -->
-              <path d="M 60 170 Q 140 160 200 120 T 360 70 T 520 40" fill="none" stroke="url(#routeGradient)" stroke-width="5" stroke-dasharray="6 3" class="animate-pulse" />
+              <path d="M 60 170 Q 140 160 200 120 T 360 70 T 520 40" fill="none" stroke="url(#routeGradient)" stroke-width="5" stroke-dasharray="6 3" class="" />
             </svg>
 
             <!-- Origin Marker (Farmer) -->
             <div class="absolute bottom-5 left-8 z-10 flex flex-col items-center">
-              <span class="px-2 py-0.5 bg-emerald-600 text-white text-[10px] font-black rounded shadow-md mb-1 animate-bounce">
+              <span class="px-2 py-0.5 bg-emerald-600 text-white text-[10px] font-black rounded shadow-md mb-1 ">
                 आप यहां हैं (Farmer)
               </span>
               <div class="w-7 h-7 rounded-full bg-emerald-500 border-2 border-white shadow-lg flex items-center justify-center text-white text-xs">
-                🌾
+                
               </div>
             </div>
 
             <!-- Midway Landmark Tag -->
             <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
               <span class="px-2 py-0.5 bg-slate-800/90 text-sky-300 border border-sky-400/30 text-[9px] font-semibold rounded-full shadow-xs">
-                🛣️ SH-9 गोण्डा-बलरामपुर मार्ग
+                <i class="fa-solid fa-road text-slate-600 mr-1"></i>SH-9 गोण्डा-बलरामपुर मार्ग
               </span>
             </div>
 
@@ -3152,7 +3433,7 @@
                 दुकान (Destination)
               </span>
               <div class="w-8 h-8 rounded-full bg-amber-500 border-2 border-white shadow-lg flex items-center justify-center text-slate-950 text-sm">
-                🏪
+                
               </div>
             </div>
 
@@ -3161,11 +3442,11 @@
               <i class="fa-solid fa-route text-emerald-400"></i>
               <span>कुल दूरी: <strong id="routeVisualDistance">1.8 km</strong></span>
               <span class="text-slate-400">•</span>
-              <span class="text-amber-300">ट्रैफिक: 🟢 सामान्य (Clear)</span>
+              <span class="text-amber-300">ट्रैफिक: सामान्य (Clear)</span>
             </div>
 
             <div class="relative z-10 self-end text-[11px] text-slate-400 bg-slate-950/70 px-2 py-1 rounded">
-              GPS Coordinates: 27.2882°N, 82.0234°E ➔ 27.3105°N, 82.0461°E
+              GPS Coordinates: 27.2882°N, 82.0234°E -&gt; 27.3105°N, 82.0461°E
             </div>
           </div>
         </div>
@@ -3173,7 +3454,7 @@
         <!-- Turn-by-Turn Step Guidance -->
         <div class="space-y-2">
           <div class="text-xs font-bold text-slate-700 flex items-center space-x-1.5">
-            <i class="fa-solid fa-signs-post text-indigo-600"></i>
+            <i class="fa-solid fa-signs-post text-slate-800"></i>
             <span>रास्ते के मोड़ व दिशा निर्देश (Turn-by-Turn Steps)</span>
           </div>
           <div id="routeStepsContainer" class="space-y-2">
@@ -3183,7 +3464,7 @@
 
         <!-- Direct Google Maps Action Buttons -->
         <div class="pt-2 flex flex-col sm:flex-row items-center gap-3">
-          <a id="routeDirectGoogleMapsBtn" href="https://www.google.com/maps/dir/?api=1&origin=27.2882,82.0234&destination=27.3105,82.0461&travelmode=driving" target="_blank" rel="noopener noreferrer" class="w-full sm:flex-1 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-extrabold text-xs sm:text-sm rounded-xl shadow-md transition flex items-center justify-center space-x-2">
+          <a id="routeDirectGoogleMapsBtn" href="https://www.google.com/maps/dir/?api=1&origin=27.2882,82.0234&destination=27.3105,82.0461&travelmode=driving" target="_blank" rel="noopener noreferrer" class="w-full sm:flex-1 py-3 bg-emerald-700 hover:bg-emerald-800 text-white font-extrabold text-xs sm:text-sm rounded-xl shadow-md transition flex items-center justify-center space-x-2">
             <i class="fa-solid fa-diamond-turn-right text-base text-amber-300"></i>
             <span>Google Maps ऐप में लाइव नेविगेशन शुरू करें</span>
           </a>
@@ -3203,7 +3484,7 @@
     <div class="bg-white rounded-3xl max-w-3xl w-full p-5 sm:p-7 shadow-2xl relative border border-slate-200 space-y-5 my-8 max-h-[92vh] overflow-y-auto">
       
       <!-- Close button -->
-      <button onclick="closeProductModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 hover:text-slate-800 transition">
+      <button onclick="closeProductModal()" class="absolute top-4 right-4 w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 hover:text-slate-800 transition">
         <i class="fa-solid fa-xmark text-sm"></i>
       </button>
 
@@ -3214,9 +3495,9 @@
         </div>
         <div class="space-y-1.5 flex-1">
           <div class="flex flex-wrap items-center gap-1.5">
-            <span id="modalCategoryBadge" class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">Fertilizer</span>
-            <span id="modalBrandBadge" class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-blue-100 text-blue-800">Insecticides (India) Ltd.</span>
-            <span id="modalMspBadge" class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-800">MSP Cap: ₹0.00</span>
+            <span id="modalCategoryBadge" class="px-2.5 py-0.5 rounded-md text-[10px] font-bold bg-emerald-100 text-emerald-800">Fertilizer</span>
+            <span id="modalBrandBadge" class="px-2.5 py-0.5 rounded-md text-[10px] font-bold bg-blue-100 text-blue-800">Insecticides (India) Ltd.</span>
+            <span id="modalMspBadge" class="px-2.5 py-0.5 rounded-md text-[10px] font-bold bg-amber-100 text-amber-800">MSP Cap: ₹0.00</span>
           </div>
           <h3 id="modalProductName" class="text-lg sm:text-xl font-extrabold text-slate-900 leading-snug">Product Name</h3>
           <p id="modalProductHindi" class="text-xs sm:text-sm font-semibold text-emerald-700 hindi-text">हिन्दी नाम</p>
@@ -3304,7 +3585,7 @@
 
       <div>
         <div class="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-800 text-[10px] font-bold uppercase mb-1">
-          <span>🔒 Central Platform Escrow</span>
+          <span><i class="fa-solid fa-lock text-slate-400 mr-1"></i>Central Platform Escrow</span>
         </div>
         <h3 class="font-extrabold text-slate-900 text-base">Jaymani Krishi Escrow Gateway</h3>
         <p class="text-xs text-slate-500">पैसा सुरक्षित एस्क्रो में जमा होगा। सामान मिलने पर ही विक्रेता को रिलीज होगा।</p>
@@ -3341,7 +3622,7 @@
       <!-- Seal -->
       <div class="flex items-center justify-between border-b border-slate-200 pb-3">
         <div class="flex items-center space-x-2">
-          <span class="text-2xl">🌾</span>
+          <i class="fa-solid fa-wheat-awn text-2xl text-amber-600"></i>
           <div>
             <h4 class="font-extrabold text-slate-900 text-sm">JAYMANI KRISHI SEWA</h4>
             <p class="text-[10px] text-slate-500">Central Escrow Payment Proof & Digital Tax Invoice</p>
@@ -3385,7 +3666,7 @@
       <div class="bg-slate-950 text-emerald-400 p-3 rounded-xl text-[10px] font-mono break-all space-y-1">
         <div class="text-slate-400 font-sans text-[10px] font-bold uppercase flex justify-between">
           <span>Cryptographic SHA-256 Verification Hash</span>
-          <span class="text-emerald-400">Verified ✓</span>
+          <span class="text-emerald-400">Verified</span>
         </div>
         <div id="escrowRecHash">e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</div>
       </div>
@@ -3412,7 +3693,7 @@
         <div class="flex items-center justify-between">
           <div class="flex items-center space-x-3">
             <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-xl border border-white/20">
-              🏛️
+              
             </div>
             <div>
               <div class="text-[10px] font-bold uppercase tracking-wider text-emerald-200">
@@ -3421,7 +3702,7 @@
               <h3 class="text-base font-extrabold tracking-tight">National SeedTrace Portal Verification</h3>
             </div>
           </div>
-          <button onclick="closeSeedTraceModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition">
+          <button onclick="closeSeedTraceModal()" class="w-8 h-8 rounded-lg bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition">
             <i class="fa-solid fa-xmark text-sm"></i>
           </button>
         </div>
@@ -3439,7 +3720,7 @@
               <div id="stModalStatusText" class="text-[11px] text-emerald-700 font-medium">Active Certified Seed & Fertilizer Dealer</div>
             </div>
           </div>
-          <span class="px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-emerald-600 text-white shadow-xs">
+          <span class="px-2.5 py-1 rounded-md text-[10px] font-extrabold bg-emerald-600 text-white shadow-xs">
             LIVE VERIFIED
           </span>
         </div>
@@ -3554,7 +3835,7 @@
   <!-- DIRECT 1-CLICK CALL MODAL SIMULATOR -->
   <div id="callModal" class="hidden fixed inset-0 bg-slate-900/70 backdrop-blur-xs z-50 flex items-center justify-center p-4">
     <div class="bg-slate-900 text-white rounded-3xl max-w-xs w-full p-6 text-center space-y-4 shadow-2xl relative border border-slate-800">
-      <div class="w-16 h-16 rounded-full bg-emerald-600 text-white flex items-center justify-center text-2xl font-bold mx-auto animate-pulse">
+      <div class="w-16 h-16 rounded-full bg-emerald-600 text-white flex items-center justify-center text-2xl font-bold mx-auto ">
         <i class="fa-solid fa-phone"></i>
       </div>
       <div>
@@ -3583,7 +3864,7 @@
 
       <div class="text-center">
         <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-800 flex items-center justify-center text-xl font-bold mx-auto mb-1">
-          🪙
+          <i class="fa-solid fa-coins text-amber-500"></i>
         </div>
         <h3 class="font-extrabold text-slate-900 text-base">Record Credit Repayment</h3>
         <p class="text-xs text-slate-500">Mints 1 Kisan Coin for every ₹10 repaid</p>
@@ -3657,7 +3938,7 @@
         <i class="fa-solid fa-cart-shopping text-emerald-600 text-lg"></i>
         <h3 class="font-bold text-slate-900 text-base">कृषि इनपुट बैग (Cart & Checkout)</h3>
       </div>
-      <button onclick="toggleCartDrawer(false)" class="w-8 h-8 rounded-full bg-slate-200 hover:bg-slate-300 flex items-center justify-center text-slate-600">
+      <button onclick="toggleCartDrawer(false)" class="w-8 h-8 rounded-lg bg-slate-200 hover:bg-slate-300 flex items-center justify-center text-slate-600">
         <i class="fa-solid fa-xmark"></i>
       </button>
     </div>
@@ -3677,14 +3958,14 @@
           <label class="delivery-option cursor-pointer border border-emerald-500 bg-emerald-50/60 rounded-xl p-2.5 flex items-center space-x-2 transition">
             <input type="radio" name="cartDeliveryMode" value="DOORSTEP" checked onchange="handleDeliveryModeChange()" class="accent-emerald-600">
             <div>
-              <span class="font-bold text-slate-900 block text-[11px]">🚚 खेत तक डिलीवरी</span>
+              <span class="font-bold text-slate-900 block text-[11px]"><i class="fa-solid fa-truck text-emerald-600 mr-1"></i>खेत तक डिलीवरी</span>
               <span class="text-[10px] text-emerald-700">Doorstep Delivery (0-15km)</span>
             </div>
           </label>
           <label class="delivery-option cursor-pointer border border-slate-200 rounded-xl p-2.5 flex items-center space-x-2 hover:bg-slate-50 transition">
             <input type="radio" name="cartDeliveryMode" value="STORE_PICKUP" onchange="handleDeliveryModeChange()" class="accent-emerald-600">
             <div>
-              <span class="font-bold text-slate-900 block text-[11px]">🏪 दुकान से उठाएं</span>
+              <span class="font-bold text-slate-900 block text-[11px]"><i class="fa-solid fa-store text-emerald-700 mr-1"></i>दुकान से उठाएं</span>
               <span class="text-[10px] text-slate-500">Self Pickup at Store</span>
             </div>
           </label>
@@ -3724,7 +4005,7 @@
       <!-- Kisan Coins Redemption Toggle -->
       <div class="bg-amber-50 border border-amber-200 rounded-xl p-2.5 flex items-center justify-between text-xs">
         <div class="flex items-center space-x-2">
-          <span class="text-base">🪙</span>
+          <span class="text-base"><i class="fa-solid fa-coins text-amber-500"></i></span>
           <div>
             <div class="font-bold text-amber-900">किसान कॉइन्स भुनाएं (Redeem Coins)</div>
             <div class="text-amber-700 text-[10px]">150 कॉइन्स = ₹150 सीधी छूट</div>
@@ -3799,7 +4080,7 @@
           </div>
           <p class="text-[11px] text-slate-500">Authorized Retail Partner: <b>पाण्डेय ट्रेडर्स, इटियाथोक, गोंडा</b> (GSTIN: 09AABCP1234F1Z8)</p>
         </div>
-        <button onclick="closeTaxInvoiceModal()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-600">
+        <button onclick="closeTaxInvoiceModal()" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-600">
           <i class="fa-solid fa-xmark"></i>
         </button>
       </div>
@@ -3871,7 +4152,7 @@
           </div>
           <h3 class="text-base font-extrabold text-slate-900 mt-0.5">कालाबाजारी / अधिक मूल्य वसूली की गोपनीय शिकायत</h3>
         </div>
-        <button onclick="closeGrievanceModal()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-600">
+        <button onclick="closeGrievanceModal()" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-600">
           <i class="fa-solid fa-xmark"></i>
         </button>
       </div>
@@ -3933,13 +4214,13 @@
     <div class="bg-white rounded-2xl max-w-xl w-full p-6 shadow-2xl border border-slate-200 space-y-4">
       <div class="flex items-start justify-between border-b border-slate-200 pb-3">
         <div>
-          <div class="flex items-center space-x-2 text-indigo-600 text-xs font-bold uppercase tracking-wider">
+          <div class="flex items-center space-x-2 text-slate-800 text-xs font-bold uppercase tracking-wider">
             <i class="fa-solid fa-truck-fast"></i>
             <span>Rural Bulk Delivery Dispatcher</span>
           </div>
           <h3 class="text-base font-extrabold text-slate-900 mt-0.5">ग्राम हब अनुसार सामूहिक ऑर्डर प्रेषण (Bulk Dispatch)</h3>
         </div>
-        <button onclick="closeBulkDispatchModal()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-600">
+        <button onclick="closeBulkDispatchModal()" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-600">
           <i class="fa-solid fa-xmark"></i>
         </button>
       </div>
@@ -4166,7 +4447,7 @@
     function checkAuthGuard(action = 'खरीदारी') {
       if (!AppState.currentUser) {
         playErrorBuzzer();
-        showToast(`⚠️ कृपया ${action} के लिए पहले लॉग इन करें।`, 'warning');
+        showToast(`कृपया ${action} के लिए पहले लॉग इन करें।`, 'warning');
         openAuthModal('login');
         return false;
       }
@@ -4189,6 +4470,12 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else if (section === 'about') {
         showTab('aboutTab');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (section === 'privacy') {
+        showTab('privacyTab');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (section === 'terms') {
+        showTab('termsTab');
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     }
@@ -4225,7 +4512,7 @@
           // Dynamically inject user full_name into all greetings
           const hHeading = document.getElementById('farmerGreetingHeading');
           if (hHeading) {
-            hHeading.innerHTML = `राम राम भाई, <span id="farmerBannerName">${user.full_name}</span> जी! 🙏`;
+            hHeading.innerHTML = `राम राम भाई, <span id="farmerBannerName">${user.full_name}</span> जी!`;
           }
           const sGreeting = document.getElementById('farmerSubGreeting');
           if (sGreeting) {
@@ -4371,9 +4658,9 @@
     async function loadComparison(query) {
       document.querySelectorAll('.comp-pill').forEach(btn => {
         if (btn.getAttribute('data-query') === query) {
-          btn.className = 'comp-pill active px-3 py-1 rounded-full font-bold bg-emerald-600 text-white';
+          btn.className = 'comp-pill active px-3 py-1 rounded-lg font-bold bg-emerald-600 text-white';
         } else {
-          btn.className = 'comp-pill px-3 py-1 rounded-full font-medium bg-slate-100 text-slate-700 hover:bg-slate-200';
+          btn.className = 'comp-pill px-3 py-1 rounded-lg font-medium bg-slate-100 text-slate-700 hover:bg-slate-200';
         }
       });
 
@@ -4409,7 +4696,7 @@
                 ${isPandey ? '<i class="fa-solid fa-circle-check text-emerald-600 text-xs" title="Verified Dealership"></i>' : ''}
               </div>
               <div class="text-[10px] text-slate-500 flex items-center space-x-2 mt-0.5">
-                <span class="text-amber-500 font-bold">★ ${it.rating}</span>
+                <span class="text-emerald-700 font-semibold text-xs">Govt. Reg.</span>
                 <span>•</span>
                 <a href="tel:${it.contact_phone}" class="hover:text-emerald-700 font-medium">${it.contact_phone}</a>
                 <span>•</span>
@@ -4424,7 +4711,7 @@
               <div class="text-[10px] text-slate-500">${it.market_area}</div>
             </td>
             <td class="py-3 px-3 text-center">
-              <span class="px-2 py-0.5 rounded-full text-[11px] font-extrabold ${it.stock_quantity <= 15 ? 'bg-amber-100 text-amber-800' : 'bg-emerald-100 text-emerald-800'}">
+              <span class="px-2 py-0.5 rounded-md text-[11px] font-extrabold ${it.stock_quantity <= 15 ? 'bg-amber-100 text-amber-800' : 'bg-emerald-100 text-emerald-800'}">
                 ${it.stock_quantity} left
               </span>
             </td>
@@ -4560,7 +4847,7 @@
         const name = AppState.currentUser.full_name;
         const hHeading = document.getElementById('farmerGreetingHeading');
         if (hHeading) {
-          hHeading.innerHTML = `राम राम भाई, <span id="farmerBannerName">${name}</span> जी! 🙏`;
+          hHeading.innerHTML = `राम राम भाई, <span id="farmerBannerName">${name}</span> जी!`;
         }
         const sGreeting = document.getElementById('farmerSubGreeting');
         if (sGreeting) {
@@ -4603,7 +4890,7 @@
       const modal = document.getElementById('productDetailModal');
       if (!modal) return;
 
-      document.getElementById('modalProductImg').src = p.image_url || 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=400&q=80';
+      document.getElementById('modalProductImg').src = p.image_url || '/static/img/fert_dap.svg';
       document.getElementById('modalProductName').innerText = p.name;
       document.getElementById('modalProductHindi').innerText = p.hindi_name || '';
       document.getElementById('modalProductDesc').innerText = p.description || '';
@@ -4651,7 +4938,7 @@
                   </div>
                 </td>
                 <td class="py-3 px-3">
-                  <div class="text-amber-500 font-bold text-xs">★ ${st.rating}</div>
+                  <div class="text-emerald-700 font-bold text-xs"><i class="fa-solid fa-certificate mr-1"></i>Govt. Reg.</div>
                   <div class="text-[11px] font-semibold text-slate-600">${st.stock_quantity} left</div>
                 </td>
                 <td class="py-3 px-3">
@@ -4720,7 +5007,7 @@
             <div class="relative h-44 bg-slate-100 overflow-hidden">
               <img src="${p.image_url}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
               
-              <div class="absolute top-3 left-3 bg-slate-900/80 backdrop-blur-xs text-white px-2.5 py-1 rounded-full text-[10px] font-bold flex items-center space-x-1 shadow-xs">
+              <div class="absolute top-3 left-3 bg-slate-900/80 backdrop-blur-xs text-white px-2.5 py-1 rounded-md text-[10px] font-bold flex items-center space-x-1 shadow-xs">
                 <i class="fa-solid fa-location-dot text-emerald-400"></i>
                 <span>${p.vendor_distance} km • ${p.vendor_name.split(' ')[0]}</span>
               </div>
@@ -4728,12 +5015,12 @@
               <div class="absolute top-3 right-3 flex flex-col items-end space-y-1">
                 ${p.is_subsidized ? `
                   <span class="bg-emerald-600 text-white px-2 py-0.5 rounded text-[10px] font-bold shadow-xs">
-                    🏛️ ₹${p.subsidy_amount} DBT Subsidy
+                    <i class="fa-solid fa-building-columns text-emerald-600 mr-1"></i>₹${p.subsidy_amount} DBT Subsidy
                   </span>
                 ` : ''}
                 ${p.is_low_stock ? `
-                  <span class="bg-rose-600 text-white px-2 py-0.5 rounded text-[10px] font-bold animate-pulse shadow-xs">
-                    ⚠️ Low Stock: ${p.stock_quantity} left
+                  <span class="bg-rose-600 text-white px-2 py-0.5 rounded text-[10px] font-bold  shadow-xs">
+                    <i class="fa-solid fa-triangle-exclamation text-rose-500 mr-1"></i>Low Stock: ${p.stock_quantity} left
                   </span>
                 ` : ''}
               </div>
@@ -4805,7 +5092,7 @@
             <td class="py-3 px-4 text-emerald-600 font-bold">${isCredit ? `₹${entry.amount.toLocaleString('en-IN')}` : '-'}</td>
             <td class="py-3 px-4 font-extrabold text-slate-900">₹${entry.balance_after.toLocaleString('en-IN')}</td>
             <td class="py-3 px-4">
-              ${entry.kisan_coins_awarded > 0 ? `<span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 text-[10px] font-bold">+${entry.kisan_coins_awarded} 🪙</span>` : '-'}
+              ${entry.kisan_coins_awarded > 0 ? `<span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 text-[10px] font-bold">+${entry.kisan_coins_awarded} <i class="fa-solid fa-coins text-amber-500"></i></span>` : '-'}
             </td>
             <td class="py-3 px-4 font-mono text-[10px] text-slate-400">${shortHash}</td>
           </tr>
@@ -4870,11 +5157,11 @@
                   isDelivered ? 'bg-emerald-100 text-emerald-800' :
                   o.order_status === 'ACCEPTED' ? 'bg-blue-100 text-blue-800' :
                   o.order_status === 'REJECTED' ? 'bg-rose-100 text-rose-800' : 'bg-amber-100 text-amber-800'
-                }">${isDelivered ? '✓ DELIVERED' : o.order_status}</span>
+                }">${isDelivered ? 'DELIVERED' : o.order_status}</span>
                 <span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 text-[10px] font-bold border border-emerald-200">
-                  ${isDoorstep ? '🚚 खेत तक डिलीवरी' : '🏪 दुकान से संग्रह'}
+                  ${isDoorstep ? 'खेत तक डिलीवरी' : 'दुकान से संग्रह'}
                 </span>
-                ${o.payment_status === 'ESCROW_HOLD' ? `<span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-[10px]">🔒 Escrow Hold</span>` : ''}
+                ${o.payment_status === 'ESCROW_HOLD' ? `<span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-[10px]"> Escrow Hold</span>` : ''}
                 <span class="text-slate-400 text-xs font-medium">${formatDateTimeIST(o.created_at)}</span>
               </div>
               <p class="text-xs text-slate-600">
@@ -4910,7 +5197,7 @@
                   <div class="flex flex-col items-center text-center">
                     <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all ${
                       isPassed ? 'bg-emerald-600 text-white shadow-xs' : 'bg-slate-100 text-slate-400'
-                    } ${isCurrent && !isDelivered ? 'ring-2 ring-emerald-500 ring-offset-1 animate-pulse' : ''}">
+                    } ${isCurrent && !isDelivered ? 'ring-2 ring-emerald-500 ring-offset-1 ' : ''}">
                       <i class="fa-solid ${s.icon}"></i>
                     </div>
                     <span class="text-[9px] sm:text-[10px] font-bold mt-1 ${isPassed ? 'text-slate-900' : 'text-slate-400'} leading-tight truncate w-full">
@@ -4982,7 +5269,7 @@
             </td>
             <td class="py-3 px-4 font-semibold text-slate-600">₹${p.gov_msp_cap}</td>
             <td class="py-3 px-4 text-center">
-              <span class="px-2.5 py-1 rounded-full text-xs font-extrabold ${p.is_low_stock ? 'bg-rose-100 text-rose-700' : 'bg-emerald-100 text-emerald-800'}">
+              <span class="px-2.5 py-1 rounded-md text-xs font-extrabold ${p.is_low_stock ? 'bg-rose-100 text-rose-700' : 'bg-emerald-100 text-emerald-800'}">
                 ${p.stock_quantity}
               </span>
             </td>
@@ -5008,7 +5295,7 @@
                 <div class="flex items-center space-x-2">
                   <span class="font-bold text-slate-900 font-mono text-xs">${o.order_reference}</span>
                   <span class="px-2 py-0.5 rounded text-[10px] font-bold ${o.payment_status === 'ESCROW_RELEASED' ? 'bg-emerald-100 text-emerald-800' : 'bg-blue-100 text-blue-800'}">
-                    ${o.payment_status === 'ESCROW_RELEASED' ? '✓ Funds Released' : '🔒 ESCROW HOLD'}
+                    ${o.payment_status === 'ESCROW_RELEASED' ? '<i class="fa-solid fa-check text-emerald-600 mr-1"></i>Funds Released' : '<i class="fa-solid fa-lock text-slate-500 mr-1"></i>ESCROW HOLD'}
                   </span>
                   <span class="text-slate-400 text-[10px]">${formatDateTimeIST(o.created_at)}</span>
                 </div>
@@ -5023,12 +5310,12 @@
                 </div>
 
                 ${o.payment_status === 'ESCROW_HOLD' ? `
-                  <button onclick="releaseEscrowFunds(${o.id})" class="px-3 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white rounded-xl text-xs font-bold transition flex items-center space-x-1.5 shadow-xs">
+                  <button onclick="releaseEscrowFunds(${o.id})" class="px-3 py-2 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl text-xs font-bold transition flex items-center space-x-1.5 shadow-xs">
                     <i class="fa-solid fa-hand-holding-dollar"></i>
                     <span>Verify Handover & Release Funds</span>
                   </button>
                 ` : `
-                  <span class="px-2.5 py-1 bg-emerald-50 border border-emerald-200 text-emerald-700 rounded-lg text-xs font-bold">Settled ✓</span>
+                  <span class="px-2.5 py-1 bg-emerald-50 border border-emerald-200 text-emerald-700 rounded-lg text-xs font-bold">Settled </span>
                 `}
               </div>
             </div>
@@ -5052,8 +5339,8 @@
               </div>
               <span class="px-2 py-0.5 rounded text-[10px] font-bold ${
                 isDelivered ? 'bg-emerald-100 text-emerald-800' :
-                curStage === 'OUT_FOR_DELIVERY' ? 'bg-indigo-100 text-indigo-800' :
-                curStage === 'PACKED' ? 'bg-purple-100 text-purple-800' :
+                curStage === 'OUT_FOR_DELIVERY' ? 'bg-slate-100 text-slate-900' :
+                curStage === 'PACKED' ? 'bg-amber-100 text-amber-900' :
                 o.order_status === 'ACCEPTED' ? 'bg-blue-100 text-blue-800' :
                 o.order_status === 'REJECTED' ? 'bg-rose-100 text-rose-800' : 'bg-amber-100 text-amber-800'
               }">${isDelivered ? 'DELIVERED' : curStage}</span>
@@ -5075,12 +5362,12 @@
                   <button onclick="stepOrderStage(${o.id}, 'ACCEPTED')" class="px-2.5 py-1 bg-emerald-600 hover:bg-emerald-700 text-white rounded text-xs font-bold transition">Accept Order</button>
                   <button onclick="updateOrderStatus(${o.id}, 'REJECTED')" class="px-2.5 py-1 bg-rose-600 hover:bg-rose-700 text-white rounded text-xs font-bold transition">Reject</button>
                 ` : curStage === 'ACCEPTED' ? `
-                  <button onclick="stepOrderStage(${o.id}, 'PACKED')" class="px-2.5 py-1 bg-purple-600 hover:bg-purple-700 text-white rounded text-xs font-bold transition flex items-center space-x-1">
+                  <button onclick="stepOrderStage(${o.id}, 'PACKED')" class="px-2.5 py-1 bg-amber-600 hover:bg-amber-700 text-white rounded text-xs font-bold transition flex items-center space-x-1">
                     <i class="fa-solid fa-box-open"></i>
                     <span>Mark Packed & Ready</span>
                   </button>
                 ` : curStage === 'PACKED' ? `
-                  <button onclick="stepOrderStage(${o.id}, 'OUT_FOR_DELIVERY')" class="px-2.5 py-1 bg-indigo-600 hover:bg-indigo-700 text-white rounded text-xs font-bold transition flex items-center space-x-1">
+                  <button onclick="stepOrderStage(${o.id}, 'OUT_FOR_DELIVERY')" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-white rounded text-xs font-bold transition flex items-center space-x-1">
                     <i class="fa-solid fa-truck-fast"></i>
                     <span>Dispatch (In Transit)</span>
                   </button>
@@ -5093,7 +5380,7 @@
                   </div>
                 ` : `
                   <span class="text-[10px] text-emerald-700 font-extrabold bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
-                    ✓ Handover Completed
+                    <i class="fa-solid fa-check text-emerald-600 mr-1"></i>Handover Completed
                   </span>
                 `}
               </div>
@@ -5202,8 +5489,8 @@
                   ${isViolation ? `+₹${(p.price - p.gov_msp_cap).toFixed(2)} Exceeds Cap` : 'Compliant'}
                 </td>
                 <td class="py-3 px-4 text-center">
-                  <span class="px-2.5 py-1 rounded-full text-[10px] font-bold ${isViolation ? 'bg-rose-100 text-rose-800' : 'bg-emerald-100 text-emerald-800'}">
-                    ${isViolation ? 'VIOLATION FLAGGED' : 'COMPLIANT ✓'}
+                  <span class="px-2.5 py-1 rounded-md text-[10px] font-bold ${isViolation ? 'bg-rose-100 text-rose-800' : 'bg-emerald-100 text-emerald-800'}">
+                    ${isViolation ? 'VIOLATION FLAGGED' : 'COMPLIANT'}
                   </span>
                 </td>
               </tr>
@@ -5582,7 +5869,7 @@
       recognition.onstart = () => {
         AppState.isListening = true;
         document.getElementById('voiceListeningBanner').classList.remove('hidden');
-        document.getElementById('micIcon').className = 'fa-solid fa-microphone-lines text-rose-400 animate-pulse';
+        document.getElementById('micIcon').className = 'fa-solid fa-microphone-lines text-rose-400 ';
         document.getElementById('voiceBtnText').innerText = 'Listening... (सुन रहे हैं)';
         playAudioTone(800, 'sine', 0.15, 0);
       };
@@ -5663,16 +5950,16 @@
       AppState.selectedCategory = catName;
       document.querySelectorAll('.cat-pill').forEach(btn => {
         if (btn.getAttribute('data-cat') === catName) {
-          btn.className = 'cat-pill active px-3 py-1 bg-emerald-600 text-white rounded-full font-semibold transition';
+          btn.className = 'cat-pill active px-3 py-1 bg-emerald-600 text-white rounded-lg font-semibold transition';
         } else {
-          btn.className = 'cat-pill px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-full font-medium transition';
+          btn.className = 'cat-pill px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg font-medium transition';
         }
       });
       renderProductsGrid();
     }
 
     function showTab(tabId) {
-      ['marketTab', 'storesTab', 'calcsTab', 'doctorTab', 'bahiTab', 'schemesTab', 'ordersTab', 'toolsTab', 'aboutTab'].forEach(t => {
+      ['marketTab', 'storesTab', 'calcsTab', 'doctorTab', 'bahiTab', 'schemesTab', 'ordersTab', 'toolsTab', 'aboutTab', 'privacyTab', 'termsTab'].forEach(t => {
         const el = document.getElementById(`tab-${t}`);
         const btn = document.getElementById(`tabBtn-${t.replace('Tab', '')}`);
         if (el) el.classList.add('hidden');
@@ -5904,7 +6191,7 @@
         const irrBadge = document.getElementById('irrigationBadge');
         if (irrBadge) {
           irrBadge.innerText = irr.badge;
-          irrBadge.className = `px-2.5 py-0.5 rounded-full text-[11px] font-black border ${irr.badge_color}`;
+          irrBadge.className = `px-2.5 py-0.5 rounded-md text-[11px] font-black border ${irr.badge_color}`;
         }
         const irrText = document.getElementById('irrigationAdvisoryText');
         if (irrText) irrText.innerText = irr.advisory;
@@ -5924,7 +6211,7 @@
         const spBadge = document.getElementById('sprayBadge');
         if (spBadge) {
           spBadge.innerText = sp.badge;
-          spBadge.className = `px-2.5 py-0.5 rounded-full text-[11px] font-black border ${sp.badge_color}`;
+          spBadge.className = `px-2.5 py-0.5 rounded-md text-[11px] font-black border ${sp.badge_color}`;
         }
         const spText = document.getElementById('sprayAdvisoryText');
         if (spText) spText.innerText = sp.advisory;
@@ -5948,7 +6235,7 @@
       const lethal = AppState.products.find(p => p.name.includes('Lethal') || p.category_name === 'Pesticides');
       if (lethal) {
         openProductModal(lethal.id);
-        showToast('🎯 पांडेय ट्रेडर्स (Pandey Traders) अधिकृत कीटनाशक कैटलॉग खोला गया।', 'info');
+        showToast('पांडेय ट्रेडर्स (Pandey Traders) अधिकृत कीटनाशक कैटलॉग खोला गया।', 'info');
       } else {
         const el = document.getElementById('productsGrid');
         if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -6006,8 +6293,8 @@
           document.getElementById('routeStoreAddress').innerText = data.store.market_area;
           document.getElementById('routeStoreProprietor').innerText = data.store.proprietor_name;
           document.getElementById('routeStoreLicense').innerText = data.store.license_number;
-          document.getElementById('routeStoreRating').innerText = `★ ${data.store.rating}`;
-          document.getElementById('routeStoreDistanceTag').innerText = `📍 ${data.store.distance_km} km दूर`;
+          document.getElementById('routeStoreRating').innerText = 'DAO SEED/147/GDN/123';
+          document.getElementById('routeStoreDistanceTag').innerText = ` ${data.store.distance_km} km दूर`;
           document.getElementById('routeVisualDistance').innerText = `${data.store.distance_km} km`;
 
           const phoneLink = document.getElementById('routeStorePhoneLink');
@@ -6018,8 +6305,8 @@
           const statusEl = document.getElementById('routeOriginStatus');
           if (statusEl) {
             statusEl.innerHTML = currentUserGpsCoords.isLive
-              ? `<span class="text-emerald-700 font-bold">🟢 किसान की लाइव GPS लोकेशन प्राप्त (${originLat.toFixed(4)}° N, ${originLon.toFixed(4)}° E)</span>`
-              : `<span class="text-slate-700 font-medium">📍 इटियाथोक किसान केंद्र (27.2882° N, 82.0234° E) • मानक आधार</span>`;
+              ? `<span class="text-emerald-700 font-bold"> किसान की लाइव GPS लोकेशन प्राप्त (${originLat.toFixed(4)}° N, ${originLon.toFixed(4)}° E)</span>`
+              : `<span class="text-slate-700 font-medium">इटियाथोक किसान केंद्र (27.2882° N, 82.0234° E) • मानक आधार</span>`;
           }
 
           document.getElementById('routeBikeTime').innerText = `${data.travel_times.bike_mins} मिनट`;
@@ -6030,7 +6317,7 @@
           if (stepsContainer && data.turn_by_turn_steps) {
             stepsContainer.innerHTML = data.turn_by_turn_steps.map((st, idx) => `
               <div class="flex items-start space-x-3 p-2.5 rounded-xl bg-slate-50 border border-slate-100 text-xs">
-                <div class="w-6 h-6 rounded-full bg-indigo-100 text-indigo-700 font-bold flex items-center justify-center shrink-0 text-[11px]">
+                <div class="w-6 h-6 rounded-full bg-slate-100 text-slate-800 font-bold flex items-center justify-center shrink-0 text-[11px]">
                   ${idx + 1}
                 </div>
                 <div class="flex-1">
@@ -6092,10 +6379,10 @@
           <div class="bg-white rounded-2xl border ${isPandey ? 'border-2 border-emerald-500 shadow-md ring-2 ring-emerald-500/10' : 'border-slate-200 shadow-xs'} p-5 flex flex-col justify-between space-y-4 hover:shadow-lg transition">
             <div class="space-y-2.5">
               <div class="flex items-center justify-between">
-                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold ${isPandey ? 'bg-emerald-100 text-emerald-800 border border-emerald-300' : 'bg-slate-100 text-slate-700'}">
-                  ${isPandey ? '⭐ मुख्य विक्रेता (Pinned Dealership)' : 'प्रमाणित विक्रेता'}
+                <span class="px-2.5 py-0.5 rounded-md text-[10px] font-bold ${isPandey ? 'bg-emerald-100 text-emerald-800 border border-emerald-300' : 'bg-slate-100 text-slate-700'}">
+                  ${isPandey ? 'मुख्य विक्रेता (Pinned Dealership)' : 'प्रमाणित विक्रेता'}
                 </span>
-                <span class="text-xs font-bold text-amber-600">★ ${st.rating}</span>
+                <span class="text-xs font-bold text-emerald-700">Govt. Verified</span>
               </div>
 
               <div>
@@ -6111,7 +6398,7 @@
 
               <div class="flex items-center space-x-3 text-xs pt-1">
                 <span class="font-bold text-blue-700 bg-blue-50 px-2.5 py-1 rounded-lg border border-blue-200">
-                  📍 ${st.distance_km} km दूर
+                  <i class="fa-solid fa-location-dot text-rose-500 mr-1"></i>${st.distance_km} km दूर
                 </span>
                 <span class="text-slate-500">
                   बाइक से ~${bikeMins} मिनट
@@ -6120,9 +6407,9 @@
             </div>
 
             <div class="space-y-2 pt-2 border-t border-slate-100">
-              <button type="button" onclick="openStoreRouteModal(${st.user_id || st.id})" class="w-full py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold text-xs rounded-xl shadow-xs transition flex items-center justify-center space-x-2">
+              <button type="button" onclick="openStoreRouteModal(${st.user_id || st.id})" class="w-full py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-xs rounded-xl shadow-xs transition flex items-center justify-center space-x-2">
                 <i class="fa-solid fa-diamond-turn-right text-amber-300"></i>
-                <span>📍 दुकान का रास्ता देखें (Live Route)</span>
+                <span><i class="fa-solid fa-route text-white mr-1"></i>दुकान का रास्ता देखें (Live Route)</span>
               </button>
 
               <div class="grid grid-cols-3 gap-1.5 text-xs">
@@ -6163,7 +6450,7 @@
                           '<span class="text-slate-400 font-bold">▬</span>';
         const mandiShort = r.mandi_name.split(' ')[0];
         return `
-          <span>🏛️ <b>${mandiShort}:</b> ${r.commodity} ₹${r.modal_price.toLocaleString('en-IN')} ${trendIcon}</span>
+          <span><i class="fa-solid fa-building-columns text-emerald-400 mr-1"></i><b>${mandiShort}:</b> ${r.commodity} ₹${r.modal_price.toLocaleString('en-IN')} ${trendIcon}</span>
           ${i < records.length - 1 ? '<span class="text-slate-600">|</span>' : ''}
         `;
       }).join('');
@@ -6205,7 +6492,7 @@
       utterance.rate = 0.95;
       utterance.pitch = 1.0;
       window.speechSynthesis.speak(utterance);
-      showToast('🔊 ऑडियो वॉइस असिस्टेंट बोल रहा है...', 'info');
+      showToast('ऑडियो वॉइस असिस्टेंट सक्रिय है।', 'info');
     }
 
     function speakSummary(msg) {
@@ -6428,13 +6715,13 @@ ${step.desc}`;
         if (urea) addToCartWithQty(urea.id, 1);
         if (dap) addToCartWithQty(dap.id, 1);
         if (lethal) addToCartWithQty(lethal.id, 1);
-        showToast('🌾 गेहूं रबी संपूर्ण किट (5% कॉम्बो छूट) बैग में जोड़ी गई!', 'success');
+        showToast('गेहूं रबी संपूर्ण किट (5% कॉम्बो छूट) बैग में जोड़ी गई!', 'success');
       } else {
         const victor = AppState.products.find(p => p.name.includes('Victor'));
         const pulsor = AppState.products.find(p => p.name.includes('Pulsor'));
         if (victor) addToCartWithQty(victor.id, 1);
         if (pulsor) addToCartWithQty(pulsor.id, 1);
-        showToast('🌼 सरसों सुरक्षा किट (5% कॉम्बो छूट) बैग में जोड़ी गई!', 'success');
+        showToast('सरसों सुरक्षा किट (5% कॉम्बो छूट) बैग में जोड़ी गई!', 'success');
       }
       toggleCartDrawer(true);
     }
@@ -6710,13 +6997,13 @@ ${step.desc}`;
                   <h5 class="font-extrabold text-sm text-slate-900">${h.hub_name}</h5>
                   <p class="text-[11px] text-slate-500">राइडर: <b>${h.assigned_rider}</b> | वाहन: ${h.vehicle}</p>
                 </div>
-                <span class="px-2.5 py-1 rounded-full text-[10px] font-black bg-indigo-100 text-indigo-800">
+                <span class="px-2.5 py-1 rounded-md text-[10px] font-black bg-slate-100 text-slate-900">
                   कुल ऑर्डर: ${h.total_orders}
                 </span>
               </div>
               <div class="flex items-center justify-between pt-2 border-t border-slate-200 text-xs">
                 <span class="text-slate-600">प्रेषण हेतु तैयार: <b>${h.ready_to_dispatch}</b></span>
-                <button onclick="executeBulkDispatch('${h.hub_name}')" class="px-3 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs rounded-xl shadow-sm transition">
+                <button onclick="executeBulkDispatch('${h.hub_name}')" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs rounded-xl shadow-sm transition">
                   <i class="fa-solid fa-truck-fast mr-1"></i> इस हब को एक साथ भेजें
                 </button>
               </div>
@@ -6775,7 +7062,7 @@ ${step.desc}`;
           seed_rate: '20-25 किग्रा / हेक्टेयर',
           treatment: 'कार्बेन्डाजिम 50% WP (2 ग्राम/किग्रा बीज)',
           fertilizer: 'DAP 50kg + यूरिया 45kg + जिंक 10kg प्रति एकड़',
-          icon: '🌾'
+          icon: '<i class="fa-solid fa-wheat-awn text-emerald-700"></i>'
         },
         {
           name: 'मक्का (Maize / Corn)',
@@ -6784,7 +7071,7 @@ ${step.desc}`;
           seed_rate: '18-20 किग्रा / हेक्टेयर',
           treatment: 'थिरम 75% WP (2.5 ग्राम/किग्रा)',
           fertilizer: 'DAP 40kg + यूरिया 50kg प्रति एकड़',
-          icon: '🌽'
+          icon: '<i class="fa-solid fa-seedling text-amber-700"></i>'
         },
         {
           name: 'अरहर / तूर (Pigeon Pea)',
@@ -6793,7 +7080,7 @@ ${step.desc}`;
           seed_rate: '12-15 किग्रा / हेक्टेयर',
           treatment: 'राइजोबियम कल्चर + ट्राइकोडर्मा',
           fertilizer: 'DAP 40kg + सल्फर 10kg प्रति एकड़',
-          icon: '🌱'
+          icon: '<i class="fa-solid fa-leaf text-emerald-700"></i>'
         }
       ],
       rabi: [
@@ -6804,7 +7091,7 @@ ${step.desc}`;
           seed_rate: '40-45 किग्रा प्रति एकड़',
           treatment: 'विटावैक्स या कार्बेन्डाजिम (2 ग्राम/किग्रा)',
           fertilizer: 'DAP 55kg + यूरिया 65kg + पोटाश 20kg प्रति एकड़',
-          icon: '🌾'
+          icon: '<i class="fa-solid fa-wheat-awn text-emerald-700"></i>'
         },
         {
           name: 'सरसों (Mustard / Toria)',
@@ -6813,7 +7100,7 @@ ${step.desc}`;
           seed_rate: '2.0-2.5 किग्रा प्रति एकड़',
           treatment: 'एप्रोन 35 SD (6 ग्राम/किग्रा)',
           fertilizer: 'DAP 35kg + यूरिया 40kg + सल्फर 15kg प्रति एकड़',
-          icon: '🌼'
+          icon: '<i class="fa-solid fa-sun text-amber-600"></i>'
         },
         {
           name: 'चना (Chickpea / Gram)',
@@ -6822,7 +7109,7 @@ ${step.desc}`;
           seed_rate: '30-35 किग्रा प्रति एकड़',
           treatment: 'राइजोबियम कल्चर + ट्राइकोडर्मा विरिडी',
           fertilizer: 'DAP 30kg + SSP 50kg प्रति एकड़ (यूरिया न दें)',
-          icon: '🌿'
+          icon: '<i class="fa-solid fa-seedling text-emerald-600"></i>'
         }
       ],
       zaid: [
@@ -6833,7 +7120,7 @@ ${step.desc}`;
           seed_rate: '10-12 किग्रा प्रति एकड़',
           treatment: 'राइजोबियम दलहनी कल्चर (5 ग्राम/किग्रा)',
           fertilizer: 'DAP 25kg प्रति एकड़',
-          icon: '🌱'
+          icon: '<i class="fa-solid fa-leaf text-emerald-700"></i>'
         },
         {
           name: 'उड़द (Black Gram / Urad)',
@@ -6842,7 +7129,7 @@ ${step.desc}`;
           seed_rate: '10-12 किग्रा प्रति एकड़',
           treatment: 'कार्बेन्डाजिम 2g + राइजोबियम',
           fertilizer: 'DAP 25kg प्रति एकड़',
-          icon: '🌿'
+          icon: '<i class="fa-solid fa-seedling text-emerald-600"></i>'
         },
         {
           name: 'खीरा व ककड़ी (Cucumber)',
@@ -6851,7 +7138,7 @@ ${step.desc}`;
           seed_rate: '1.5-2 किग्रा प्रति एकड़',
           treatment: 'कैप्टन 2.5 ग्राम/किग्रा बीज',
           fertilizer: 'गोबर की सड़ी खाद 5 टन + NPK 19:19:19',
-          icon: '🥒'
+          icon: '<i class="fa-solid fa-carrot text-emerald-600"></i>'
         }
       ]
     };
@@ -6997,13 +7284,13 @@ ${step.desc}`;
     <div class="bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl relative border-2 border-slate-300 text-left">
       <div class="bg-slate-900 text-white p-5 flex items-center justify-between border-b border-slate-800">
         <div class="flex items-center space-x-3">
-          <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-xl">📖</div>
+          <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-lg"><i class="fa-solid fa-book-open"></i></div>
           <div>
             <h3 class="font-extrabold text-base">डिजिटल बही-खाता पासबुक (Kisan Passbook)</h3>
-            <p class="text-xs text-slate-400">पाण्डेय ट्रेडर्स — अधिकृत साख विवरण</p>
+            <p class="text-xs text-slate-400">पाण्डेय ट्रेडर्स: अधिकृत साख विवरण</p>
           </div>
         </div>
-        <button onclick="closePassbookModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition">
+        <button onclick="closePassbookModal()" class="w-8 h-8 rounded-lg bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition">
           <i class="fa-solid fa-xmark"></i>
         </button>
       </div>
@@ -7120,13 +7407,13 @@ ${step.desc}`;
     <div class="bg-white rounded-3xl max-w-md w-full overflow-hidden shadow-2xl relative border-2 border-amber-500 text-left">
       <div class="bg-slate-900 text-white p-5 flex items-center justify-between border-b border-slate-800">
         <div class="flex items-center space-x-3">
-          <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-xl">🚜</div>
+          <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-lg"><i class="fa-solid fa-tractor"></i></div>
           <div>
             <h3 class="font-extrabold text-base">कृषि यंत्र किराया बुकिंग</h3>
             <p class="text-xs text-slate-400" id="mbMachineTitle">महिंद्रा 575 DI ट्रैक्टर</p>
           </div>
         </div>
-        <button onclick="closeMachineryModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition">
+        <button onclick="closeMachineryModal()" class="w-8 h-8 rounded-lg bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition">
           <i class="fa-solid fa-xmark"></i>
         </button>
       </div>

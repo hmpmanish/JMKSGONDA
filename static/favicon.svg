@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14532d"/>
+      <stop offset="100%" stop-color="#052e16"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+  </defs>
+  <!-- Base Shield -->
+  <path d="M32 4 L56 14 V32 C56 46 45 56 32 60 C19 56 8 46 8 32 V14 Z" fill="url(#shieldGrad)" stroke="#16a34a" stroke-width="2"/>
+  <!-- Central Crop Grain / Seedling -->
+  <path d="M32 48 V20" stroke="#fef08a" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Grains Left -->
+  <path d="M32 26 C26 24 22 28 24 33 C27 34 31 31 32 28" fill="url(#goldGrad)"/>
+  <path d="M32 35 C26 33 22 37 24 42 C27 43 31 40 32 37" fill="url(#goldGrad)"/>
+  <!-- Grains Right -->
+  <path d="M32 22 C38 20 42 24 40 29 C37 30 33 27 32 24" fill="url(#goldGrad)"/>
+  <path d="M32 31 C38 29 42 33 40 38 C37 39 33 36 32 33" fill="url(#goldGrad)"/>
+  <!-- Top Seed -->
+  <circle cx="32" cy="18" r="2.5" fill="#fde047"/>
+</svg>
